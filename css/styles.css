@@ -11,6 +11,8 @@
     --color-texto-100: #31C030;
     --color-blanco: #FFFFFF;
     --color-negro: #000000;
+    --color-fondo-menu: #0a2a4a;
+    --color-borde-menu: #1a3a5a;
 }
 
 * {
@@ -295,81 +297,109 @@ body {
     display: flex;
     gap: 1.5rem;
     margin-bottom: 3rem;
+    position: relative;
 }
 
-.boton-contratar-primario {
-    background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
-    color: var(--color-blanco);
-    border: none;
-    padding: 1rem 3rem;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Contenedor del menú desplegable de CV */
+.contenedor-menu-cv {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
 }
 
-.boton-contratar-primario:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(5, 112, 30, 0.4);
-}
-
-.boton-secundario {
+.boton-descargar-cv {
     background: transparent;
     color: var(--color-blanco);
     border: 2px solid var(--color-blanco);
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     border-radius: 10px;
     font-size: 1.1rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 250px;
 }
 
-.boton-secundario:hover {
+.boton-descargar-cv:hover {
     background: rgba(63, 224, 62, 0.1);
     transform: translateY(-3px);
 }
 
-/* Estadísticas */
-.estadisticas-hero {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    animation: aparecer 1.5s ease;
-}
-
-.tarjeta-estadistica {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 1.5rem;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.flecha-menu {
+    font-size: 0.8rem;
     transition: transform 0.3s ease;
+    margin-left: 0.5rem;
 }
 
-.tarjeta-estadistica:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-texto-0);
+.boton-descargar-cv.menu-abierto .flecha-menu {
+    transform: rotate(180deg);
 }
 
-.numero-estadistica {
-    display: block;
-    font-size: 2rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-bottom: 0.5rem;
+/* Menú desplegable de CV */
+.menu-desplegable-cv {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-fondo-menu);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    margin-top: 0.5rem;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    z-index: 100;
+    border: 1px solid var(--color-borde-menu);
 }
 
-.etiqueta-estadistica {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.menu-desplegable-cv.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.opcion-menu {
+    background: var(--color-fondo-menu);
+    color: var(--color-blanco);
+    border: none;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid var(--color-borde-menu);
+}
+
+.opcion-menu:last-child {
+    border-bottom: none;
+}
+
+.opcion-menu:hover {
+    background: rgba(63, 224, 62, 0.15);
+    color: var(--color-texto-0);
+}
+
+.texto-opcion {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.nombre-archivo {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-style: italic;
 }
 
 /* Imagen de perfil */
@@ -382,7 +412,7 @@ body {
 
 .foto-perfil {
     width: 100%;
-    max-width: 500px;
+    max-width: 420px;
     height: auto;
     border-radius: 20px;
     object-fit: cover;
@@ -439,6 +469,14 @@ body {
     .redes-sociales {
         justify-content: center;
     }
+    
+    .botones-hero {
+        justify-content: center;
+    }
+    
+    .contenedor-menu-cv {
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -463,16 +501,12 @@ body {
         align-items: center;
     }
     
-    .boton-contratar-primario,
-    .boton-secundario {
-        width: 100%;
-        max-width: 300px;
+    .contenedor-menu-cv {
+        max-width: 100%;
     }
     
-    .estadisticas-hero {
-        grid-template-columns: 1fr;
-        max-width: 300px;
-        margin: 0 auto;
+    .boton-descargar-cv {
+        min-width: 100%;
     }
 }
 
@@ -500,5 +534,18 @@ body {
     .icono-red {
         width: 35px;
         height: 35px;
+    }
+    
+    .boton-descargar-cv {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .texto-opcion {
+        font-size: 0.9rem;
+    }
+    
+    .nombre-archivo {
+        font-size: 0.75rem;
     }
 }

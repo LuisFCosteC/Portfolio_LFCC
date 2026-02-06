@@ -98,28 +98,22 @@
                 
                 <!-- Botones de acción -->
                 <div class="botones-hero">
-                    <!-- Botón principal ahora abre WhatsApp directamente -->
-                    <button class="boton-contratar-primario" onclick="window.open('https://api.whatsapp.com/send/?phone=3116463033&text&type=phone_number&app_absent=0', '_blank')">
-                        Contrátame
-                    </button>
-                    <button class="boton-secundario" onclick="descargarCV()">
-                        Descarga mi CV
-                    </button>
-                </div>
-
-                <!-- Estadísticas -->
-                <div class="estadisticas-hero">
-                    <div class="tarjeta-estadistica">
-                        <span class="numero-estadistica">5+</span>
-                        <span class="etiqueta-estadistica">Experiencias</span>
-                    </div>
-                    <div class="tarjeta-estadistica">
-                        <span class="numero-estadistica">20+</span>
-                        <span class="etiqueta-estadistica">Proyectos</span>
-                    </div>
-                    <div class="tarjeta-estadistica">
-                        <span class="numero-estadistica">80+</span>
-                        <span class="etiqueta-estadistica">Clientes Felices</span>
+                    <!-- Contenedor del menú desplegable de CV -->
+                    <div class="contenedor-menu-cv">
+                        <button class="boton-descargar-cv" id="botonDescargarCV">
+                            Descarga mi CV
+                            <span class="flecha-menu">▼</span>
+                        </button>
+                        
+                        <!-- Menú desplegable -->
+                        <div class="menu-desplegable-cv" id="menuCV">
+                            <button class="opcion-menu" onclick="descargarCV('es')">
+                                <span class="texto-opcion">Descargar CV en Español</span>
+                            </button>
+                            <button class="opcion-menu" onclick="descargarCV('en')">
+                                <span class="texto-opcion">Descargar CV en Inglés</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -132,6 +126,6 @@
     </header>
 
     <!-- Scripts -->
-    <script src="js/principal.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
