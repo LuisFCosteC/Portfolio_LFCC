@@ -35,8 +35,8 @@
                 <li><a href="contacto.html" class="enlace-navegacion">Contáctame</a></li>
             </ul>
 
-            <!-- Botón Contrátame (Escritorio) -->
-            <button class="boton-contratar-escritorio" onclick="location.href='contacto.html'">
+            <!-- Botón Contrátame (Escritorio) - Ahora abre WhatsApp directamente -->
+            <button class="boton-contratar-escritorio" onclick="window.open('https://api.whatsapp.com/send/?phone=3116463033&text&type=phone_number&app_absent=0', '_blank')">
                 Contrátame
             </button>
 
@@ -55,7 +55,7 @@
                 <li><a href="portafolio.html" class="enlace-movil">Portafolio</a></li>
                 <li><a href="contacto.html" class="enlace-movil">Contáctame</a></li>
                 <li>
-                    <button class="boton-contratar-movil" onclick="location.href='contacto.html'">
+                    <button class="boton-contratar-movil" onclick="window.open('https://api.whatsapp.com/send/?phone=3116463033&text&type=phone_number&app_absent=0', '_blank')">
                         Contrátame
                     </button>
                 </li>
@@ -98,7 +98,8 @@
                 
                 <!-- Botones de acción -->
                 <div class="botones-hero">
-                    <button class="boton-primario" onclick="location.href='contacto.html'">
+                    <!-- Botón principal ahora abre WhatsApp directamente -->
+                    <button class="boton-contratar-primario" onclick="window.open('https://api.whatsapp.com/send/?phone=3116463033&text&type=phone_number&app_absent=0', '_blank')">
                         Contrátame
                     </button>
                     <button class="boton-secundario" onclick="descargarCV()">

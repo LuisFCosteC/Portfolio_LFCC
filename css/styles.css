@@ -167,6 +167,7 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
+    background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
     padding: 2rem;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
@@ -231,6 +232,7 @@ body {
 
 .saludo-hero {
     font-size: 1.25rem;
+    color: var(--color-texto-0);
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
@@ -295,7 +297,7 @@ body {
     margin-bottom: 3rem;
 }
 
-.boton-primario {
+.boton-contratar-primario {
     background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
     color: var(--color-blanco);
     border: none;
@@ -307,7 +309,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.boton-primario:hover {
+.boton-contratar-primario:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(5, 112, 30, 0.4);
 }
@@ -454,7 +456,6 @@ body {
     
     .menu-movil[aria-hidden="false"] {
         display: block;
-        background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
     }
     
     .botones-hero {
@@ -462,7 +463,7 @@ body {
         align-items: center;
     }
     
-    .boton-primario,
+    .boton-contratar-primario,
     .boton-secundario {
         width: 100%;
         max-width: 300px;
