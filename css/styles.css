@@ -1,0 +1,503 @@
+/* Reseteo y estilos base */
+:root {
+    /* Colores según especificación */
+    --color-cuerpo-0: #072E4F;
+    --color-cuerpo-100: #051A2F;
+    --color-banner-0: #07233B;
+    --color-banner-100: #060C16;
+    --color-boton-0: #079C2A;
+    --color-boton-100: #05701E;
+    --color-texto-0: #3FE03E;
+    --color-texto-100: #31C030;
+    --color-blanco: #FFFFFF;
+    --color-negro: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(100deg, var(--color-cuerpo-100) 0%, var(--color-cuerpo-0) 100%);
+    color: var(--color-blanco);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navegación */
+.navegacion {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contenedor-navegacion {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--color-blanco);
+    text-decoration: none;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.menu-escritorio {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.enlace-navegacion {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.enlace-navegacion:hover,
+.enlace-navegacion.activo {
+    color: var(--color-texto-0);
+}
+
+.enlace-navegacion.activo::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+}
+
+/* Botones de navegación */
+.boton-contratar-escritorio {
+    background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
+    color: var(--color-blanco);
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-contratar-escritorio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(5, 112, 30, 0.3);
+}
+
+/* Menú móvil */
+.alternar-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburguesa {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--color-blanco);
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.hamburguesa::before,
+.hamburguesa::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--color-blanco);
+    transition: transform 0.3s ease;
+}
+
+.hamburguesa::before {
+    top: -8px;
+}
+
+.hamburguesa::after {
+    bottom: -8px;
+}
+
+.alternar-menu[aria-expanded="true"] .hamburguesa {
+    background: transparent;
+}
+
+.alternar-menu[aria-expanded="true"] .hamburguesa::before {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.alternar-menu[aria-expanded="true"] .hamburguesa::after {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.menu-movil {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navegacion-movil {
+    list-style: none;
+}
+
+.enlace-movil {
+    display: block;
+    color: var(--color-blanco);
+    text-decoration: none;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: color 0.3s ease;
+}
+
+.enlace-movil:hover,
+.enlace-movil.activo {
+    color: var(--color-texto-0);
+}
+
+.boton-contratar-movil {
+    width: 100%;
+    background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
+    color: var(--color-blanco);
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+/* Sección Hero */
+.hero {
+    background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contenido-hero {
+    animation: aparecerArriba 1s ease;
+}
+
+.saludo-hero {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.nombre-hero {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.linea-nombre {
+    display: block;
+}
+
+.titulo-hero {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.gradiente-titulo {
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+/* Redes sociales */
+.redes-sociales {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.enlace-red {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.enlace-red:hover {
+    transform: translateY(-3px);
+}
+
+.icono-red {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.enlace-red:hover .icono-red {
+    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
+}
+
+/* Botones */
+.botones-hero {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.boton-primario {
+    background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
+    color: var(--color-blanco);
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-primario:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(5, 112, 30, 0.4);
+}
+
+.boton-secundario {
+    background: transparent;
+    color: var(--color-blanco);
+    border: 2px solid var(--color-blanco);
+    padding: 1rem 3rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-secundario:hover {
+    background: rgba(63, 224, 62, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Estadísticas */
+.estadisticas-hero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    animation: aparecer 1.5s ease;
+}
+
+.tarjeta-estadistica {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-estadistica:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-texto-0);
+}
+
+.numero-estadistica {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.etiqueta-estadistica {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Imagen de perfil */
+.imagen-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: aparecer 1s ease 0.3s both;
+}
+
+.foto-perfil {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Animaciones */
+@keyframes aparecerArriba {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contenedor-hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .nombre-hero {
+        font-size: 2.5rem;
+    }
+    
+    .titulo-hero {
+        font-size: 2.5rem;
+    }
+    
+    .foto-perfil {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .redes-sociales {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-escritorio {
+        display: none;
+    }
+    
+    .boton-contratar-escritorio {
+        display: none;
+    }
+    
+    .alternar-menu {
+        display: block;
+    }
+    
+    .menu-movil[aria-hidden="false"] {
+        display: block;
+        background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
+    }
+    
+    .botones-hero {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .boton-primario,
+    .boton-secundario {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .estadisticas-hero {
+        grid-template-columns: 1fr;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .nombre-hero {
+        font-size: 2rem;
+    }
+    
+    .titulo-hero {
+        font-size: 1.8rem;
+    }
+    
+    .contenedor-navegacion {
+        padding: 0 1rem;
+    }
+    
+    .hero {
+        padding: 5rem 1rem 3rem;
+    }
+    
+    .redes-sociales {
+        gap: 1rem;
+    }
+    
+    .icono-red {
+        width: 35px;
+        height: 35px;
+    }
+}

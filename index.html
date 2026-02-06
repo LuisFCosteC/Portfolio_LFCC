@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis F. Coste C. | Desarrollador Full Stack</title>
+    <meta name="description" content="Portafolio profesional de Luis Fernando Coste Contreras, Desarrollador Full Stack con 5+ años de experiencia">
+    
+    <!-- Preload crítico -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" as="style">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/Icono_LC_2.ico">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navegacion" aria-label="Navegación principal">
+        <div class="contenedor-navegacion">
+            <!-- Logo -->
+            <a href="/" class="logo" aria-label="Inicio">
+                LFCC
+            </a>
+
+            <!-- Menú Escritorio -->
+            <ul class="menu-escritorio">
+                <li><a href="/" class="enlace-navegacion activo" aria-current="page">Inicio</a></li>
+                <li><a href="servicios.html" class="enlace-navegacion">Servicios</a></li>
+                <li><a href="acerca.html" class="enlace-navegacion">Acerca de mí</a></li>
+                <li><a href="portafolio.html" class="enlace-navegacion">Portafolio</a></li>
+                <li><a href="contacto.html" class="enlace-navegacion">Contáctame</a></li>
+            </ul>
+
+            <!-- Botón Contrátame (Escritorio) -->
+            <button class="boton-contratar-escritorio" onclick="location.href='contacto.html'">
+                Contrátame
+            </button>
+
+            <!-- Menú Hamburguesa (Móvil) -->
+            <button class="alternar-menu" aria-label="Abrir menú" aria-expanded="false">
+                <span class="hamburguesa"></span>
+            </button>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div class="menu-movil" aria-hidden="true">
+            <ul class="navegacion-movil">
+                <li><a href="/" class="enlace-movil activo">Inicio</a></li>
+                <li><a href="servicios.html" class="enlace-movil">Servicios</a></li>
+                <li><a href="acerca.html" class="enlace-movil">Acerca de mí</a></li>
+                <li><a href="portafolio.html" class="enlace-movil">Portafolio</a></li>
+                <li><a href="contacto.html" class="enlace-movil">Contáctame</a></li>
+                <li>
+                    <button class="boton-contratar-movil" onclick="location.href='contacto.html'">
+                        Contrátame
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <header class="hero" role="banner">
+        <div class="contenedor-hero">
+            <div class="contenido-hero">
+                <!-- Saludo -->
+                <p class="saludo-hero" aria-label="Saludo">Hola soy</p>
+                
+                <!-- Nombre -->
+                <h1 class="nombre-hero">
+                    <span class="linea-nombre">Luis Fernando Coste Contreras</span>
+                </h1>
+                
+                <!-- Título con gradiente -->
+                <h2 class="titulo-hero" aria-label="Título profesional">
+                    <span class="gradiente-titulo">Desarrollador <br>Full Stack</span>
+                </h2>
+                
+                <!-- Redes sociales -->
+                <div class="redes-sociales">
+                    <a href="http://www.linkedin.com/in/luisfcostec" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="LinkedIn">
+                        <img src="assets/images/Icono_Linkedin.png" alt="LinkedIn" class="icono-red">
+                    </a>
+                    <a href="mailto:contacto@luiscoste.com" target="_blank" aria-label="Gmail">
+                        <img src="assets/images/Icono_Gmail.png" alt="Gmail" class="icono-red">
+                    </a>
+                    <a href="https://github.com/LuisFCosteC" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="GitHub">
+                        <img src="assets/images/Icono_GitHub.png" alt="GitHub" class="icono-red">
+                    </a>
+                    <a href="https://www.instagram.com/luis_coste_c?igsh=eWRtaGljdmI4bHoz" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="Instagram">
+                        <img src="assets/images/Icono_Instagram.png" alt="Instagram" class="icono-red">
+                    </a>
+                </div>
+                
+                <!-- Botones de acción -->
+                <div class="botones-hero">
+                    <button class="boton-primario" onclick="location.href='contacto.html'">
+                        Contrátame
+                    </button>
+                    <button class="boton-secundario" onclick="descargarCV()">
+                        Descarga mi CV
+                    </button>
+                </div>
+
+                <!-- Estadísticas -->
+                <div class="estadisticas-hero">
+                    <div class="tarjeta-estadistica">
+                        <span class="numero-estadistica">5+</span>
+                        <span class="etiqueta-estadistica">Experiencias</span>
+                    </div>
+                    <div class="tarjeta-estadistica">
+                        <span class="numero-estadistica">20+</span>
+                        <span class="etiqueta-estadistica">Proyectos</span>
+                    </div>
+                    <div class="tarjeta-estadistica">
+                        <span class="numero-estadistica">80+</span>
+                        <span class="etiqueta-estadistica">Clientes Felices</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen de perfil -->
+            <div class="imagen-hero">
+                <img src="assets/images/Imagen_1.png" alt="Luis Fernando Coste Contreras - Desarrollador Full Stack" class="foto-perfil">
+            </div>
+        </div>
+    </header>
+
+    <!-- Scripts -->
+    <script src="js/principal.js" type="module"></script>
+</body>
+</html>
