@@ -1,59 +1,72 @@
-/* Reseteo y estilos base */
+/* ============================================
+   RESET Y ESTILOS BASE
+   ============================================ */
+
+/* Variables CSS globales para mantener consistencia */
 :root {
-    /* Colores según especificación */
-    --color-body-0: #072E4F;
-    --color-body-100: #051A2F;
-    --color-banner-0: #07233B;
-    --color-banner-100: #060C16;
-    --color-boton-0: #079C2A;
-    --color-boton-100: #05701E;
-    --color-texto-0: #3FE03E;
-    --color-texto-100: #31C030;
-    --color-blanco: #FFFFFF;
-    --color-negro: #000000;
-    --color-fondo-menu: #051A2F;
-    --color-borde-menu: #1a3a5a;
+    /* Paleta de colores principal */
+    --color-body-0: #072E4F;      /* Fondo superior */
+    --color-body-100: #051A2F;    /* Fondo inferior */
+    --color-banner-0: #07233B;    /* Banner superior */
+    --color-banner-100: #060C16;  /* Banner inferior */
+    --color-boton-0: #079C2A;     /* Botón claro */
+    --color-boton-100: #05701E;   /* Botón oscuro */
+    --color-texto-0: #3FE03E;     /* Texto acento claro */
+    --color-texto-100: #31C030;   /* Texto acento oscuro */
+    --color-blanco: #FFFFFF;      /* Blanco puro */
+    --color-negro: #000000;       /* Negro puro */
+    --color-fondo-menu: #051A2F;  /* Fondo menús desplegables */
+    --color-borde-menu: #1a3a5a;  /* Borde menús desplegables */
 }
 
+/* Reset universal para eliminar márgenes y paddings predeterminados */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
 }
 
+/* Configuración base del documento */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
 }
 
+/* Estilos base del cuerpo */
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Lato', sans-serif; /* Tipografía principal */
     background: linear-gradient(100deg, var(--color-body-100) 0%, var(--color-body-0) 100%);
     color: var(--color-blanco);
-    min-height: 100vh;
-    overflow-x: hidden;
+    min-height: 100vh; /* Altura mínima de toda la ventana */
+    overflow-x: hidden; /* Oculta scroll horizontal */
 }
 
-/* Navegación */
+/* ============================================
+   NAVEGACIÓN
+   ============================================ */
+
+/* Barra de navegación fija en la parte superior */
 .navegacion {
     position: fixed;
     top: 0;
     width: 100%;
     background: linear-gradient(100deg, var(--color-body-100) 0%, var(--color-body-0) 100%);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
 }
 
+/* Contenedor interno de navegación */
 .contenedor-navegacion {
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrado horizontal */
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Logo */
 .logo {
     font-size: 1.5rem;
     font-weight: 900;
@@ -61,17 +74,19 @@ body {
     text-decoration: none;
     letter-spacing: 1px;
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; /* Compatibilidad con WebKit */
+    background-clip: text; /* Texto con gradiente */
+    color: transparent; /* Hace visible el gradiente */
 }
 
+/* Menú de escritorio */
 .menu-escritorio {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2.5rem; /* Espacio entre elementos del menú */
 }
 
+/* Enlaces de navegación */
 .enlace-navegacion {
     color: var(--color-blanco);
     text-decoration: none;
@@ -84,7 +99,7 @@ body {
 
 .enlace-navegacion:hover,
 .enlace-navegacion.activo {
-    color: var(--color-texto-0);
+    color: var(--color-texto-0); /* Color acento al hacer hover o activo */
 }
 
 .enlace-navegacion.activo::after {
@@ -97,7 +112,7 @@ body {
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
 }
 
-/* Botones de navegación */
+/* Botón "Contrátame" en escritorio */
 .boton-contratar-escritorio {
     background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
     color: var(--color-blanco);
@@ -111,19 +126,24 @@ body {
 }
 
 .boton-contratar-escritorio:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Efecto de elevación */
     box-shadow: 0 10px 20px rgba(5, 112, 30, 0.3);
 }
 
-/* Menú móvil */
+/* ============================================
+   MENÚ MÓVIL
+   ============================================ */
+
+/* Botón para alternar menú en móvil */
 .alternar-menu {
-    display: none;
+    display: none; /* Oculto por defecto (solo visible en móvil) */
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
 }
 
+/* Icono hamburguesa del menú móvil */
 .Desplegable {
     display: block;
     width: 25px;
@@ -151,6 +171,7 @@ body {
     bottom: -8px;
 }
 
+/* Transformación a "X" cuando el menú está abierto */
 .alternar-menu[aria-expanded="true"] .Desplegable {
     background: transparent;
 }
@@ -163,6 +184,7 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
+/* Menú móvil desplegable */
 .menu-movil {
     display: none;
     position: absolute;
@@ -174,6 +196,7 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Navegación dentro del menú móvil */
 .navegacion-movil {
     list-style: none;
 }
@@ -193,6 +216,7 @@ body {
     color: var(--color-texto-0);
 }
 
+/* Botón "Contrátame" en móvil */
 .boton-contratar-movil {
     width: 100%;
     background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
@@ -206,13 +230,16 @@ body {
     cursor: pointer;
 }
 
-/* Sección Hero */
+/* ============================================
+   SECCIÓN HERO (ENCABEZADO)
+   ============================================ */
+
 .hero {
     background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
-    min-height: 100vh;
+    min-height: 100vh; /* Altura completa de la ventana */
     display: flex;
     align-items: center;
-    padding: 6rem 2rem 4rem;
+    padding: 6rem 2rem 4rem; /* Padding superior mayor por la navbar fija */
     position: relative;
     overflow: hidden;
 }
@@ -221,13 +248,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 1;
 }
 
+/* Contenido del Hero con animación de entrada */
 .contenido-hero {
     animation: aparecerArriba 1s ease;
 }
@@ -255,6 +283,7 @@ body {
     line-height: 1.2;
 }
 
+/* Texto con gradiente para títulos */
 .gradiente-titulo {
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
     -webkit-background-clip: text;
@@ -263,7 +292,10 @@ body {
     font-weight: 700;
 }
 
-/* Redes sociales */
+/* ============================================
+   REDES SOCIALES
+   ============================================ */
+
 .redes-sociales {
     display: flex;
     gap: 1.5rem;
@@ -276,22 +308,25 @@ body {
 }
 
 .enlace-red:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Efecto de levitación */
 }
 
 .icono-red {
     width: 40px;
     height: 40px;
     object-fit: contain;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Iconos blancos */
     transition: filter 0.3s ease;
 }
 
 .enlace-red:hover .icono-red {
-    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
+    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5); /* Efecto verde al hover */
 }
 
-/* Botones */
+/* ============================================
+   BOTONES DE ACCIÓN
+   ============================================ */
+
 .botones-hero {
     display: flex;
     gap: 1.5rem;
@@ -336,7 +371,7 @@ body {
 }
 
 .boton-descargar-cv.menu-abierto .flecha-menu {
-    transform: rotate(180deg);
+    transform: rotate(180deg); /* Gira la flecha cuando el menú está abierto */
 }
 
 /* Menú desplegable de CV */
@@ -401,12 +436,15 @@ body {
     font-style: italic;
 }
 
-/* Imagen de perfil */
+/* ============================================
+   IMAGEN DE PERFIL
+   ============================================ */
+
 .imagen-hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: aparecer 1s ease 0.3s both;
+    animation: aparecer 1s ease 0.3s both; /* Animación con retardo */
 }
 
 .foto-perfil {
@@ -423,7 +461,10 @@ body {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
-/* Sección Sobre Mí */
+/* ============================================
+   SECCIÓN "SOBRE MÍ"
+   ============================================ */
+
 .sobre-mi {
     background: linear-gradient(100deg, var(--color-body-100) 0%, var(--color-body-0) 100%);
     padding: 2rem 2rem;
@@ -442,16 +483,22 @@ body {
     font-weight: 900;
 }
 
-/* Primera sección: Carrusel y Texto */
+/* ============================================
+   PRIMERA SECCIÓN: CARRUSEL Y TEXTO
+   ============================================ */
+
 .seccion-carrusel-texto {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
     gap: 4rem;
     margin-bottom: 6rem;
     align-items: center;
 }
 
-/* Carrusel */
+/* ============================================
+   CARRUSEL DE IMÁGENES
+   ============================================ */
+
 .carrusel-contenedor {
     position: relative;
     width: 100%;
@@ -468,13 +515,13 @@ body {
 
 .carrusel-slides {
     display: flex;
-    width: 400%;
+    width: 400%; /* 4 slides = 400% */
     height: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
 .carrusel-slide {
-    width: 25%;
+    width: 25%; /* Cada slide ocupa 25% del contenedor (4 slides) */
     height: 100%;
     display: flex;
     justify-content: center;
@@ -519,7 +566,7 @@ body {
     right: 20px;
 }
 
-/* Indicadores del carrusel */
+/* Indicadores del carrusel (puntos inferiores) */
 .carrusel-indicadores {
     position: absolute;
     bottom: 20px;
@@ -543,14 +590,17 @@ body {
 
 .indicador.activo {
     background: var(--color-texto-0);
-    transform: scale(1.2);
+    transform: scale(1.2); /* Punto activo más grande */
 }
 
 .indicador:hover {
     background: var(--color-texto-100);
 }
 
-/* Texto sobre mí */
+/* ============================================
+   TEXTO "SOBRE MÍ"
+   ============================================ */
+
 .texto-sobre-mi {
     padding: 0 1rem;
 }
@@ -571,7 +621,10 @@ body {
     font-size: 1.1rem;
 }
 
-/* Botón CV Secundario con menú desplegable */
+/* ============================================
+   BOTÓN CV SECUNDARIO (EN SECCIÓN "SOBRE MÍ")
+   ============================================ */
+
 .contenedor-menu-cv-secundario {
     position: relative;
     display: inline-block;
@@ -667,25 +720,34 @@ body {
     font-size: 1rem;
 }
 
-/* Sección Tecnologías organizadas por categorías */
+/* ============================================
+   SECCIÓN DE TECNOLOGÍAS (COMPLETAMENTE REMODELADA)
+   ============================================ */
+
 .seccion-tecnologias {
     background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 3rem;
+    padding: 1rem;
 }
 
 .subtitulo-tecnologias {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     color: var(--color-texto-0);
     font-weight: 700;
 }
 
-/* Categorías de tecnologías */
+/* ============================================
+   CATEGORÍAS DE TECNOLOGÍAS - DISEÑO HORIZONTAL
+   ============================================ */
+
 .categoria-tecnologia {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .categoria-tecnologia:last-child {
@@ -694,13 +756,14 @@ body {
 
 .titulo-categoria {
     font-size: 1.5rem;
-    margin-bottom: 1.5rem;
     font-weight: 700;
     text-align: center;
     padding-bottom: 0.5rem;
     position: relative;
+    width: 100%;
 }
 
+/* Línea decorativa bajo cada título de categoría */
 .titulo-categoria::after {
     content: '';
     position: absolute;
@@ -712,77 +775,90 @@ body {
     border-radius: 2px;
 }
 
-.titulo-categoria.frontend::after {
-    background: linear-gradient(90deg, var(--color-frontend), var(--color-texto-100));
-}
-
-.titulo-categoria.backend::after {
-    background: linear-gradient(90deg, var(--color-backend), var(--color-boton-100));
-}
-
-.titulo-categoria.extras::after {
-    background: linear-gradient(90deg, var(--color-extras), var(--color-texto-0));
-}
-
-.titulo-categoria.frontend {
-    color: var(--color-frontend);
-}
-
-.titulo-categoria.backend {
-    color: var(--color-backend);
-}
-
-.titulo-categoria.extras {
-    color: var(--color-extras);
-}
+/* ============================================
+   CONTENEDOR DE TECNOLOGÍAS - UNA SOLA LÍNEA CON FLEX
+   ============================================ */
 
 .contenedor-tecnologias {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1.5rem;
-    grid-auto-rows: 180px; /* Altura uniforme para todas las filas */
-    align-items: center;   /* Centra verticalmente todos los items */
-    justify-items: center; /* Centra horizontalmente todos los items */
+    display: flex; /* Cambiado de grid a flex para una sola línea */
+    flex-wrap: nowrap; /* Evita que se rompa en varias líneas */
+    justify-content: center; /* Centra horizontalmente todos los items */
+    align-items: center; /* Centra verticalmente */
+    gap: 1rem; /* Espacio entre items */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 1200px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0.5rem; /* Padding interno reducido */
+    overflow-x: auto; /* Permite scroll horizontal si hay demasiados items */
+    scrollbar-width: thin; /* Scrollbar fina (para Firefox) */
+    scrollbar-color: var(--color-texto-0) rgba(255, 255, 255, 0.1); /* Color scrollbar */
 }
+
+/* Estilos para scrollbar en Webkit (Chrome, Safari, Edge) */
+.contenedor-tecnologias::-webkit-scrollbar {
+    height: 6px; /* Altura de la scrollbar horizontal */
+}
+
+.contenedor-tecnologias::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Fondo de la track */
+    border-radius: 3px;
+}
+
+.contenedor-tecnologias::-webkit-scrollbar-thumb {
+    background: var(--color-texto-0); /* Color del thumb */
+    border-radius: 3px;
+}
+
+.contenedor-tecnologias::-webkit-scrollbar-thumb:hover {
+    background: var(--color-texto-100); /* Color al hacer hover */
+}
+
+/* ============================================
+   ITEMS DE TECNOLOGÍA - TAMAÑO REDUCIDO, UNA LÍNEA
+   ============================================ */
 
 .tecnologia-item {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    place-items: center;
-    gap: 1rem;
-    padding: 1.5rem 1rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem; /* Padding muy reducido */
+    border-radius: 8px;
     transition: all 0.3s ease;
-    height: 10%;          /* Ocupa el espacio de la celda de la grid */
-    width: 100%;           /* Ocupa el espacio del ancho disponible */
-    min-height: 140px;     /* Altura mínima garantizada */
-}
-
-.tecnologia-item:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
+    width: 80px; /* Ancho fijo pequeño */
+    height: 80px; /* Alto fijo pequeño */
+    flex-shrink: 0; /* Evita que los items se encojan */
+    text-align: center;
 }
 
 .icono-tecnologia {
-    width: 60px;
-    height: 60px;
+    width: 35px; /* Iconos más pequeños */
+    height: 35px; /* Iconos más pequeños */
     object-fit: contain;
-    filter: brightness(0) invert(1);
-    transition: filter 0.3s ease;
+    filter: brightness(0) invert(1); /* Iconos blancos */
+    transition: filter 0.3s ease, transform 0.3s ease;
+    margin-bottom: 0.25rem; /* Menos espacio entre icono y texto */
 }
 
 .tecnologia-item:hover .icono-tecnologia {
     filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
+    transform: scale(1.1); /* Ligero aumento al hacer hover */
 }
 
 .nombre-tecnologia {
-    font-size: 0.9rem;
+    font-size: 0.7rem; /* Texto más pequeño */
     font-weight: 500;
     text-align: center;
+    line-height: 1.1;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Animaciones */
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
 @keyframes aparecerArriba {
     from {
         opacity: 0;
@@ -803,16 +879,21 @@ body {
     }
 }
 
-/* Responsive */
+/* ============================================
+   DISEÑO RESPONSIVE - AJUSTES PARA UNA LÍNEA
+   ============================================ */
+
+/* Pantallas grandes (hasta 1200px) */
 @media (max-width: 1200px) {
     .contenedor-tecnologias {
-        grid-template-columns: repeat(4, 1fr);
+        max-width: 1000px;
     }
 }
 
+/* Tablets grandes (hasta 1024px) */
 @media (max-width: 1024px) {
     .contenedor-hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una columna en tablets */
         gap: 3rem;
         text-align: center;
     }
@@ -827,7 +908,7 @@ body {
     
     .foto-perfil {
         max-width: 400px;
-        margin: -10 auto;
+        margin: 0 auto; /* Centra la imagen */
     }
     
     .redes-sociales {
@@ -843,7 +924,7 @@ body {
     }
     
     .seccion-carrusel-texto {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una columna en tablets */
         gap: 3rem;
     }
     
@@ -854,7 +935,22 @@ body {
     }
     
     .contenedor-tecnologias {
-        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+        gap: 0.8rem; /* Menos espacio en tablets */
+    }
+    
+    .tecnologia-item {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .icono-tecnologia {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .nombre-tecnologia {
+        font-size: 0.65rem;
     }
     
     .contenedor-menu-cv-secundario {
@@ -862,25 +958,26 @@ body {
     }
 }
 
+/* Tablets pequeñas y móviles grandes (hasta 768px) */
 @media (max-width: 768px) {
     .menu-escritorio {
-        display: none;
+        display: none; /* Oculta menú de escritorio */
     }
     
     .boton-contratar-escritorio {
-        display: none;
+        display: none; /* Oculta botón de escritorio */
     }
     
     .alternar-menu {
-        display: block;
+        display: block; /* Muestra botón hamburguesa */
     }
     
     .menu-movil[aria-hidden="false"] {
-        display: block;
+        display: block; /* Muestra menú móvil cuando está activo */
     }
     
     .botones-hero {
-        flex-direction: column;
+        flex-direction: column; /* Botones en columna */
         align-items: center;
     }
     
@@ -889,7 +986,7 @@ body {
     }
     
     .boton-descargar-cv {
-        min-width: 100%;
+        min-width: 100%; /* Botón ocupa todo el ancho */
     }
     
     .titulo-seccion {
@@ -901,7 +998,29 @@ body {
     }
     
     .contenedor-tecnologias {
-        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+        gap: 0.6rem; /* Aún menos espacio */
+        justify-content: flex-start; /* Alinea a la izquierda para permitir scroll */
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .tecnologia-item {
+        width: 70px;
+        height: 70px;
+        padding: 0.4rem;
+    }
+    
+    .icono-tecnologia {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .nombre-tecnologia {
+        font-size: 0.6rem;
+    }
+    
+    .seccion-tecnologias {
+        padding: 2rem 1rem;
     }
     
     .contenedor-menu-cv-secundario {
@@ -913,6 +1032,7 @@ body {
     }
 }
 
+/* Móviles (hasta 480px) */
 @media (max-width: 480px) {
     .nombre-hero {
         font-size: 2rem;
@@ -977,21 +1097,34 @@ body {
     }
     
     .seccion-tecnologias {
-        padding: 2rem 1rem;
+        padding: 1.5rem 0.5rem;
     }
     
     .contenedor-tecnologias {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 0.4rem; /* Espacio mínimo entre items */
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .tecnologia-item {
+        width: 65px;
+        height: 65px;
+        padding: 0.3rem;
     }
     
     .icono-tecnologia {
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
+        margin-bottom: 0.2rem;
+    }
+    
+    .nombre-tecnologia {
+        font-size: 0.55rem;
+        line-height: 1;
     }
     
     .titulo-categoria {
         font-size: 1.3rem;
+        margin-bottom: 0.75rem;
     }
     
     .boton-cv-secundario {
@@ -1001,5 +1134,26 @@ body {
     
     .texto-opcion-secundario {
         font-size: 0.9rem;
+    }
+}
+
+/* Pantallas muy pequeñas (hasta 360px) */
+@media (max-width: 360px) {
+    .tecnologia-item {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .icono-tecnologia {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .nombre-tecnologia {
+        font-size: 0.5rem;
+    }
+    
+    .contenedor-tecnologias {
+        gap: 0.3rem;
     }
 }
