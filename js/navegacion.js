@@ -42,30 +42,49 @@ export function configurarNavegacion() {
     // Navegación suave para anclas
     document.querySelectorAll('a[href^="#"]').forEach(ancla => {
         ancla.addEventListener('click', function(e) {
-            e.preventDefault();
-            const idObjetivo = this.getAttribute('href');
-            if (idObjetivo === '#') return;
+            const href = this.getAttribute('href');
             
-            const elementoObjetivo = document.querySelector(idObjetivo);
+            // Solo procesar enlaces que sean anclas internas
+            if (href === '#') return;
+            
+            // No prevenir comportamiento por defecto en enlaces que no sean #inicio
+            if (href !== '#inicio') {
+                e.preventDefault();
+            }
+            
+            const elementoObjetivo = document.querySelector(href);
             if (elementoObjetivo) {
+                // Cerrar menú móvil si está abierto
+                if (alternarMenu.getAttribute('aria-expanded') === 'true') {
+                    alternarMenu.setAttribute('aria-expanded', 'false');
+                    menuMovil.setAttribute('aria-hidden', 'true');
+                    menuMovil.style.display = 'none';
+                }
+                
                 window.scrollTo({
                     top: elementoObjetivo.offsetTop - 80,
                     behavior: 'smooth'
                 });
+                
+                // Actualizar enlace activo
+                document.querySelectorAll('.enlace-navegacion, .enlace-movil').forEach(enlace => {
+                    enlace.classList.remove('activo');
+                });
+                this.classList.add('activo');
             }
         });
     });
     
     // Cambiar clase activa al navegar
     const actualizarEnlaceActivo = () => {
-        const secciones = document.querySelectorAll('section[id]');
+        const secciones = document.querySelectorAll('section[id], header[id]');
         const enlacesNavegacion = document.querySelectorAll('.enlace-navegacion, .enlace-movil');
         
         let actual = '';
         secciones.forEach(seccion => {
             const parteSuperiorSeccion = seccion.offsetTop;
             const alturaSeccion = seccion.clientHeight;
-            if (scrollY >= parteSuperiorSeccion - 100) {
+            if (window.scrollY >= parteSuperiorSeccion - 150) {
                 actual = seccion.getAttribute('id');
             }
         });

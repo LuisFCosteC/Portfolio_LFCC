@@ -28,11 +28,11 @@
 
             <!-- Menú Escritorio -->
             <ul class="menu-escritorio">
-                <li><a href="/" class="enlace-navegacion activo" aria-current="page">Inicio</a></li>
-                <li><a href="servicios.html" class="enlace-navegacion">Servicios</a></li>
-                <li><a href="acerca.html" class="enlace-navegacion">Acerca de mí</a></li>
-                <li><a href="portafolio.html" class="enlace-navegacion">Portafolio</a></li>
-                <li><a href="contacto.html" class="enlace-navegacion">Contáctame</a></li>
+                <li><a href="#inicio" class="enlace-navegacion activo" aria-current="page">Inicio</a></li>
+                <li><a href="#sobre-mi" class="enlace-navegacion">Acerca de mí</a></li>
+                <li><a href="#proyectos" class="enlace-navegacion">Proyectos</a></li>
+                <li><a href="#certificados" class="enlace-navegacion">Certificados</a></li>
+                <li><a href="#contacto" class="enlace-navegacion">Contáctame</a></li>
             </ul>
 
             <!-- Botón Contrátame (Escritorio) - Ahora abre WhatsApp directamente -->
@@ -40,20 +40,20 @@
                 Contrátame
             </button>
 
-            <!-- Menú Hamburguesa (Móvil) -->
+            <!-- Menú Desplegable (Móvil) -->
             <button class="alternar-menu" aria-label="Abrir menú" aria-expanded="false">
-                <span class="hamburguesa"></span>
+                <span class="Desplegable"></span>
             </button>
         </div>
 
         <!-- Menú Móvil -->
         <div class="menu-movil" aria-hidden="true">
             <ul class="navegacion-movil">
-                <li><a href="/" class="enlace-movil activo">Inicio</a></li>
-                <li><a href="servicios.html" class="enlace-movil">Servicios</a></li>
-                <li><a href="acerca.html" class="enlace-movil">Acerca de mí</a></li>
-                <li><a href="portafolio.html" class="enlace-movil">Portafolio</a></li>
-                <li><a href="contacto.html" class="enlace-movil">Contáctame</a></li>
+                <li><a href="#inicio" class="enlace-movil activo">Inicio</a></li>
+                <li><a href="#sobre-mi" class="enlace-movil">Acerca de mí</a></li>
+                <li><a href="#proyectos" class="enlace-movil">Proyectos</a></li>
+                <li><a href="#certificados" class="enlace-movil">Certificados</a></li>
+                <li><a href="#contacto" class="enlace-movil">Contáctame</a></li>
                 <li>
                     <button class="boton-contratar-movil" onclick="window.open('https://api.whatsapp.com/send/?phone=3116463033&text&type=phone_number&app_absent=0', '_blank')">
                         Contrátame
@@ -64,11 +64,11 @@
     </nav>
 
     <!-- Sección Hero -->
-    <header class="hero" role="banner">
+    <header class="hero" id="inicio" role="banner">
         <div class="contenedor-hero">
             <div class="contenido-hero">
                 <!-- Saludo -->
-                <p class="saludo-hero" aria-label="Saludo">Hola soy</p>
+                <p class="saludo-hero" aria-label="Saludo">Hola, un gusto conocerte, soy</p>
                 
                 <!-- Nombre -->
                 <h1 class="nombre-hero">
@@ -83,16 +83,13 @@
                 <!-- Redes sociales -->
                 <div class="redes-sociales">
                     <a href="http://www.linkedin.com/in/luisfcostec" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="LinkedIn">
-                        <img src="assets/images/Icono_Linkedin.png" alt="LinkedIn" class="icono-red">
+                        <img src="assets/images/Icono_Redes_Linkedin.png" alt="LinkedIn" class="icono-red">
                     </a>
                     <a href="mailto:contacto@luiscoste.com" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="Gmail">
-                        <img src="assets/images/Icono_Gmail.png" alt="Gmail" class="icono-red">
+                        <img src="assets/images/Icono_Redes_Gmail.png" alt="Gmail" class="icono-red">
                     </a>
                     <a href="https://github.com/LuisFCosteC" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="GitHub">
-                        <img src="assets/images/Icono_GitHub.png" alt="GitHub" class="icono-red">
-                    </a>
-                    <a href="https://www.instagram.com/luis_coste_c?igsh=eWRtaGljdmI4bHoz" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="Instagram">
-                        <img src="assets/images/Icono_Instagram.png" alt="Instagram" class="icono-red">
+                        <img src="assets/images/Icono_Redes_GitHub.png" alt="GitHub" class="icono-red">
                     </a>
                 </div>
                 
@@ -124,6 +121,187 @@
             </div>
         </div>
     </header>
+
+    <!-- Sección Acerca de mí -->
+    <section class="sobre-mi" id="sobre-mi">
+        <div class="contenedor-sobre-mi">
+            <!-- Título de la sección -->
+            <h2 class="titulo-seccion">
+                <span class="gradiente-titulo">Acerca de mí</span>
+            </h2>
+            
+            <!-- Primera sección: Carrusel y Texto -->
+            <div class="seccion-carrusel-texto">
+                <!-- Carrusel de fotos (izquierda) -->
+                <div class="carrusel-contenedor">
+                    <div class="carrusel">
+                        <div class="carrusel-slides">
+                            <div class="carrusel-slide activo">
+                                <img src="assets/images/Imagen_Carrusel_1.jpeg" alt="Luis Coste trabajando en proyecto" class="imagen-carrusel">
+                            </div>
+                            <div class="carrusel-slide">
+                                <img src="assets/images/Imagen_Carrusel_2.jpeg" alt="Luis Coste en equipo de desarrollo" class="imagen-carrusel">
+                            </div>
+                            <div class="carrusel-slide">
+                                <img src="assets/images/Imagen_Carrusel_3.jpeg" alt="Luis Coste presentando proyecto" class="imagen-carrusel">
+                            </div>
+                            <div class="carrusel-slide">
+                                <img src="assets/images/Imagen_Carrusel_4.jpeg" alt="Luis Coste en conferencia tecnológica" class="imagen-carrusel">
+                            </div>
+                        </div>
+                        
+                        <!-- Controles del carrusel -->
+                        <button class="carrusel-control anterior" aria-label="Imagen anterior">
+                            ‹
+                        </button>
+                        <button class="carrusel-control siguiente" aria-label="Imagen siguiente">
+                            ›
+                        </button>
+                        
+                        <!-- Indicadores -->
+                        <div class="carrusel-indicadores">
+                            <button class="indicador activo" aria-label="Ir a imagen 1"></button>
+                            <button class="indicador" aria-label="Ir a imagen 2"></button>
+                            <button class="indicador" aria-label="Ir a imagen 3"></button>
+                            <button class="indicador" aria-label="Ir a imagen 4"></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Texto de resumen profesional (derecha) -->
+                <div class="texto-sobre-mi">
+                    <h3 class="subtitulo-sobre-mi">¿Quien soy?</h3>
+                    <div class="parrafos-sobre-mi">
+                        <p>Soy un desarrollador Full Stack Junior enfocado en crear aplicaciones web eficientes, escalables y fáciles de mantener. Tengo experiencia tanto en backend como en frontend, lo que me permite entender los proyectos de forma integral y proponer soluciones prácticas y bien pensadas. Me apasiona el aprendizaje continuo y el desarrollo de software de calidad.</p>
+                    </div>
+                    
+                    <!-- Botón secundario con menú desplegable -->
+                    <div class="contenedor-menu-cv-secundario">
+                        <button class="boton-cv-secundario" id="botonDescargarCVSecundario">
+                            Descargar CV
+                            <span class="flecha-menu-secundario">▼</span>
+                        </button>
+                        
+                        <!-- Menú desplegable secundario -->
+                        <div class="menu-desplegable-cv-secundario" id="menuCVSecundario">
+                            <button class="opcion-menu-secundario" onclick="descargarCV('es')">
+                                <span class="texto-opcion-secundario">Descargar CV en Español</span>
+                            </button>
+                            <button class="opcion-menu-secundario" onclick="descargarCV('en')">
+                                <span class="texto-opcion-secundario">Descargar CV en Inglés</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segunda sección: Tecnologías organizadas por categorías -->
+            <div class="seccion-tecnologias">
+                <h3 class="subtitulo-tecnologias">Tecnologías que domino</h3>
+                
+                <!-- Categoría: Frontend -->
+                <div class="categoria-tecnologia">
+                    <h4 class="titulo-categoria frontend">Frontend</h4>
+                    <div class="contenedor-tecnologias categoria-frontend">
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_HTML.png" alt="HTML" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">HTML</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_CSS.png" alt="CSS" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">CSS</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_JavaScript.png" alt="JavaScript" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">JavaScript</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_TailwindCSS.png" alt="Tailwind CSS" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Tailwind CSS</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_Angular.png" alt="Angular" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Angular</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_React.png" alt="React" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">React</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_Typescript.png" alt="TypeScript" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categoría: Backend -->
+                <div class="categoria-tecnologia">
+                    <h4 class="titulo-categoria backend">Backend</h4>
+                    <div class="contenedor-tecnologias categoria-backend">
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_Python.png" alt="Python" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Python</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_Java.png" alt="Java" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Java</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_.NET.png" alt=".NET" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Microsoft .NET</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_.NETCore.png" alt=".NET Core" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Microsoft .NET Core</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_NodeJS.png" alt="NodeJS" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Node JS</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_FastAPI.png" alt="FastAPI" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">FastAPI</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_MySQL.png" alt="MySQL" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">MySQL</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_SqlServer.png" alt="SQL Server" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">SQL Server</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_Csharp.png" alt="C#" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">C#</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Categoría: Extras -->
+                <div class="categoria-tecnologia">
+                    <h4 class="titulo-categoria extras">Extras</h4>
+                    <div class="contenedor-tecnologias categoria-extras">
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_Figma.png" alt="Figma" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Figma</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_GitBash.png" alt="Git Bash" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Git Bash</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_GitHub.png" alt="GitHub" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">GitHub</span>
+                        </div>
+                        <div class="tecnologia-item">
+                            <img src="assets/images/Icono_Tecnología_PostMan.png" alt="Postman" class="icono-tecnologia">
+                            <span class="nombre-tecnologia">Postman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Scripts -->
     <script src="js/main.js" type="module"></script>

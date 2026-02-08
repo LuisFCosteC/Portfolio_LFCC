@@ -10,12 +10,22 @@ export function configurarAnimaciones() {
         entradas.forEach(entrada => {
             if (entrada.isIntersecting) {
                 entrada.target.classList.add('animar-entrada');
+                
+                // Si es la sección de tecnologías, animar cada item con delay
+                if (entrada.target.classList.contains('seccion-tecnologias')) {
+                    const items = entrada.target.querySelectorAll('.tecnologia-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animar-entrada');
+                        }, index * 100);
+                    });
+                }
             }
         });
     }, opcionesObservador);
     
     // Elementos a observar
-    document.querySelectorAll('.contenido-hero, .imagen-hero').forEach(elemento => {
+    document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias').forEach(elemento => {
         observador.observe(elemento);
     });
     
