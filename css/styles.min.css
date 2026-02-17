@@ -476,7 +476,7 @@ body {
 }
 
 /* ============================================
-   BOTONES DE ACCIÓN
+   BOTONES DE ACCIÓN (MODIFICADO)
    ============================================ */
 
 .botones-hero {
@@ -489,8 +489,8 @@ body {
 .contenedor-menu-cv {
     position: relative;
     display: inline-block;
-    width: 100%;
-    max-width: 300px;
+    width: auto;        /* se adapta al contenido */
+    max-width: none;
 }
 
 .boton-descargar-cv {
@@ -503,12 +503,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    min-width: 250px;
-    padding: 0.5rem 1.5rem;   /* mismo padding vertical que el botón de traducción */
-    font-size: 1rem;           /* reduce ligeramente para acercar alturas */
-    line-height: 1.2;           /* controla la altura del texto */
-    font-weight: 700;          /* se mantiene */
+    width: auto;            /* elimina el ancho fijo */
+    min-width: unset;       /* quita el mínimo de 250px */
+    padding: 0.5rem 1rem;   /* padding más compacto */
+    font-size: 1rem;
+    line-height: 1.2;
+    font-weight: 700;
+    gap: 0.5rem;            /* espacio entre texto y flecha */
 }
 
 .boton-descargar-cv:hover {
@@ -519,7 +520,6 @@ body {
 .flecha-menu {
     font-size: 0.8rem;
     transition: transform 0.3s ease;
-    margin-left: 0.5rem;
 }
 
 .boton-descargar-cv.menu-abierto .flecha-menu {
@@ -529,8 +529,9 @@ body {
 .menu-desplegable-cv {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    left: -170px;
+    width: max-content;
+    min-width: 250px;
     background: var(--color-fondo-menu);
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
@@ -1032,10 +1033,17 @@ body {
     }
     
     .contenedor-menu-cv {
+        width: 100%;
         max-width: 100%;
     }
     
     .boton-descargar-cv {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .menu-desplegable-cv {
+        width: 100%;
         min-width: 100%;
     }
     
