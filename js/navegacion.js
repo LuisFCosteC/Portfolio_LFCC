@@ -5,13 +5,11 @@ export function configurarNavegacion() {
     
     if (!alternarMenu || !menuMovil) return;
     
-    // Alternar del menú móvil
     alternarMenu.addEventListener('click', () => {
         const estaExpandido = alternarMenu.getAttribute('aria-expanded') === 'true';
         alternarMenu.setAttribute('aria-expanded', !estaExpandido);
         menuMovil.setAttribute('aria-hidden', estaExpandido);
         
-        // Para lectores de pantalla
         if (!estaExpandido) {
             menuMovil.style.display = 'block';
             setTimeout(() => menuMovil.focus(), 100);
@@ -20,7 +18,6 @@ export function configurarNavegacion() {
         }
     });
     
-    // Cerrar menú al hacer clic en un enlace
     const enlacesMoviles = document.querySelectorAll('.enlace-movil');
     enlacesMoviles.forEach(enlace => {
         enlace.addEventListener('click', () => {
@@ -30,7 +27,6 @@ export function configurarNavegacion() {
         });
     });
     
-    // Cerrar menú al hacer clic fuera
     document.addEventListener('click', (evento) => {
         if (!alternarMenu.contains(evento.target) && !menuMovil.contains(evento.target)) {
             alternarMenu.setAttribute('aria-expanded', 'false');
@@ -39,7 +35,6 @@ export function configurarNavegacion() {
         }
     });
     
-    // Navegación suave para anclas
     document.querySelectorAll('a[href^="#"]').forEach(ancla => {
         ancla.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -71,7 +66,6 @@ export function configurarNavegacion() {
         });
     });
     
-    // Cambiar clase activa al navegar
     const actualizarEnlaceActivo = () => {
         const secciones = document.querySelectorAll('section[id], header[id]');
         const enlacesNavegacion = document.querySelectorAll('.enlace-navegacion, .enlace-movil');

@@ -1,6 +1,7 @@
 // js/traduccion.js - Sistema de traducción
+import { reproducirAnimaciones } from './animaciones.js';
+
 export function configurarTraduccion() {
-    // Objeto con todas las traducciones al inglés americano
     const traduccionesEN = {
         // Navegación
         'nav-inicio': 'Home',
@@ -31,30 +32,25 @@ export function configurarTraduccion() {
         'opcion-cv-ingles': 'Download CV in English'
     };
 
-    // Estado del idioma
     let idiomaActual = 'es';
     let textosOriginales = new Map();
 
-    // Elementos traducibles (excluimos el span del botón móvil)
+    // Elementos traducibles (excluimos el span del botón móvil que se maneja aparte)
     const elementosTraducibles = document.querySelectorAll('.traducible:not(#botonTraduccionMovil .texto-boton-traduccion)');
 
-    // Guardar textos originales en español (innerHTML)
     function guardarTextosOriginales() {
         elementosTraducibles.forEach(elemento => {
             const key = elemento.getAttribute('data-key');
             if (key && !textosOriginales.has(key)) {
-                textosOriginales.set(key, elemento.innerHTML);
+                textosOriginales.set(key, elemento.textContent); // Guardamos textContent
             }
         });
     }
 
-    // Cambiar idioma
     function cambiarIdioma(nuevoIdioma) {
         idiomaActual = nuevoIdioma;
-        
         document.documentElement.lang = nuevoIdioma;
         
-        // Título y meta description
         const tituloPagina = document.querySelector('title');
         if (tituloPagina) {
             tituloPagina.textContent = nuevoIdioma === 'en' 
@@ -69,18 +65,17 @@ export function configurarTraduccion() {
                 : 'Portafolio profesional de Luis Fernando Coste Contreras, Desarrollador Full Stack Junior con 5+ años de experiencia');
         }
         
-        // Actualizar elementos traducibles
         elementosTraducibles.forEach(elemento => {
             const key = elemento.getAttribute('data-key');
             if (key) {
                 if (nuevoIdioma === 'en') {
                     if (traduccionesEN[key]) {
-                        elemento.innerHTML = traduccionesEN[key];
+                        elemento.textContent = traduccionesEN[key];
                     }
                 } else {
                     const textoOriginal = textosOriginales.get(key);
                     if (textoOriginal) {
-                        elemento.innerHTML = textoOriginal;
+                        elemento.textContent = textoOriginal;
                     }
                 }
             }
@@ -88,9 +83,11 @@ export function configurarTraduccion() {
         
         actualizarEstadoBotones();
         localStorage.setItem('idioma-preferido', nuevoIdioma);
+        
+        // Reproducir animaciones después de cambiar idioma
+        reproducirAnimaciones();
     }
 
-    // Actualizar botones de traducción
     function actualizarEstadoBotones() {
         const botonEscritorio = document.getElementById('botonTraduccionEscritorio');
         const botonMovil = document.getElementById('botonTraduccionMovil');

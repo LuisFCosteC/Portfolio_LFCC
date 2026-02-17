@@ -2,76 +2,67 @@
    RESET Y ESTILOS BASE
    ============================================ */
 
-/* Variables CSS globales para mantener consistencia */
 :root {
-    /* Paleta de colores principal */
-    --color-body-0: #072E4F;      /* Fondo superior */
-    --color-body-100: #051A2F;    /* Fondo inferior */
-    --color-banner-0: #07233B;    /* Banner superior */
-    --color-banner-100: #060C16;  /* Banner inferior */
-    --color-boton-0: #079C2A;     /* Botón claro */
-    --color-boton-100: #05701E;   /* Botón oscuro */
-    --color-texto-0: #3FE03E;     /* Texto acento claro */
-    --color-texto-100: #31C030;   /* Texto acento oscuro */
-    --color-blanco: #FFFFFF;      /* Blanco puro */
-    --color-negro: #000000;       /* Negro puro */
-    --color-fondo-menu: #051A2F;  /* Fondo menús desplegables */
-    --color-borde-menu: #1a3a5a;  /* Borde menús desplegables */
+    --color-body-0: #072E4F;
+    --color-body-100: #051A2F;
+    --color-banner-0: #07233B;
+    --color-banner-100: #060C16;
+    --color-boton-0: #079C2A;
+    --color-boton-100: #05701E;
+    --color-texto-0: #3FE03E;
+    --color-texto-100: #31C030;
+    --color-blanco: #FFFFFF;
+    --color-negro: #000000;
+    --color-fondo-menu: #051A2F;
+    --color-borde-menu: #1a3a5a;
     
-    /* Colores para categorías de tecnologías */
-    --color-frontend: #3FE03E;    /* Frontend - verde claro */
-    --color-backend: #079C2A;     /* Backend - verde medio */
-    --color-extras: #31C030;      /* Extras - verde oscuro */
+    --color-frontend: #3FE03E;
+    --color-backend: #079C2A;
+    --color-extras: #31C030;
 }
 
-/* Reset universal para eliminar márgenes y paddings predeterminados */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+    box-sizing: border-box;
 }
 
-/* Configuración base del documento */
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+    scroll-behavior: smooth;
 }
 
-/* Estilos base del cuerpo */
 body {
-    font-family: 'Lato', sans-serif; /* Tipografía principal */
+    font-family: 'Lato', sans-serif;
     background: linear-gradient(100deg, var(--color-body-100) 0%, var(--color-body-0) 100%);
     color: var(--color-blanco);
-    min-height: 100vh; /* Altura mínima de toda la ventana */
-    overflow-x: hidden; /* Oculta scroll horizontal */
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* ============================================
    NAVEGACIÓN
    ============================================ */
 
-/* Barra de navegación fija en la parte superior */
 .navegacion {
     position: fixed;
     top: 0;
     width: 100%;
     background: linear-gradient(100deg, var(--color-body-100) 0%, var(--color-body-0) 100%);
-    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    backdrop-filter: blur(10px);
+    z-index: 1000;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Contenedor interno de navegación */
 .contenedor-navegacion {
-    max-width: 1200px; /* Ancho máximo del contenido */
-    margin: 0 auto; /* Centrado horizontal */
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Logo */
 .logo {
     font-size: 1.5rem;
     font-weight: 900;
@@ -79,20 +70,18 @@ body {
     text-decoration: none;
     letter-spacing: 1px;
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
-    -webkit-background-clip: text; /* Compatibilidad con WebKit */
-    background-clip: text; /* Texto con gradiente */
-    color: transparent; /* Hace visible el gradiente */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-/* Menú de escritorio */
 .menu-escritorio {
     display: flex;
     list-style: none;
-    gap: 2.5rem; /* Espacio entre elementos del menú */
-    margin-right: 1rem; /* Espacio para botones de traducción */
+    gap: 2.5rem;
+    margin-right: 1rem;
 }
 
-/* Enlaces de navegación */
 .enlace-navegacion {
     color: var(--color-blanco);
     text-decoration: none;
@@ -105,7 +94,7 @@ body {
 
 .enlace-navegacion:hover,
 .enlace-navegacion.activo {
-    color: var(--color-texto-0); /* Color acento al hacer hover o activo */
+    color: var(--color-texto-0);
 }
 
 .enlace-navegacion.activo::after {
@@ -128,7 +117,6 @@ body {
     gap: 1rem;
 }
 
-/* Botón de traducción (Escritorio) */
 .boton-traduccion-escritorio {
     background: none;
     border: 2px solid var(--color-blanco);
@@ -160,7 +148,6 @@ body {
     font-weight: 600;
 }
 
-/* Indicador de idioma activo */
 .boton-traduccion-escritorio.ingles .texto-boton-traduccion {
     color: var(--color-texto-0);
     font-weight: 700;
@@ -170,16 +157,14 @@ body {
    MENÚ MÓVIL
    ============================================ */
 
-/* Botón para alternar menú en móvil */
 .alternar-menu {
-    display: none; /* Oculto por defecto (solo visible en móvil) */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0.5rem;
 }
 
-/* Icono hamburguesa del menú móvil */
 .Desplegable {
     display: block;
     width: 25px;
@@ -207,7 +192,6 @@ body {
     bottom: -8px;
 }
 
-/* Transformación a "X" cuando el menú está abierto */
 .alternar-menu[aria-expanded="true"] .Desplegable {
     background: transparent;
 }
@@ -220,7 +204,6 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Navegación dentro del menú móvil */
 .navegacion-movil {
     list-style: none;
 }
@@ -240,7 +223,6 @@ body {
     color: var(--color-texto-0);
 }
 
-/* Botón de traducción (Móvil) */
 .boton-traduccion-movil {
     background: none;
     border: 2px solid var(--color-blanco);
@@ -262,7 +244,6 @@ body {
     background: rgba(63, 224, 62, 0.1);
 }
 
-/* Botón "Contrátame" en móvil */
 .boton-contratar-movil {
     width: 100%;
     background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
@@ -276,7 +257,6 @@ body {
     cursor: pointer;
 }
 
-/* Indicador de idioma activo para móvil */
 .boton-traduccion-movil.ingles .texto-boton-traduccion {
     color: var(--color-texto-0);
     font-weight: 700;
@@ -297,12 +277,10 @@ body {
     z-index: 999;
 }
 
-/* Cuando el menú está visible (controlado por JS) */
 .menu-movil[aria-hidden="false"] {
     display: block;
 }
 
-/* En pantallas de escritorio (≥769px), ocultar menú móvil siempre */
 @media (min-width: 769px) {
     .menu-movil {
         display: none !important;
@@ -315,10 +293,10 @@ body {
 
 .hero {
     background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
-    min-height: 100vh; /* Altura completa de la ventana */
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 6rem 2rem 4rem; /* Padding superior mayor por la navbar fija */
+    padding: 6rem 2rem 4rem;
     position: relative;
     overflow: hidden;
 }
@@ -327,16 +305,54 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
     position: relative;
     z-index: 1;
 }
 
-/* Contenido del Hero con animación de entrada */
-.contenido-hero {
-    animation: aparecerArriba 1s ease;
+/* Animaciones controladas por JS con clase .animar-entrada */
+.contenido-hero,
+.imagen-hero,
+.seccion-carrusel-texto,
+.seccion-tecnologias {
+    opacity: 0; /* Se harán visibles al aplicar la animación */
+}
+
+.animar-entrada {
+    animation: aparecerArriba 1s ease forwards;
+}
+
+.animar-entrada.imagen-hero {
+    animation: aparecer 1s ease 0.3s forwards;
+}
+
+/* Para animación escalonada de items de tecnología (opcional) */
+.seccion-tecnologias.animar-entrada .tecnologia-item {
+    animation: aparecerArriba 0.5s ease forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes aparecerArriba {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .saludo-hero {
@@ -362,7 +378,6 @@ body {
     line-height: 1.2;
 }
 
-/* Texto con gradiente para títulos */
 .gradiente-titulo {
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
     -webkit-background-clip: text;
@@ -387,19 +402,19 @@ body {
 }
 
 .enlace-red:hover {
-    transform: translateY(-3px); /* Efecto de levitación */
+    transform: translateY(-3px);
 }
 
 .icono-red {
     width: 40px;
     height: 40px;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* Iconos blancos */
+    filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
 }
 
 .enlace-red:hover .icono-red {
-    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5); /* Efecto verde al hover */
+    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
 }
 
 /* ============================================
@@ -413,7 +428,6 @@ body {
     position: relative;
 }
 
-/* Contenedor del menú desplegable de CV */
 .contenedor-menu-cv {
     position: relative;
     display: inline-block;
@@ -450,10 +464,9 @@ body {
 }
 
 .boton-descargar-cv.menu-abierto .flecha-menu {
-    transform: rotate(180deg); /* Gira la flecha cuando el menú está abierto */
+    transform: rotate(180deg);
 }
 
-/* Menú desplegable de CV */
 .menu-desplegable-cv {
     position: absolute;
     top: 100%;
@@ -523,7 +536,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: aparecer 1s ease 0.3s both; /* Animación con retardo */
 }
 
 .foto-perfil {
@@ -568,7 +580,7 @@ body {
 
 .seccion-carrusel-texto {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
     margin-bottom: 6rem;
     align-items: center;
@@ -594,13 +606,13 @@ body {
 
 .carrusel-slides {
     display: flex;
-    width: 400%; /* 4 slides = 400% */
+    width: 400%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
 }
 
 .carrusel-slide {
-    width: 25%; /* Cada slide ocupa 25% del contenedor (4 slides) */
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -613,7 +625,6 @@ body {
     object-fit: cover;
 }
 
-/* Controles del carrusel */
 .carrusel-control {
     position: absolute;
     top: 50%;
@@ -645,7 +656,6 @@ body {
     right: 20px;
 }
 
-/* Indicadores del carrusel (puntos inferiores) */
 .carrusel-indicadores {
     position: absolute;
     bottom: 20px;
@@ -669,7 +679,7 @@ body {
 
 .indicador.activo {
     background: var(--color-texto-0);
-    transform: scale(1.2); /* Punto activo más grande */
+    transform: scale(1.2);
 }
 
 .indicador:hover {
@@ -720,7 +730,7 @@ body {
 }
 
 /* ============================================
-   CATEGORÍAS DE TECNOLOGÍAS - DISEÑO HORIZONTAL
+   CATEGORÍAS DE TECNOLOGÍAS
    ============================================ */
 
 .categoria-tecnologia {
@@ -744,7 +754,6 @@ body {
     width: 100%;
 }
 
-/* Línea decorativa bajo cada título de categoría */
 .titulo-categoria::after {
     content: '';
     position: absolute;
@@ -757,7 +766,6 @@ body {
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
 }
 
-/* Colores específicos para cada categoría */
 .titulo-categoria.frontend {
     color: var(--color-frontend);
 }
@@ -771,139 +779,108 @@ body {
 }
 
 /* ============================================
-   CONTENEDOR DE TECNOLOGÍAS - UNA SOLA LÍNEA CON FLEX
+   CONTENEDOR DE TECNOLOGÍAS
    ============================================ */
 
 .contenedor-tecnologias {
-    display: flex; /* Cambiado de grid a flex para una sola línea */
-    flex-wrap: nowrap; /* Evita que se rompa en varias líneas */
-    justify-content: center; /* Centra horizontalmente todos los items */
-    align-items: center; /* Centra verticalmente */
-    gap: 1rem; /* Espacio entre items */
-    width: 100%; /* Ocupa todo el ancho disponible */
-    max-width: 1200px; /* Ancho máximo */
-    margin: 0 auto; /* Centra el contenedor */
-    padding: 0.5rem; /* Padding interno reducido */
-    overflow-x: auto; /* Permite scroll horizontal si hay demasiados items */
-    scrollbar-width: thin; /* Scrollbar fina (para Firefox) */
-    scrollbar-color: var(--color-texto-0) rgba(255, 255, 255, 0.1); /* Color scrollbar */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-texto-0) rgba(255, 255, 255, 0.1);
 }
 
-/* Estilos para scrollbar en Webkit (Chrome, Safari, Edge) */
 .contenedor-tecnologias::-webkit-scrollbar {
-    height: 6px; /* Altura de la scrollbar horizontal */
+    height: 6px;
 }
 
 .contenedor-tecnologias::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1); /* Fondo de la track */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
 }
 
 .contenedor-tecnologias::-webkit-scrollbar-thumb {
-    background: var(--color-texto-0); /* Color del thumb */
+    background: var(--color-texto-0);
     border-radius: 3px;
 }
 
 .contenedor-tecnologias::-webkit-scrollbar-thumb:hover {
-    background: var(--color-texto-100); /* Color al hacer hover */
+    background: var(--color-texto-100);
 }
-
-/* ============================================
-   ITEMS DE TECNOLOGÍA - TAMAÑO REDUCIDO, UNA LÍNEA
-   ============================================ */
 
 .tecnologia-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem; /* Padding muy reducido */
+    padding: 0.5rem;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.03);
     transition: all 0.3s ease;
-    width: 80px; /* Ancho fijo pequeño */
-    height: 80px; /* Alto fijo pequeño */
-    flex-shrink: 0; /* Evita que los items se encojan */
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
     text-align: center;
 }
 
 .tecnologia-item:hover {
-    transform: translateY(-3px); /* Elevación más sutil */
+    transform: translateY(-3px);
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .icono-tecnologia {
-    width: 35px; /* Iconos más pequeños */
-    height: 35px; /* Iconos más pequeños */
+    width: 35px;
+    height: 35px;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* Iconos blancos */
+    filter: brightness(0) invert(1);
     transition: filter 0.3s ease, transform 0.3s ease;
-    margin-bottom: 0.25rem; /* Menos espacio entre icono y texto */
+    margin-bottom: 0.25rem;
 }
 
 .tecnologia-item:hover .icono-tecnologia {
     filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
-    transform: scale(1.1); /* Ligero aumento al hacer hover */
+    transform: scale(1.1);
 }
 
 .nombre-tecnologia {
-    font-size: 0.7rem; /* Texto más pequeño */
+    font-size: 0.7rem;
     font-weight: 500;
     text-align: center;
     line-height: 1.1;
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
-}
-
-/* ============================================
-   ANIMACIONES
-   ============================================ */
-
-@keyframes aparecerArriba {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes aparecer {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    white-space: nowrap;
 }
 
 /* ============================================
    AJUSTE PARA ALINEACIÓN DE BOTONES EN ESCRITORIO
    ============================================ */
 .contenedor-botones-escritorio .botones-hero {
-    margin-bottom: 0; /* Elimina el margen inferior que desalineaba los botones */
+    margin-bottom: 0;
 }
 
 /* ============================================
-   DISEÑO RESPONSIVE - AJUSTES PARA UNA LÍNEA
+   DISEÑO RESPONSIVE
    ============================================ */
 
-/* Pantallas grandes (hasta 1200px) */
 @media (max-width: 1200px) {
     .contenedor-tecnologias {
         max-width: 1000px;
     }
 }
 
-/* Tablets grandes (hasta 1024px) */
 @media (max-width: 1024px) {
     .contenedor-hero {
-        grid-template-columns: 1fr; /* Una columna en tablets */
+        grid-template-columns: 1fr;
         gap: 3rem;
         text-align: center;
     }
@@ -918,7 +895,7 @@ body {
     
     .foto-perfil {
         max-width: 400px;
-        margin: 0 auto; /* Centra la imagen */
+        margin: 0 auto;
     }
     
     .redes-sociales {
@@ -934,7 +911,7 @@ body {
     }
     
     .seccion-carrusel-texto {
-        grid-template-columns: 1fr; /* Una columna en tablets */
+        grid-template-columns: 1fr;
         gap: 3rem;
     }
     
@@ -946,7 +923,7 @@ body {
     
     .contenedor-tecnologias {
         max-width: 900px;
-        gap: 0.8rem; /* Menos espacio en tablets */
+        gap: 0.8rem;
     }
     
     .tecnologia-item {
@@ -963,7 +940,6 @@ body {
         font-size: 0.65rem;
     }
     
-    /* Ajustes botones traducción en tablets */
     .contenedor-botones-escritorio {
         gap: 0.75rem;
     }
@@ -979,22 +955,21 @@ body {
     }
 }
 
-/* Tablets pequeñas y móviles grandes (hasta 768px) */
 @media (max-width: 768px) {
     .menu-escritorio {
-        display: none; /* Oculta menú de escritorio */
+        display: none;
     }
     
     .contenedor-botones-escritorio {
-        display: none; /* Ocultar botones de escritorio en móvil */
+        display: none;
     }
     
     .alternar-menu {
-        display: block; /* Muestra botón hamburguesa */
+        display: block;
     }
     
     .botones-hero {
-        flex-direction: column; /* Botones en columna */
+        flex-direction: column;
         align-items: center;
     }
     
@@ -1003,7 +978,7 @@ body {
     }
     
     .boton-descargar-cv {
-        min-width: 100%; /* Botón ocupa todo el ancho */
+        min-width: 100%;
     }
     
     .titulo-seccion {
@@ -1016,8 +991,8 @@ body {
     
     .contenedor-tecnologias {
         max-width: 100%;
-        gap: 0.6rem; /* Aún menos espacio */
-        justify-content: flex-start; /* Alinea a la izquierda para permitir scroll */
+        gap: 0.6rem;
+        justify-content: flex-start;
         padding: 0.5rem 0.25rem;
     }
     
@@ -1041,7 +1016,6 @@ body {
     }
 }
 
-/* Móviles (hasta 480px) */
 @media (max-width: 480px) {
     .nombre-hero {
         font-size: 2rem;
@@ -1110,7 +1084,7 @@ body {
     }
     
     .contenedor-tecnologias {
-        gap: 0.4rem; /* Espacio mínimo entre items */
+        gap: 0.4rem;
         padding: 0.5rem 0.25rem;
     }
     
@@ -1147,7 +1121,6 @@ body {
     }
 }
 
-/* Pantallas muy pequeñas (hasta 360px) */
 @media (max-width: 360px) {
     .tecnologia-item {
         width: 60px;

@@ -12,12 +12,9 @@ export function configurarCarrusel() {
     const totalSlides = slides.length;
     let intervalo;
     
-    // Función para actualizar el carrusel
     function actualizarCarrusel() {
-        // Mover el carrusel
         carruselSlides.style.transform = `translateX(-${slideActual * 25}%)`;
         
-        // Actualizar indicadores
         indicadores.forEach((indicador, index) => {
             if (index === slideActual) {
                 indicador.classList.add('activo');
@@ -27,19 +24,16 @@ export function configurarCarrusel() {
         });
     }
     
-    // Función para ir al slide siguiente
     function siguienteSlide() {
         slideActual = (slideActual + 1) % totalSlides;
         actualizarCarrusel();
     }
     
-    // Función para ir al slide anterior
     function anteriorSlide() {
         slideActual = slideActual === 0 ? totalSlides - 1 : slideActual - 1;
         actualizarCarrusel();
     }
     
-    // Función para ir a un slide específico
     function irASlide(index) {
         if (index >= 0 && index < totalSlides) {
             slideActual = index;
@@ -47,9 +41,8 @@ export function configurarCarrusel() {
         }
     }
     
-    // Iniciar autoplay
     function iniciarAutoplay() {
-        intervalo = setInterval(siguienteSlide, 5000); // Cambia cada 5 segundos
+        intervalo = setInterval(siguienteSlide, 5000);
     }
     
     function detenerAutoplay() {
@@ -58,7 +51,6 @@ export function configurarCarrusel() {
         }
     }
     
-    // Event listeners para controles
     if (btnSiguiente) {
         btnSiguiente.addEventListener('click', () => {
             detenerAutoplay();
@@ -75,7 +67,6 @@ export function configurarCarrusel() {
         });
     }
     
-    // Event listeners para indicadores
     indicadores.forEach((indicador, index) => {
         indicador.addEventListener('click', () => {
             detenerAutoplay();
@@ -84,16 +75,12 @@ export function configurarCarrusel() {
         });
     });
     
-    // Pausar autoplay al pasar el mouse
     const carrusel = document.querySelector('.carrusel');
     if (carrusel) {
         carrusel.addEventListener('mouseenter', detenerAutoplay);
         carrusel.addEventListener('mouseleave', iniciarAutoplay);
     }
     
-    // Iniciar autoplay
     iniciarAutoplay();
-    
-    // Actualizar carrusel inicial
     actualizarCarrusel();
 }

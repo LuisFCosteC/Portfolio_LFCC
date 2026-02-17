@@ -1,6 +1,10 @@
 // js/animaciones.js - Animaciones y efectos
 export function configurarAnimaciones() {
-    // Observador para animaciones al hacer scroll
+    // Aplicar animación a elementos visibles al cargar
+    const elementosIniciales = document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias');
+    elementosIniciales.forEach(el => el.classList.add('animar-entrada'));
+
+    // Observador para elementos que aparecen con scroll
     const opcionesObservador = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -20,30 +24,40 @@ export function configurarAnimaciones() {
                         }, index * 100);
                     });
                 }
+                // Dejar de observar una vez animado
+                observador.unobserve(entrada.target);
             }
         });
     }, opcionesObservador);
     
-    // Elementos a observar
+    // Observar elementos que no hayan sido animados aún (por si no eran visibles al inicio)
     document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias').forEach(elemento => {
-        observador.observe(elemento);
+        if (!elemento.classList.contains('animar-entrada')) {
+            observador.observe(elemento);
+        }
     });
-    
-    // Efecto de escritura para el título (opcional)
-    const tituloHero = document.querySelector('.titulo-hero .gradiente-titulo');
-    if (tituloHero) {
-        const texto = tituloHero.textContent;
-        tituloHero.textContent = '';
-        
-        let i = 0;
-        const maquinaEscribir = () => {
-            if (i < texto.length) {
-                tituloHero.textContent += texto.charAt(i);
-                i++;
-                setTimeout(maquinaEscribir, 50);
-            }
-        };
-        
-        setTimeout(maquinaEscribir, 1000);
+}
+
+// Función para reproducir animaciones manualmente (al cambiar idioma)
+export function reproducirAnimaciones() {
+    // Elementos principales
+    const elementos = document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias');
+    elementos.forEach(el => {
+        el.classList.remove('animar-entrada');
+        // Forzar reflow
+        void el.offsetWidth;
+        el.classList.add('animar-entrada');
+    });
+
+    // Items de tecnología dentro de la sección (si ya está visible)
+    const seccionTec = document.querySelector('.seccion-tecnologias');
+    if (seccionTec && seccionTec.classList.contains('animar-entrada')) {
+        const items = seccionTec.querySelectorAll('.tecnologia-item');
+        items.forEach((item, index) => {
+            item.classList.remove('animar-entrada');
+            setTimeout(() => {
+                item.classList.add('animar-entrada');
+            }, index * 100);
+        });
     }
 }
