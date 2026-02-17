@@ -107,6 +107,63 @@ body {
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
 }
 
+/* Contenedor del ítem con submenú */
+.menu-item-con-submenu {
+  list-style: none;
+}
+
+/* Cabecera del ítem: enlace + botón */
+.enlace-submenu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.enlace-submenu .enlace-movil {
+  flex: 1;
+  border-bottom: none; /* Quita el borde del enlace para que lo gestione el contenedor */
+}
+
+/* Botón para desplegar el submenú */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: var(--color-blanco);
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submenu-toggle[aria-expanded="true"] .flecha-submenu {
+  transform: rotate(180deg);
+}
+
+/* Submenú oculto por defecto */
+.submenu-movil {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: rgba(0, 0, 0, 0.2); /* Fondo ligeramente más oscuro para diferenciar */
+  padding-left: 1rem;
+}
+
+.submenu-movil.mostrar {
+  max-height: 200px; /* Suficiente para un solo ítem */
+}
+
+/* Estilo del enlace dentro del submenú */
+.submenu-movil .enlace-movil {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+
 /* ============================================
    CONTENEDOR DE BOTONES DE ESCRITORIO
    ============================================ */
@@ -439,10 +496,7 @@ body {
     background: transparent;
     color: var(--color-blanco);
     border: 2px solid var(--color-blanco);
-    padding: 1rem 2rem;
     border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
@@ -450,6 +504,10 @@ body {
     justify-content: space-between;
     width: 100%;
     min-width: 250px;
+    padding: 0.5rem 1.5rem;   /* mismo padding vertical que el botón de traducción */
+    font-size: 1rem;           /* reduce ligeramente para acercar alturas */
+    line-height: 1.2;           /* controla la altura del texto */
+    font-weight: 700;          /* se mantiene */
 }
 
 .boton-descargar-cv:hover {
