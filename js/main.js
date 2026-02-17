@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializar módulos
     configurarNavegacion();
     configurarAnimaciones();
-    configurarMenuCV();
-    configurarMenuCVSecundario();
+    configurarMenuCV(); // Solo menú principal
     configurarCarrusel();
     
     // Inicializar sistema de traducción
@@ -39,14 +38,6 @@ function configurarMenuCV() {
         evento.stopPropagation();
         menuCV.classList.toggle('mostrar');
         botonDescargarCV.classList.toggle('menu-abierto');
-        
-        // Cerrar menú secundario si está abierto
-        const menuSecundario = document.getElementById('menuCVSecundario');
-        const botonSecundario = document.getElementById('botonDescargarCVSecundario');
-        if (menuSecundario && menuSecundario.classList.contains('mostrar')) {
-            menuSecundario.classList.remove('mostrar');
-            botonSecundario.classList.remove('menu-abierto');
-        }
     });
     
     // Cerrar menú al hacer clic fuera
@@ -73,56 +64,6 @@ function configurarMenuCV() {
         if (evento.key === 'Escape') {
             menuCV.classList.remove('mostrar');
             botonDescargarCV.classList.remove('menu-abierto');
-        }
-    });
-}
-
-// Configurar menú desplegable de CV secundario
-function configurarMenuCVSecundario() {
-    const botonDescargarCVSecundario = document.getElementById('botonDescargarCVSecundario');
-    const menuCVSecundario = document.getElementById('menuCVSecundario');
-    
-    if (!botonDescargarCVSecundario || !menuCVSecundario) return;
-    
-    // Alternar menú al hacer clic en el botón
-    botonDescargarCVSecundario.addEventListener('click', (evento) => {
-        evento.stopPropagation();
-        menuCVSecundario.classList.toggle('mostrar');
-        botonDescargarCVSecundario.classList.toggle('menu-abierto');
-        
-        // Cerrar menú principal si está abierto
-        const menuPrincipal = document.getElementById('menuCV');
-        const botonPrincipal = document.getElementById('botonDescargarCV');
-        if (menuPrincipal && menuPrincipal.classList.contains('mostrar')) {
-            menuPrincipal.classList.remove('mostrar');
-            botonPrincipal.classList.remove('menu-abierto');
-        }
-    });
-    
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener('click', (evento) => {
-        if (!botonDescargarCVSecundario.contains(evento.target) && !menuCVSecundario.contains(evento.target)) {
-            menuCVSecundario.classList.remove('mostrar');
-            botonDescargarCVSecundario.classList.remove('menu-abierto');
-        }
-    });
-    
-    // Cerrar menú al seleccionar una opción
-    const opcionesMenuSecundario = document.querySelectorAll('.opcion-menu-secundario');
-    opcionesMenuSecundario.forEach(opcion => {
-        opcion.addEventListener('click', () => {
-            setTimeout(() => {
-                menuCVSecundario.classList.remove('mostrar');
-                botonDescargarCVSecundario.classList.remove('menu-abierto');
-            }, 100);
-        });
-    });
-    
-    // Cerrar menú al presionar Escape
-    document.addEventListener('keydown', (evento) => {
-        if (evento.key === 'Escape') {
-            menuCVSecundario.classList.remove('mostrar');
-            botonDescargarCVSecundario.classList.remove('menu-abierto');
         }
     });
 }

@@ -28,11 +28,11 @@
 
             <!-- Menú Escritorio -->
             <ul class="menu-escritorio">
-                <li><a href="#inicio" class="enlace-navegacion activo" aria-current="page">Inicio</a></li>
-                <li><a href="#sobre-mi" class="enlace-navegacion">Acerca de mí</a></li>
-                <li><a href="#proyectos" class="enlace-navegacion">Proyectos</a></li>
-                <li><a href="#certificados" class="enlace-navegacion">Certificados</a></li>
-                <li><a href="#contacto" class="enlace-navegacion">Contáctame</a></li>
+                <li><a href="#inicio" class="enlace-navegacion activo traducible" data-key="nav-inicio" aria-current="page">Inicio</a></li>
+                <li><a href="#sobre-mi" class="enlace-navegacion traducible" data-key="nav-acerca-de-mi">Acerca de mí</a></li>
+                <li><a href="#proyectos" class="enlace-navegacion traducible" data-key="nav-proyectos">Proyectos</a></li>
+                <li><a href="#certificados" class="enlace-navegacion traducible" data-key="nav-certificados">Certificados</a></li>
+                <li><a href="#contacto" class="enlace-navegacion traducible" data-key="nav-contactame">Contáctame</a></li>
             </ul>
 
             <!-- Contenedor de botones de escritorio -->
@@ -65,9 +65,26 @@
                 </div>
             </div>
 
-            <!-- Menú Desplegable (Móvil) -->
+            <!-- Botón menú móvil (hamburguesa) -->
             <button class="alternar-menu" aria-label="Abrir menú" aria-expanded="false">
                 <span class="Desplegable"></span>
+            </button>
+        </div>
+
+        <!-- Menú Móvil (oculto por defecto) -->
+        <div class="menu-movil" id="menuMovil" aria-hidden="true">
+            <ul class="navegacion-movil">
+                <li><a href="#inicio" class="enlace-movil activo traducible" data-key="nav-inicio">Inicio</a></li>
+                <li><a href="#sobre-mi" class="enlace-movil traducible" data-key="nav-acerca-de-mi">Acerca de mí</a></li>
+                <li><a href="#proyectos" class="enlace-movil traducible" data-key="nav-proyectos">Proyectos</a></li>
+                <li><a href="#certificados" class="enlace-movil traducible" data-key="nav-certificados">Certificados</a></li>
+                <li><a href="#contacto" class="enlace-movil traducible" data-key="nav-contactame">Contáctame</a></li>
+            </ul>
+
+            <!-- Botón de traducción móvil (sin clase traducible, se maneja manualmente) -->
+            <button class="boton-traduccion-movil" id="botonTraduccionMovil" aria-label="Cambiar idioma">
+                <img src="assets/images/Icono_Traductor.png" alt="" class="icono-traduccion">
+                <span class="texto-boton-traduccion">Switch to English</span>
             </button>
         </div>
     </nav>
@@ -86,7 +103,7 @@
                 
                 <!-- Título con gradiente -->
                 <h2 class="titulo-hero" aria-label="Título profesional">
-                    <span class="gradiente-titulo traducible" data-key="titulo-hero">Desarrollador <br> Full Stack Junior</span>
+                    <span class="gradiente-titulo traducible" data-key="titulo-hero">Desarrollador Full Stack Junior</span>
                 </h2>
                 
                 <!-- Redes sociales -->
@@ -200,7 +217,6 @@
                 <div class="categoria-tecnologia">
                     <h4 class="titulo-categoria backend traducible" data-key="categoria-backend">Backend</h4>
                     <div class="contenedor-tecnologias categoria-backend">
-                        <!-- Lenguajes de programación principales -->
                         <div class="tecnologia-item">
                             <img src="assets/images/Icono_Tecnología_Python.png" alt="Python" class="icono-tecnologia">
                             <span class="nombre-tecnologia">Python</span>
@@ -217,8 +233,6 @@
                             <img src="assets/images/Icono_Tecnología_NodeJS.png" alt="NodeJS" class="icono-tecnologia">
                             <span class="nombre-tecnologia">Node JS</span>
                         </div>
-                        
-                        <!-- Frameworks/Plataformas específicas -->
                         <div class="tecnologia-item">
                             <img src="assets/images/Icono_Tecnología_FastAPI.png" alt="FastAPI" class="icono-tecnologia">
                             <span class="nombre-tecnologia">FastAPI</span>
@@ -231,8 +245,6 @@
                             <img src="assets/images/Icono_Tecnología_.NET.png" alt=".NET" class="icono-tecnologia">
                             <span class="nombre-tecnologia">Microsoft .NET</span>
                         </div>
-                        
-                        <!-- Bases de datos -->
                         <div class="tecnologia-item">
                             <img src="assets/images/Icono_Tecnología_MySQL.png" alt="MySQL" class="icono-tecnologia">
                             <span class="nombre-tecnologia">MySQL</span>

@@ -44,7 +44,6 @@ export function configurarAnimaciones() {
             }
         };
         
-        // Iniciar después de un retraso
         setTimeout(maquinaEscribir, 1000);
     }
 }

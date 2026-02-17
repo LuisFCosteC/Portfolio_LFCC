@@ -283,6 +283,33 @@ body {
 }
 
 /* ============================================
+   MENÚ MÓVIL - OCULTO POR DEFECTO Y SOLO EN MÓVIL
+   ============================================ */
+.menu-movil {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(100deg, var(--color-body-100) 0%, var(--color-body-0) 100%);
+    padding: 1rem 2rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+/* Cuando el menú está visible (controlado por JS) */
+.menu-movil[aria-hidden="false"] {
+    display: block;
+}
+
+/* En pantallas de escritorio (≥769px), ocultar menú móvil siempre */
+@media (min-width: 769px) {
+    .menu-movil {
+        display: none !important;
+    }
+}
+
+/* ============================================
    SECCIÓN HERO (ENCABEZADO)
    ============================================ */
 
@@ -674,106 +701,7 @@ body {
 }
 
 /* ============================================
-   BOTÓN CV SECUNDARIO (EN SECCIÓN "SOBRE MÍ")
-   ============================================ */
-
-.contenedor-menu-cv-secundario {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 300px;
-}
-
-.boton-cv-secundario {
-    background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
-    color: var(--color-blanco);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    min-width: 250px;
-}
-
-.boton-cv-secundario:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(5, 112, 30, 0.4);
-}
-
-.flecha-menu-secundario {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-    margin-left: 0.5rem;
-}
-
-.boton-cv-secundario.menu-abierto .flecha-menu-secundario {
-    transform: rotate(180deg);
-}
-
-/* Menú desplegable secundario */
-.menu-desplegable-cv-secundario {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--color-fondo-menu);
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    margin-top: 0.5rem;
-    overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-    z-index: 100;
-    border: 1px solid var(--color-borde-menu);
-}
-
-.menu-desplegable-cv-secundario.mostrar {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.opcion-menu-secundario {
-    background: var(--color-fondo-menu);
-    color: var(--color-blanco);
-    border: none;
-    padding: 1rem 1.5rem;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    border-bottom: 1px solid var(--color-borde-menu);
-}
-
-.opcion-menu-secundario:last-child {
-    border-bottom: none;
-}
-
-.opcion-menu-secundario:hover {
-    background: rgba(63, 224, 62, 0.15);
-    color: var(--color-texto-0);
-}
-
-.texto-opcion-secundario {
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-/* ============================================
-   SECCIÓN DE TECNOLOGÍAS (COMPLETAMENTE REMODELADA)
+   SECCIÓN DE TECNOLOGÍAS
    ============================================ */
 
 .seccion-tecnologias {
@@ -955,6 +883,13 @@ body {
 }
 
 /* ============================================
+   AJUSTE PARA ALINEACIÓN DE BOTONES EN ESCRITORIO
+   ============================================ */
+.contenedor-botones-escritorio .botones-hero {
+    margin-bottom: 0; /* Elimina el margen inferior que desalineaba los botones */
+}
+
+/* ============================================
    DISEÑO RESPONSIVE - AJUSTES PARA UNA LÍNEA
    ============================================ */
 
@@ -1026,10 +961,6 @@ body {
     
     .nombre-tecnologia {
         font-size: 0.65rem;
-    }
-    
-    .contenedor-menu-cv-secundario {
-        margin: 0 auto;
     }
     
     /* Ajustes botones traducción en tablets */
@@ -1107,14 +1038,6 @@ body {
     
     .seccion-tecnologias {
         padding: 2rem 1rem;
-    }
-    
-    .contenedor-menu-cv-secundario {
-        max-width: 100%;
-    }
-    
-    .boton-cv-secundario {
-        min-width: 100%;
     }
 }
 
@@ -1211,15 +1134,6 @@ body {
     .titulo-categoria {
         font-size: 1.3rem;
         margin-bottom: 0.75rem;
-    }
-    
-    .boton-cv-secundario {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
-    
-    .texto-opcion-secundario {
-        font-size: 0.9rem;
     }
     
     .boton-traduccion-movil {
