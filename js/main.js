@@ -2,6 +2,7 @@
 import { configurarNavegacion } from './navegacion.js';
 import { configurarAnimaciones } from './animaciones.js';
 import { configurarCarrusel } from './carrusel.js';
+import { configurarTraduccion } from './traduccion.js';
 
 // Inicialización de la aplicación
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarMenuCV();
     configurarMenuCVSecundario();
     configurarCarrusel();
+    
+    // Inicializar sistema de traducción
+    const sistemaTraduccion = configurarTraduccion();
+    sistemaTraduccion.inicializar();
     
     // Configurar año actual en pie de página (si existe)
     const añoActual = new Date().getFullYear();
@@ -38,7 +43,7 @@ function configurarMenuCV() {
         // Cerrar menú secundario si está abierto
         const menuSecundario = document.getElementById('menuCVSecundario');
         const botonSecundario = document.getElementById('botonDescargarCVSecundario');
-        if (menuSecundario.classList.contains('mostrar')) {
+        if (menuSecundario && menuSecundario.classList.contains('mostrar')) {
             menuSecundario.classList.remove('mostrar');
             botonSecundario.classList.remove('menu-abierto');
         }
@@ -88,7 +93,7 @@ function configurarMenuCVSecundario() {
         // Cerrar menú principal si está abierto
         const menuPrincipal = document.getElementById('menuCV');
         const botonPrincipal = document.getElementById('botonDescargarCV');
-        if (menuPrincipal.classList.contains('mostrar')) {
+        if (menuPrincipal && menuPrincipal.classList.contains('mostrar')) {
             menuPrincipal.classList.remove('mostrar');
             botonPrincipal.classList.remove('menu-abierto');
         }

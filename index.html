@@ -35,31 +35,40 @@
                 <li><a href="#contacto" class="enlace-navegacion">Contáctame</a></li>
             </ul>
 
-            <!-- Botón Contrátame (Escritorio) - Ahora abre WhatsApp directamente -->
-            <button class="boton-contratar-escritorio" onclick="window.open('https://api.whatsapp.com/send/?phone=3116463033&text&type=phone_number&app_absent=0', '_blank')">
-                Contrátame
-            </button>
+            <!-- Contenedor de botones de escritorio -->
+            <div class="contenedor-botones-escritorio">
+                <!-- Botón de traducción (Escritorio) -->
+                <button class="boton-traduccion-escritorio" id="botonTraduccionEscritorio" aria-label="Traducir sitio a inglés">
+                    <img src="assets/images/Icono_Traductor.png" alt="Traducir" class="icono-traduccion">
+                    <span class="texto-boton-traduccion">EN</span>
+                </button>
+
+                <!-- Botones de acción -->
+                <div class="botones-hero">
+                    <!-- Contenedor del menú desplegable de CV -->
+                    <div class="contenedor-menu-cv">
+                        <button class="boton-descargar-cv traducible" data-key="boton-descargar-cv" id="botonDescargarCV">
+                            Descarga mi CV
+                            <span class="flecha-menu">▼</span>
+                        </button>
+                        
+                        <!-- Menú desplegable -->
+                        <div class="menu-desplegable-cv" id="menuCV">
+                            <button class="opcion-menu traducible" data-key="opcion-cv-espanol" onclick="descargarCV('es')">
+                                <span class="texto-opcion">Descargar CV en Español</span>
+                            </button>
+                            <button class="opcion-menu traducible" data-key="opcion-cv-ingles" onclick="descargarCV('en')">
+                                <span class="texto-opcion">Descargar CV en Inglés</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Menú Desplegable (Móvil) -->
             <button class="alternar-menu" aria-label="Abrir menú" aria-expanded="false">
                 <span class="Desplegable"></span>
             </button>
-        </div>
-
-        <!-- Menú Móvil -->
-        <div class="menu-movil" aria-hidden="true">
-            <ul class="navegacion-movil">
-                <li><a href="#inicio" class="enlace-movil activo">Inicio</a></li>
-                <li><a href="#sobre-mi" class="enlace-movil">Acerca de mí</a></li>
-                <li><a href="#proyectos" class="enlace-movil">Proyectos</a></li>
-                <li><a href="#certificados" class="enlace-movil">Certificados</a></li>
-                <li><a href="#contacto" class="enlace-movil">Contáctame</a></li>
-                <li>
-                    <button class="boton-contratar-movil" onclick="window.open('https://api.whatsapp.com/send/?phone=3116463033&text&type=phone_number&app_absent=0', '_blank')">
-                        Contrátame
-                    </button>
-                </li>
-            </ul>
         </div>
     </nav>
 
@@ -68,16 +77,16 @@
         <div class="contenedor-hero">
             <div class="contenido-hero">
                 <!-- Saludo -->
-                <p class="saludo-hero" aria-label="Saludo">Hola, un gusto conocerte, soy</p>
+                <p class="saludo-hero traducible" data-key="saludo-hero" aria-label="Saludo">Hola, un gusto conocerte, soy</p>
                 
                 <!-- Nombre -->
                 <h1 class="nombre-hero">
-                    <span class="linea-nombre">Luis Fernando Coste Contreras</span>
+                    <span class="linea-nombre traducible" data-key="nombre-hero">Luis Fernando Coste Contreras</span>
                 </h1>
                 
                 <!-- Título con gradiente -->
                 <h2 class="titulo-hero" aria-label="Título profesional">
-                    <span class="gradiente-titulo">Desarrollador <br>Full Stack</span>
+                    <span class="gradiente-titulo traducible" data-key="titulo-hero">Desarrollador <br> Full Stack Junior</span>
                 </h2>
                 
                 <!-- Redes sociales -->
@@ -91,27 +100,6 @@
                     <a href="https://github.com/LuisFCosteC" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="GitHub">
                         <img src="assets/images/Icono_Redes_GitHub.png" alt="GitHub" class="icono-red">
                     </a>
-                </div>
-                
-                <!-- Botones de acción -->
-                <div class="botones-hero">
-                    <!-- Contenedor del menú desplegable de CV -->
-                    <div class="contenedor-menu-cv">
-                        <button class="boton-descargar-cv" id="botonDescargarCV">
-                            Descarga mi CV
-                            <span class="flecha-menu">▼</span>
-                        </button>
-                        
-                        <!-- Menú desplegable -->
-                        <div class="menu-desplegable-cv" id="menuCV">
-                            <button class="opcion-menu" onclick="descargarCV('es')">
-                                <span class="texto-opcion">Descargar CV en Español</span>
-                            </button>
-                            <button class="opcion-menu" onclick="descargarCV('en')">
-                                <span class="texto-opcion">Descargar CV en Inglés</span>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -127,7 +115,7 @@
         <div class="contenedor-sobre-mi">
             <!-- Título de la sección -->
             <h2 class="titulo-seccion">
-                <span class="gradiente-titulo">Acerca de mí</span>
+                <span class="gradiente-titulo traducible" data-key="titulo-acerca-de-mi">Acerca de mí</span>
             </h2>
             
             <!-- Primera sección: Carrusel y Texto -->
@@ -170,38 +158,20 @@
                 
                 <!-- Texto de resumen profesional (derecha) -->
                 <div class="texto-sobre-mi">
-                    <h3 class="subtitulo-sobre-mi">¿Quien soy?</h3>
+                    <h3 class="subtitulo-sobre-mi traducible" data-key="subtitulo-quien-soy">¿Quien soy?</h3>
                     <div class="parrafos-sobre-mi">
-                        <p>Soy un Desarrollador Full Stack Junior enfocado en crear aplicaciones web eficientes, escalables y fáciles de mantener. Tengo experiencia tanto en backend como en frontend, lo que me permite entender los proyectos de forma integral y proponer soluciones prácticas y bien pensadas. Me apasiona el aprendizaje continuo y el desarrollo de software de calidad.</p>
-                    </div>
-                    
-                    <!-- Botón secundario con menú desplegable -->
-                    <div class="contenedor-menu-cv-secundario">
-                        <button class="boton-cv-secundario" id="botonDescargarCVSecundario">
-                            Descargar CV
-                            <span class="flecha-menu-secundario">▼</span>
-                        </button>
-                        
-                        <!-- Menú desplegable secundario -->
-                        <div class="menu-desplegable-cv-secundario" id="menuCVSecundario">
-                            <button class="opcion-menu-secundario" onclick="descargarCV('es')">
-                                <span class="texto-opcion-secundario">Descargar CV en Español</span>
-                            </button>
-                            <button class="opcion-menu-secundario" onclick="descargarCV('en')">
-                                <span class="texto-opcion-secundario">Descargar CV en Inglés</span>
-                            </button>
-                        </div>
+                        <p class="traducible" data-key="parrafo-sobre-mi">Soy un Desarrollador Full Stack Junior enfocado en crear aplicaciones web eficientes, escalables y fáciles de mantener. Tengo experiencia tanto en backend como en frontend, lo que me permite entender los proyectos de forma integral y proponer soluciones prácticas y bien pensadas. Me apasiona el aprendizaje continuo y el desarrollo de software de calidad.</p>
                     </div>
                 </div>
             </div>
             
             <!-- Segunda sección: Tecnologías organizadas por categorías -->
             <div class="seccion-tecnologias">
-                <h3 class="subtitulo-tecnologias">Tecnologías que domino</h3>
+                <h3 class="subtitulo-tecnologias traducible" data-key="titulo-tecnologias">Tecnologías que domino</h3>
                 
                 <!-- Categoría: Frontend -->
                 <div class="categoria-tecnologia">
-                    <h4 class="titulo-categoria frontend">Frontend</h4>
+                    <h4 class="titulo-categoria frontend traducible" data-key="categoria-frontend">Frontend</h4>
                     <div class="contenedor-tecnologias categoria-frontend">
                         <div class="tecnologia-item">
                             <img src="assets/images/Icono_Tecnología_HTML.png" alt="HTML" class="icono-tecnologia">
@@ -228,7 +198,7 @@
                 
                 <!-- Categoría: Backend -->
                 <div class="categoria-tecnologia">
-                    <h4 class="titulo-categoria backend">Backend</h4>
+                    <h4 class="titulo-categoria backend traducible" data-key="categoria-backend">Backend</h4>
                     <div class="contenedor-tecnologias categoria-backend">
                         <!-- Lenguajes de programación principales -->
                         <div class="tecnologia-item">
@@ -276,7 +246,7 @@
                 
                 <!-- Categoría: Extras -->
                 <div class="categoria-tecnologia">
-                    <h4 class="titulo-categoria extras">Extras</h4>
+                    <h4 class="titulo-categoria extras traducible" data-key="categoria-extras">Extras</h4>
                     <div class="contenedor-tecnologias categoria-extras">
                         <div class="tecnologia-item">
                             <img src="assets/images/Icono_Tecnología_Figma.png" alt="Figma" class="icono-tecnologia">

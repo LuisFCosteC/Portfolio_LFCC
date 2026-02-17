@@ -17,6 +17,11 @@
     --color-negro: #000000;       /* Negro puro */
     --color-fondo-menu: #051A2F;  /* Fondo menús desplegables */
     --color-borde-menu: #1a3a5a;  /* Borde menús desplegables */
+    
+    /* Colores para categorías de tecnologías */
+    --color-frontend: #3FE03E;    /* Frontend - verde claro */
+    --color-backend: #079C2A;     /* Backend - verde medio */
+    --color-extras: #31C030;      /* Extras - verde oscuro */
 }
 
 /* Reset universal para eliminar márgenes y paddings predeterminados */
@@ -84,6 +89,7 @@ body {
     display: flex;
     list-style: none;
     gap: 2.5rem; /* Espacio entre elementos del menú */
+    margin-right: 1rem; /* Espacio para botones de traducción */
 }
 
 /* Enlaces de navegación */
@@ -112,22 +118,52 @@ body {
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
 }
 
-/* Botón "Contrátame" en escritorio */
-.boton-contratar-escritorio {
-    background: linear-gradient(180deg, var(--color-boton-0) 0%, var(--color-boton-100) 100%);
-    color: var(--color-blanco);
-    border: none;
-    padding: 0.75rem 2rem;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ============================================
+   CONTENEDOR DE BOTONES DE ESCRITORIO
+   ============================================ */
+
+.contenedor-botones-escritorio {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.boton-contratar-escritorio:hover {
-    transform: translateY(-2px); /* Efecto de elevación */
-    box-shadow: 0 10px 20px rgba(5, 112, 30, 0.3);
+/* Botón de traducción (Escritorio) */
+.boton-traduccion-escritorio {
+    background: none;
+    border: 2px solid var(--color-blanco);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    color: var(--color-blanco);
+    font-weight: 600;
+}
+
+.boton-traduccion-escritorio:hover {
+    background: rgba(63, 224, 62, 0.1);
+    transform: translateY(-2px);
+}
+
+.icono-traduccion {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.texto-boton-traduccion {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Indicador de idioma activo */
+.boton-traduccion-escritorio.ingles .texto-boton-traduccion {
+    color: var(--color-texto-0);
+    font-weight: 700;
 }
 
 /* ============================================
@@ -184,18 +220,6 @@ body {
     transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Menú móvil desplegable */
-.menu-movil {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
-    padding: 2rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
 /* Navegación dentro del menú móvil */
 .navegacion-movil {
     list-style: none;
@@ -216,6 +240,28 @@ body {
     color: var(--color-texto-0);
 }
 
+/* Botón de traducción (Móvil) */
+.boton-traduccion-movil {
+    background: none;
+    border: 2px solid var(--color-blanco);
+    border-radius: 10px;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    color: var(--color-blanco);
+    font-weight: 600;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.boton-traduccion-movil:hover {
+    background: rgba(63, 224, 62, 0.1);
+}
+
 /* Botón "Contrátame" en móvil */
 .boton-contratar-movil {
     width: 100%;
@@ -228,6 +274,12 @@ body {
     font-size: 1.2rem;
     margin-top: 1rem;
     cursor: pointer;
+}
+
+/* Indicador de idioma activo para móvil */
+.boton-traduccion-movil.ingles .texto-boton-traduccion {
+    color: var(--color-texto-0);
+    font-weight: 700;
 }
 
 /* ============================================
@@ -728,13 +780,13 @@ body {
     background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .subtitulo-tecnologias {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 3rem;
     color: var(--color-texto-0);
     font-weight: 700;
 }
@@ -756,6 +808,7 @@ body {
 
 .titulo-categoria {
     font-size: 1.5rem;
+    margin-bottom: 1rem;
     font-weight: 700;
     text-align: center;
     padding-bottom: 0.5rem;
@@ -773,6 +826,20 @@ body {
     width: 100px;
     height: 3px;
     border-radius: 2px;
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+}
+
+/* Colores específicos para cada categoría */
+.titulo-categoria.frontend {
+    color: var(--color-frontend);
+}
+
+.titulo-categoria.backend {
+    color: var(--color-backend);
+}
+
+.titulo-categoria.extras {
+    color: var(--color-extras);
 }
 
 /* ============================================
@@ -824,11 +891,18 @@ body {
     justify-content: center;
     padding: 0.5rem; /* Padding muy reducido */
     border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
     transition: all 0.3s ease;
     width: 80px; /* Ancho fijo pequeño */
     height: 80px; /* Alto fijo pequeño */
     flex-shrink: 0; /* Evita que los items se encojan */
     text-align: center;
+}
+
+.tecnologia-item:hover {
+    transform: translateY(-3px); /* Elevación más sutil */
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .icono-tecnologia {
@@ -853,6 +927,7 @@ body {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
 }
 
 /* ============================================
@@ -956,6 +1031,21 @@ body {
     .contenedor-menu-cv-secundario {
         margin: 0 auto;
     }
+    
+    /* Ajustes botones traducción en tablets */
+    .contenedor-botones-escritorio {
+        gap: 0.75rem;
+    }
+    
+    .boton-traduccion-escritorio {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .icono-traduccion {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 /* Tablets pequeñas y móviles grandes (hasta 768px) */
@@ -964,16 +1054,12 @@ body {
         display: none; /* Oculta menú de escritorio */
     }
     
-    .boton-contratar-escritorio {
-        display: none; /* Oculta botón de escritorio */
+    .contenedor-botones-escritorio {
+        display: none; /* Ocultar botones de escritorio en móvil */
     }
     
     .alternar-menu {
         display: block; /* Muestra botón hamburguesa */
-    }
-    
-    .menu-movil[aria-hidden="false"] {
-        display: block; /* Muestra menú móvil cuando está activo */
     }
     
     .botones-hero {
@@ -1134,6 +1220,16 @@ body {
     
     .texto-opcion-secundario {
         font-size: 0.9rem;
+    }
+    
+    .boton-traduccion-movil {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .icono-traduccion {
+        width: 16px;
+        height: 16px;
     }
 }
 
