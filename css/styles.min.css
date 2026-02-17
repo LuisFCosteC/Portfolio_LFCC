@@ -1200,11 +1200,11 @@ body {
 }
 
 /* ============================================
-   SECCIÓN PROYECTOS (NUEVA CON IMÁGENES Y FONDO UNIFORME)
+   SECCIÓN PROYECTOS (3 columnas, dos botones)
    ============================================ */
 
 .proyectos {
-    padding: 6rem 2rem;
+    padding: 1rem 2rem;
     position: relative;
 }
 
@@ -1215,7 +1215,7 @@ body {
 
 .grid-proyectos {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -1223,7 +1223,7 @@ body {
 /* Contenedor de la imagen del proyecto */
 .imagen-proyecto {
     width: 100%;
-    height: 200px;
+    height: 180px; /* altura reducida para 3 columnas */
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 1rem;
@@ -1266,7 +1266,7 @@ body {
 }
 
 .titulo-proyecto {
-    font-size: 1.8rem;
+    font-size: 1.5rem; /* ligeramente más pequeño para 3 columnas */
     font-weight: 900;
     margin-bottom: 1rem;
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
@@ -1276,8 +1276,8 @@ body {
 }
 
 .descripcion-proyecto {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1.5rem;
     flex-grow: 1;
@@ -1292,8 +1292,8 @@ body {
 }
 
 .tecnologias-proyecto .icono-tecnologia {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     filter: brightness(0) invert(1);
     transition: filter 0.3s ease;
 }
@@ -1302,26 +1302,75 @@ body {
     filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
 }
 
-.enlace-proyecto {
-    color: var(--color-texto-0);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    align-self: flex-start;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 0.2rem;
+/* Contenedor de botones (Código y Demo) */
+.botones-proyecto {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
 }
 
-.enlace-proyecto:hover {
-    color: var(--color-texto-100);
-    border-bottom-color: var(--color-texto-0);
+.boton-proyecto {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.6rem 0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.boton-proyecto.github {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-blanco);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.boton-proyecto.github:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: var(--color-texto-0);
+}
+
+.boton-proyecto.web {
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+    color: var(--color-body-100);
+}
+
+.boton-proyecto.web:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(63, 224, 62, 0.3);
+}
+
+.boton-proyecto img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.boton-proyecto.web img {
+    filter: brightness(0) invert(0); /* icono oscuro sobre fondo claro */
 }
 
 /* Responsive para proyectos */
+@media (max-width: 1024px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+    
+    .imagen-proyecto {
+        height: 160px;
+    }
+}
+
 @media (max-width: 768px) {
     .grid-proyectos {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 columna en móviles */
         gap: 1.5rem;
     }
     
@@ -1334,7 +1383,7 @@ body {
     }
     
     .imagen-proyecto {
-        height: 160px;
+        height: 200px; /* más grande en móvil */
     }
 }
 
@@ -1348,6 +1397,11 @@ body {
     }
     
     .imagen-proyecto {
-        height: 140px;
+        height: 180px;
+    }
+    
+    .botones-proyecto {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
