@@ -29,7 +29,13 @@ export function configurarTraduccion() {
         
         // CV Options
         'opcion-cv-espanol': 'Download CV in Spanish',
-        'opcion-cv-ingles': 'Download CV in English'
+        'opcion-cv-ingles': 'Download CV in English',
+
+        // ===== NUEVAS CLAVES PARA PROYECTOS =====
+        'titulo-proyectos': 'Projects',
+        'desc-proyecto1': 'Halloween-themed web application where users can register and receive 4 tokens per day to upload 4 images and change their backgrounds.',
+        'desc-proyecto2': 'Main page of the Mikhuy project, a university cafeteria manager, a group project about to be deployed.',
+        'ver-mas-github': 'See more on GitHub →'
     };
 
     let idiomaActual = 'es';

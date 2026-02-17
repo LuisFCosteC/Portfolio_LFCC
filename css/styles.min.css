@@ -373,7 +373,8 @@ body {
 .contenido-hero,
 .imagen-hero,
 .seccion-carrusel-texto,
-.seccion-tecnologias {
+.seccion-tecnologias,
+.tarjeta-proyecto {
     opacity: 0; /* Se harán visibles al aplicar la animación */
 }
 
@@ -615,7 +616,6 @@ body {
    ============================================ */
 
 .sobre-mi {
-    background: linear-gradient(100deg, var(--color-body-100) 0%, var(--color-body-0) 100%);
     padding: 2rem 2rem;
     position: relative;
 }
@@ -1196,5 +1196,158 @@ body {
     
     .contenedor-tecnologias {
         gap: 0.3rem;
+    }
+}
+
+/* ============================================
+   SECCIÓN PROYECTOS (NUEVA CON IMÁGENES Y FONDO UNIFORME)
+   ============================================ */
+
+.proyectos {
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.contenedor-proyectos {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Contenedor de la imagen del proyecto */
+.imagen-proyecto {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.imagen-proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-proyecto:hover .imagen-proyecto img {
+    transform: scale(1.05);
+}
+
+/* Fondo sólido uniforme para todas las tarjetas */
+.tarjeta-proyecto {
+    background: linear-gradient(145deg, rgba(7, 35, 59, 0.95) 0%, rgba(6, 12, 22, 0.95) 100%);
+    backdrop-filter: none;
+    border-radius: 20px;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(63, 224, 62, 0.3);
+}
+
+.fecha-proyecto {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.titulo-proyecto {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.descripcion-proyecto {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.tecnologias-proyecto {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.tecnologias-proyecto .icono-tecnologia {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.tecnologias-proyecto .icono-tecnologia:hover {
+    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
+}
+
+.enlace-proyecto {
+    color: var(--color-texto-0);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    align-self: flex-start;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.2rem;
+}
+
+.enlace-proyecto:hover {
+    color: var(--color-texto-100);
+    border-bottom-color: var(--color-texto-0);
+}
+
+/* Responsive para proyectos */
+@media (max-width: 768px) {
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .titulo-proyecto {
+        font-size: 1.5rem;
+    }
+    
+    .descripcion-proyecto {
+        font-size: 0.95rem;
+    }
+    
+    .imagen-proyecto {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .proyectos {
+        padding: 4rem 1rem;
+    }
+    
+    .tarjeta-proyecto {
+        padding: 1.5rem;
+    }
+    
+    .imagen-proyecto {
+        height: 140px;
     }
 }

@@ -24,6 +24,12 @@ export function configurarAnimaciones() {
                         }, index * 100);
                     });
                 }
+                
+                // Si es una tarjeta de proyecto (para animación individual)
+                if (entrada.target.classList.contains('tarjeta-proyecto')) {
+                    // No necesita acción adicional, ya se anima con la clase
+                }
+                
                 // Dejar de observar una vez animado
                 observador.unobserve(entrada.target);
             }
@@ -36,12 +42,25 @@ export function configurarAnimaciones() {
             observador.observe(elemento);
         }
     });
+
+    // NUEVO: Observar tarjetas de proyecto
+    document.querySelectorAll('.tarjeta-proyecto').forEach(tarjeta => {
+        if (!tarjeta.classList.contains('animar-entrada')) {
+            observador.observe(tarjeta);
+        }
+    });
+
+    document.querySelectorAll('.imagen-proyecto').forEach(imagen => {
+        if (!imagen.classList.contains('animar-entrada')) {
+            observador.observe(imagen);
+        }
+    });
 }
 
 // Función para reproducir animaciones manualmente (al cambiar idioma)
 export function reproducirAnimaciones() {
     // Elementos principales
-    const elementos = document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias');
+    const elementos = document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias, .tarjeta-proyecto');
     elementos.forEach(el => {
         el.classList.remove('animar-entrada');
         // Forzar reflow
