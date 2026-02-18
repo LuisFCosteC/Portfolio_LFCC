@@ -39,7 +39,8 @@ export function configurarTraduccion() {
         'titulo-certificados': 'Certificates',
         'subtitulo-certificados': 'Professional certifications and achievements that demonstrate my experience and continuous learning.',
         'ver-certificado': 'View certificate',
-        'boton-ver-certificados': 'View certificates', // NUEVA CLAVE
+        'boton-ver-certificados': 'View certificates',
+        'boton-cerrar-certificados': 'Close certificates',  // NUEVA CLAVE
         'cert-graphql-desc': 'Basic course',
         'cert-angular-desc': 'Creation and optimization of web forms',
         'cert-arrays-desc': 'Array manipulation',
@@ -60,6 +61,8 @@ export function configurarTraduccion() {
                 textosOriginales.set(key, elemento.textContent);
             }
         });
+        // Guardar también el texto para el botón de cerrar, aunque no esté inicialmente
+        textosOriginales.set('boton-cerrar-certificados', 'Cerrar certificados');
     }
 
     function cambiarIdioma(nuevoIdioma) {

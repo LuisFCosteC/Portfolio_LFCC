@@ -1605,7 +1605,7 @@ body {
 }
 
 /* ============================================
-   BOTÓN VER CERTIFICADOS (nuevo)
+   BOTÓN VER CERTIFICADOS (modificado)
    ============================================ */
 .contenedor-boton-certificados {
     display: flex;
@@ -1626,23 +1626,29 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.boton-ver-certificados::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-image: url('../assets/images/Flecha_hacia_abajo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+}
+
+.boton-ver-certificados[aria-expanded="true"]::after {
+    background-image: url('../assets/images/Flecha_hacia_arriba.png');
 }
 
 .boton-ver-certificados:hover {
     background: rgba(63, 224, 62, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(63, 224, 62, 0.2);
-}
-
-.icono-flecha {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-    filter: brightness(0) invert(1);
-}
-
-.boton-ver-certificados[aria-expanded="true"] .icono-flecha {
-    transform: rotate(180deg);
 }
 
 /* Clase para ocultar tarjetas extra */
