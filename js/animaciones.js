@@ -25,34 +25,37 @@ export function configurarAnimaciones() {
                     });
                 }
                 
-                // Si es una tarjeta de proyecto (para animación individual)
-                if (entrada.target.classList.contains('tarjeta-proyecto')) {
-                    // No necesita acción adicional, ya se anima con la clase
-                }
-                
                 // Dejar de observar una vez animado
                 observador.unobserve(entrada.target);
             }
         });
     }, opcionesObservador);
     
-    // Observar elementos que no hayan sido animados aún (por si no eran visibles al inicio)
+    // Observar elementos que no hayan sido animados aún
     document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias').forEach(elemento => {
         if (!elemento.classList.contains('animar-entrada')) {
             observador.observe(elemento);
         }
     });
 
-    // NUEVO: Observar tarjetas de proyecto
+    // Observar tarjetas de proyecto
     document.querySelectorAll('.tarjeta-proyecto').forEach(tarjeta => {
         if (!tarjeta.classList.contains('animar-entrada')) {
             observador.observe(tarjeta);
         }
     });
 
+    // Observar imágenes de proyecto
     document.querySelectorAll('.imagen-proyecto').forEach(imagen => {
         if (!imagen.classList.contains('animar-entrada')) {
             observador.observe(imagen);
+        }
+    });
+
+    // Observar tarjetas de certificados
+    document.querySelectorAll('.tarjeta-certificado').forEach(tarjeta => {
+        if (!tarjeta.classList.contains('animar-entrada')) {
+            observador.observe(tarjeta);
         }
     });
 }
@@ -60,7 +63,7 @@ export function configurarAnimaciones() {
 // Función para reproducir animaciones manualmente (al cambiar idioma)
 export function reproducirAnimaciones() {
     // Elementos principales
-    const elementos = document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias, .tarjeta-proyecto');
+    const elementos = document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias, .tarjeta-proyecto, .tarjeta-certificado');
     elementos.forEach(el => {
         el.classList.remove('animar-entrada');
         // Forzar reflow

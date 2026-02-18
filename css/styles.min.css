@@ -122,7 +122,7 @@ body {
 
 .enlace-submenu .enlace-movil {
   flex: 1;
-  border-bottom: none; /* Quita el borde del enlace para que lo gestione el contenedor */
+  border-bottom: none;
 }
 
 /* Botón para desplegar el submenú */
@@ -149,12 +149,12 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
-  background: rgba(0, 0, 0, 0.2); /* Fondo ligeramente más oscuro para diferenciar */
+  background: rgba(0, 0, 0, 0.2);
   padding-left: 1rem;
 }
 
 .submenu-movil.mostrar {
-  max-height: 200px; /* Suficiente para un solo ítem */
+  max-height: 200px;
 }
 
 /* Estilo del enlace dentro del submenú */
@@ -374,8 +374,9 @@ body {
 .imagen-hero,
 .seccion-carrusel-texto,
 .seccion-tecnologias,
-.tarjeta-proyecto {
-    opacity: 0; /* Se harán visibles al aplicar la animación */
+.tarjeta-proyecto,
+.tarjeta-certificado {
+    opacity: 0;
 }
 
 .animar-entrada {
@@ -386,7 +387,6 @@ body {
     animation: aparecer 1s ease 0.3s forwards;
 }
 
-/* Para animación escalonada de items de tecnología (opcional) */
 .seccion-tecnologias.animar-entrada .tecnologia-item {
     animation: aparecerArriba 0.5s ease forwards;
     opacity: 0;
@@ -476,7 +476,7 @@ body {
 }
 
 /* ============================================
-   BOTONES DE ACCIÓN (MODIFICADO)
+   BOTONES DE ACCIÓN
    ============================================ */
 
 .botones-hero {
@@ -489,7 +489,7 @@ body {
 .contenedor-menu-cv {
     position: relative;
     display: inline-block;
-    width: auto;        /* se adapta al contenido */
+    width: auto;
     max-width: none;
 }
 
@@ -503,13 +503,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: auto;            /* elimina el ancho fijo */
-    min-width: unset;       /* quita el mínimo de 250px */
-    padding: 0.5rem 1rem;   /* padding más compacto */
+    width: auto;
+    min-width: unset;
+    padding: 0.5rem 1rem;
     font-size: 1rem;
     line-height: 1.2;
     font-weight: 700;
-    gap: 0.5rem;            /* espacio entre texto y flecha */
+    gap: 0.5rem;
 }
 
 .boton-descargar-cv:hover {
@@ -629,7 +629,7 @@ body {
 .titulo-seccion {
     text-align: center;
     font-size: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-weight: 900;
 }
 
@@ -1208,7 +1208,7 @@ body {
 }
 
 /* ============================================
-   SECCIÓN PROYECTOS (3 columnas, dos botones)
+   SECCIÓN PROYECTOS
    ============================================ */
 
 .proyectos {
@@ -1223,15 +1223,14 @@ body {
 
 .grid-proyectos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas en escritorio */
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
-/* Contenedor de la imagen del proyecto */
 .imagen-proyecto {
     width: 100%;
-    height: 180px; /* altura reducida para 3 columnas */
+    height: 180px;
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 1rem;
@@ -1248,7 +1247,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Fondo sólido uniforme para todas las tarjetas */
 .tarjeta-proyecto {
     background: linear-gradient(145deg, rgba(7, 35, 59, 0.95) 0%, rgba(6, 12, 22, 0.95) 100%);
     backdrop-filter: none;
@@ -1274,7 +1272,7 @@ body {
 }
 
 .titulo-proyecto {
-    font-size: 1.5rem; /* ligeramente más pequeño para 3 columnas */
+    font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 1rem;
     background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
@@ -1310,7 +1308,6 @@ body {
     filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
 }
 
-/* Contenedor de botones (Código y Demo) */
 .botones-proyecto {
     display: flex;
     gap: 1rem;
@@ -1362,13 +1359,13 @@ body {
 }
 
 .boton-proyecto.web img {
-    filter: brightness(0) invert(0); /* icono oscuro sobre fondo claro */
+    filter: brightness(0) invert(0);
 }
 
 /* Responsive para proyectos */
 @media (max-width: 1024px) {
     .grid-proyectos {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .imagen-proyecto {
@@ -1378,7 +1375,7 @@ body {
 
 @media (max-width: 768px) {
     .grid-proyectos {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
@@ -1391,7 +1388,7 @@ body {
     }
     
     .imagen-proyecto {
-        height: 200px; /* más grande en móvil */
+        height: 200px;
     }
 }
 
@@ -1411,5 +1408,194 @@ body {
     .botones-proyecto {
         flex-direction: column;
         gap: 0.5rem;
+    }
+}
+
+/* ============================================
+   SECCIÓN CERTIFICADOS
+   ============================================ */
+
+.certificados {
+    padding: 2rem 2rem;
+    background: linear-gradient(100deg, var(--color-banner-100) 0%, var(--color-banner-0) 100%);
+    position: relative;
+}
+
+.contenedor-certificados {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.subtitulo-certificados {
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-certificados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start; /* Hace que cada tarjeta tenga su altura natural */
+}
+
+.tarjeta-certificado {
+    background: linear-gradient(145deg, rgba(7, 35, 59, 0.95) 0%, rgba(6, 12, 22, 0.95) 100%);
+    backdrop-filter: none;
+    border-radius: 20px;
+    padding: 1rem 0rem 0rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-certificado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(63, 224, 62, 0.3);
+}
+
+.badge-plataforma {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(90deg, var(--color-texto-0), var(--color-texto-100));
+    color: var(--color-body-100);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(63, 224, 62, 0.3);
+    z-index: 2;
+}
+
+.titulo-certificado {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 0.5rem 0 0.5rem 0;
+    background: var(--color-blanco);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    padding-right: 4rem; /* espacio para el badge */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.descripcion-certificado {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+/* Contenedor para la acción (fecha y enlace) */
+.accion-certificado {
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.fecha-certificado,
+.enlace-certificado {
+    transition: opacity 0.3s ease;
+}
+
+.fecha-certificado {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icono-calendario {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: brightness(0) invert(0.7);
+    transition: filter 0.3s ease;
+}
+
+.tarjeta-certificado:hover .icono-calendario {
+    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(70deg) saturate(5);
+}
+
+.enlace-certificado {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    text-decoration: none;
+    color: var(--color-texto-0);
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 0.2rem;
+}
+
+.enlace-certificado span {
+    transition: transform 0.2s ease;
+}
+
+.enlace-certificado:hover span {
+    transform: translateX(3px);
+}
+
+.tarjeta-certificado:hover .fecha-certificado {
+    opacity: 0;
+}
+
+.tarjeta-certificado:hover .enlace-certificado {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Responsive para certificados */
+@media (max-width: 1024px) {
+    .grid-certificados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-certificados {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .subtitulo-certificados {
+        font-size: 1rem;
+    }
+    
+    .titulo-certificado {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificados {
+        padding: 4rem 1rem;
+    }
+    
+    .badge-plataforma {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.8rem;
     }
 }
