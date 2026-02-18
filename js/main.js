@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Portafolio LFCC cargado');
     
     configurarNavegacion();
-    configurarAnimaciones(); // Ahora anima elementos visibles y configura observador
+    configurarAnimaciones();
     configurarMenuCV();
     configurarCarrusel();
+    configurarVerMasCertificados(); // Función actualizada
     
     const sistemaTraduccion = configurarTraduccion();
     sistemaTraduccion.inicializar();
@@ -96,3 +97,32 @@ window.descargarCV = function(idioma = 'es') {
     
     console.log(`CV descargado en ${textosIdioma[idioma]}`);
 };
+
+// Configurar botón "Ver más certificados" con imágenes
+function configurarVerMasCertificados() {
+    const btn = document.getElementById('btnVerMasCertificados');
+    const grid = document.getElementById('gridCertificados');
+    if (!btn || !grid) return;
+
+    const imgIzquierda = btn.querySelector('.icono-flecha.izquierda');
+    const imgDerecha = btn.querySelector('.icono-flecha.derecha');
+    
+    if (!imgIzquierda || !imgDerecha) return;
+
+    btn.addEventListener('click', () => {
+        grid.classList.toggle('expandido');
+        
+        if (grid.classList.contains('expandido')) {
+            imgIzquierda.src = 'assets/images/Flecha_hacia_arriba.png';
+            imgDerecha.src = 'assets/images/Flecha_hacia_arriba.png';
+            // Opcional: cambiar texto
+            // const textoSpan = btn.querySelector('.texto-boton');
+            // if (textoSpan) textoSpan.textContent = 'Ver menos certificados';
+        } else {
+            imgIzquierda.src = 'assets/images/Flecha_hacia_abajo.png';
+            imgDerecha.src = 'assets/images/Flecha_hacia_abajo.png';
+            // const textoSpan = btn.querySelector('.texto-boton');
+            // if (textoSpan) textoSpan.textContent = 'Ver todos los certificados';
+        }
+    });
+}
