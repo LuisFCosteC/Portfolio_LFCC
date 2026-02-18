@@ -1,4 +1,3 @@
-// js/traduccion.js - Sistema de traducción
 import { reproducirAnimaciones } from './animaciones.js';
 
 export function configurarTraduccion() {
@@ -31,24 +30,34 @@ export function configurarTraduccion() {
         'opcion-cv-espanol': 'Download CV in Spanish',
         'opcion-cv-ingles': 'Download CV in English',
 
-        // ===== NUEVAS CLAVES PARA PROYECTOS =====
+        // Projects
         'titulo-proyectos': 'Projects',
         'desc-proyecto1': 'Halloween-themed web application where users can register and receive 4 tokens per day to upload 4 images and change their backgrounds.',
         'desc-proyecto2': 'Main page of the Mikhuy project, a university cafeteria manager, a group project about to be deployed.',
-        'ver-mas-github': 'See more on GitHub →'
+        
+        // Certificates
+        'titulo-certificados': 'Certificates',
+        'subtitulo-certificados': 'Professional certifications and achievements that demonstrate my experience and continuous learning.',
+        'ver-certificado': 'View certificate',
+        'boton-ver-certificados': 'View certificates', // NUEVA CLAVE
+        'cert-graphql-desc': 'Basic course',
+        'cert-angular-desc': 'Creation and optimization of web forms',
+        'cert-arrays-desc': 'Array manipulation',
+        'cert-solid-desc': 'SOLID, DRY and Clean Code',
+        'cert-herrera-desc': 'Node.js course',
+        'cert-ts-desc': 'Fundamentals and advanced types',
     };
 
     let idiomaActual = 'es';
     let textosOriginales = new Map();
 
-    // Elementos traducibles (excluimos el span del botón móvil que se maneja aparte)
     const elementosTraducibles = document.querySelectorAll('.traducible:not(#botonTraduccionMovil .texto-boton-traduccion)');
 
     function guardarTextosOriginales() {
         elementosTraducibles.forEach(elemento => {
             const key = elemento.getAttribute('data-key');
             if (key && !textosOriginales.has(key)) {
-                textosOriginales.set(key, elemento.textContent); // Guardamos textContent
+                textosOriginales.set(key, elemento.textContent);
             }
         });
     }

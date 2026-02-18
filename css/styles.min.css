@@ -1603,3 +1603,57 @@ body {
         padding: 0.2rem 0.8rem;
     }
 }
+
+/* ============================================
+   BOTÓN VER CERTIFICADOS (nuevo)
+   ============================================ */
+.contenedor-boton-certificados {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.boton-ver-certificados {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: transparent;
+    border: 2px solid var(--color-texto-0);
+    color: var(--color-blanco);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-ver-certificados:hover {
+    background: rgba(63, 224, 62, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(63, 224, 62, 0.2);
+}
+
+.icono-flecha {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+.boton-ver-certificados[aria-expanded="true"] .icono-flecha {
+    transform: rotate(180deg);
+}
+
+/* Clase para ocultar tarjetas extra */
+.tarjeta-certificado.oculto {
+    display: none;
+}
+
+/* Responsive para el botón */
+@media (max-width: 480px) {
+    .boton-ver-certificados {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+}

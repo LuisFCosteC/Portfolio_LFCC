@@ -3,6 +3,7 @@ import { configurarNavegacion } from './navegacion.js';
 import { configurarAnimaciones } from './animaciones.js';
 import { configurarCarrusel } from './carrusel.js';
 import { configurarTraduccion } from './traduccion.js';
+import { configurarVerMasCertificados } from './certificados.js'; // nuevo
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Portafolio LFCC cargado');
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarAnimaciones();
     configurarMenuCV();
     configurarCarrusel();
-    configurarVerMasCertificados(); // Función corregida
+    configurarVerMasCertificados(); // función importada
     
     const sistemaTraduccion = configurarTraduccion();
     sistemaTraduccion.inicializar();
