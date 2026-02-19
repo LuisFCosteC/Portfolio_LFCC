@@ -1772,6 +1772,62 @@ body {
 }
 
 /* ============================================
+   RESPONSIVE PARA FORMULARIO DE CONTACTO
+   ============================================ */
+
+@media (max-width: 768px) {
+    .formulario-contacto {
+        grid-template-columns: 1fr;           /* Una sola columna en móviles */
+        padding: 1.5rem;                       /* Reducir padding interior */
+    }
+
+    .campo-textarea,
+    .boton-enviar {
+        grid-column: span 1;                   /* Ocupan toda la fila */
+    }
+
+    .campo-formulario input,
+    .campo-formulario select,
+    .campo-formulario textarea {
+        font-size: 1rem;                        /* Tamaño legible sin zoom */
+        padding: 0.75rem;                        /* Ajuste de padding */
+    }
+
+    .subtitulo-contacto {
+        font-size: 1rem;                         /* Reducir tamaño de subtítulo */
+        margin-bottom: 2rem;
+    }
+
+    .boton-enviar {
+        padding: 0.9rem 1.5rem;                  /* Ajustar padding del botón */
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .formulario-contacto {
+        padding: 1rem;                            /* Padding aún más pequeño */
+        gap: 1rem;
+    }
+
+    .campo-formulario label {
+        font-size: 0.85rem;                       /* Etiquetas ligeramente más pequeñas */
+    }
+
+    .campo-formulario input,
+    .campo-formulario select,
+    .campo-formulario textarea {
+        padding: 0.6rem;                           /* Inputs más compactos */
+        font-size: 0.95rem;
+    }
+
+    .boton-enviar {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
