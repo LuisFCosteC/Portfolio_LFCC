@@ -966,7 +966,7 @@ body {
     }
     
     .contenedor-menu-cv {
-        margin: 0 auto;
+        margin: 20px auto;
     }
     
     .seccion-carrusel-texto {
@@ -1080,6 +1080,10 @@ body {
     
     .seccion-tecnologias {
         padding: 2rem 1rem;
+    }
+
+    .menu-desplegable-cv {
+        left: 0;
     }
 }
 

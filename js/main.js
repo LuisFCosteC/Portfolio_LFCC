@@ -1,4 +1,3 @@
-// js/main.js - Módulo principal
 import { configurarNavegacion } from './navegacion.js';
 import { configurarAnimaciones } from './animaciones.js';
 import { configurarCarrusel } from './carrusel.js';
@@ -10,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     configurarNavegacion();
     configurarAnimaciones();
-    configurarMenuCV();
+    configurarMenuCV('botonDescargarCV', 'menuCV');       // Menú de escritorio
+    configurarMenuCV('botonDescargarCVMovil', 'menuCVMovil'); // Menú móvil
     configurarCarrusel();
     configurarVerMasCertificados();
     
@@ -30,9 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const formulario = document.getElementById('formularioContacto');
     if (formulario) {
         formulario.addEventListener('submit', (e) => {
-            e.preventDefault(); // Evita el envío tradicional
+            e.preventDefault();
 
-            // Obtener valores de los campos
             const nombre = document.getElementById('nombre')?.value.trim() || 'No especificado';
             const email = document.getElementById('email')?.value.trim() || 'No especificado';
             const telefono = document.getElementById('telefono')?.value.trim() || 'No especificado';
@@ -40,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const tiempo = document.getElementById('tiempo')?.value;
             const detalles = document.getElementById('detalles')?.value.trim() || 'Sin detalles';
 
-            // Mapear valores de selects a texto legible
             const servicioTexto = {
                 'desarrollo-web': 'Desarrollo Web',
                 'aplicacion-movil': 'Aplicación Móvil',
@@ -53,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 'largo': 'Largo plazo (más de 1 mes)'
             }[tiempo] || tiempo;
 
-            // Construir mensaje
             const mensaje = `Hola Luis, te escriben desde tu portafolio:
 
 *Nombre:* ${nombre}
@@ -66,53 +63,47 @@ ${detalles}
 
 Quedo atento a tu respuesta.`;
 
-            // Número de WhatsApp con código de país (Colombia 57)
             const numero = '573116463033';
             const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-
-            // Abrir WhatsApp en nueva pestaña
             window.open(url, '_blank');
         });
-        console.log('Listener de formulario de contacto agregado');
-    } else {
-        console.warn('No se encontró el formulario de contacto');
     }
 });
 
-// Configurar menú desplegable de CV principal
-function configurarMenuCV() {
-    const botonDescargarCV = document.getElementById('botonDescargarCV');
-    const menuCV = document.getElementById('menuCV');
+// Función reutilizable para configurar el menú desplegable de CV
+function configurarMenuCV(botonId, menuId) {
+    const boton = document.getElementById(botonId);
+    const menu = document.getElementById(menuId);
     
-    if (!botonDescargarCV || !menuCV) return;
+    if (!boton || !menu) return;
     
-    botonDescargarCV.addEventListener('click', (evento) => {
+    boton.addEventListener('click', (evento) => {
         evento.stopPropagation();
-        menuCV.classList.toggle('mostrar');
-        botonDescargarCV.classList.toggle('menu-abierto');
+        menu.classList.toggle('mostrar');
+        boton.classList.toggle('menu-abierto');
     });
     
     document.addEventListener('click', (evento) => {
-        if (!botonDescargarCV.contains(evento.target) && !menuCV.contains(evento.target)) {
-            menuCV.classList.remove('mostrar');
-            botonDescargarCV.classList.remove('menu-abierto');
+        if (!boton.contains(evento.target) && !menu.contains(evento.target)) {
+            menu.classList.remove('mostrar');
+            boton.classList.remove('menu-abierto');
         }
     });
     
-    const opcionesMenu = document.querySelectorAll('.opcion-menu');
+    const opcionesMenu = document.querySelectorAll(`#${menuId} .opcion-menu`);
     opcionesMenu.forEach(opcion => {
         opcion.addEventListener('click', () => {
             setTimeout(() => {
-                menuCV.classList.remove('mostrar');
-                botonDescargarCV.classList.remove('menu-abierto');
+                menu.classList.remove('mostrar');
+                boton.classList.remove('menu-abierto');
             }, 100);
         });
     });
     
     document.addEventListener('keydown', (evento) => {
         if (evento.key === 'Escape') {
-            menuCV.classList.remove('mostrar');
-            botonDescargarCV.classList.remove('menu-abierto');
+            menu.classList.remove('mostrar');
+            boton.classList.remove('menu-abierto');
         }
     });
 }
@@ -129,27 +120,17 @@ window.descargarCV = function(idioma = 'es') {
         'en': 'Luis_Coste_Full_Stack_Developer.pdf'
     };
     
-    const textosIdioma = {
-        'es': 'español',
-        'en': 'inglés'
-    };
-    
     if (!rutasCV[idioma]) {
         console.error('Idioma no válido:', idioma);
         return;
     }
     
-    const rutaCV = rutasCV[idioma];
-    const nombreArchivo = nombresCV[idioma];
-    
     const enlace = document.createElement('a');
-    enlace.href = rutaCV;
-    enlace.download = nombreArchivo;
+    enlace.href = rutasCV[idioma];
+    enlace.download = nombresCV[idioma];
     enlace.target = '_blank';
     
     document.body.appendChild(enlace);
     enlace.click();
     document.body.removeChild(enlace);
-    
-    console.log(`CV descargado en ${textosIdioma[idioma]}`);
 };

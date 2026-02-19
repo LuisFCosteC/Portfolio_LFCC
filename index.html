@@ -81,11 +81,27 @@
                 <li><a href="#contacto" class="enlace-movil traducible" data-key="nav-contactame">Contáctame</a></li>
             </ul>
 
-            <!-- Botón de traducción móvil (sin clase traducible, se maneja manualmente) -->
+            <!-- Botón de traducción móvil -->
             <button class="boton-traduccion-movil" id="botonTraduccionMovil" aria-label="Cambiar idioma">
                 <img src="assets/images/Icono_Traductor.png" alt="" class="icono-traduccion">
                 <span class="texto-boton-traduccion">Switch to English</span>
             </button>
+
+            <!-- Contenedor del menú CV para móvil (nuevo) -->
+            <div class="contenedor-menu-cv">
+                <button class="boton-descargar-cv" id="botonDescargarCVMovil">
+                    <span>CV</span>
+                    <span class="flecha-menu">▼</span>
+                </button>
+                <div class="menu-desplegable-cv" id="menuCVMovil">
+                    <button class="opcion-menu traducible" data-key="opcion-cv-espanol" onclick="descargarCV('es')">
+                        <span class="texto-opcion">Descargar CV en Español</span>
+                    </button>
+                    <button class="opcion-menu traducible" data-key="opcion-cv-ingles" onclick="descargarCV('en')">
+                        <span class="texto-opcion">Descargar CV en Inglés</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </nav>
 
