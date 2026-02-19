@@ -111,13 +111,13 @@ function configurarMenuCV(botonId, menuId) {
 // Función global para descargar CV según idioma
 window.descargarCV = function(idioma = 'es') {
     const rutasCV = {
-        'es': 'assets/docs/Luis Coste Desarrollador Full Stack.pdf',
-        'en': 'assets/docs/Luis Coste Full Stack Developer.pdf'
+        'es': 'assets/docs/Luis Coste Desarrollador de Software.pdf',
+        'en': 'assets/docs/Luis Coste Software Developer.pdf'
     };
     
     const nombresCV = {
-        'es': 'Luis_Coste_Desarrollador_Full_Stack.pdf',
-        'en': 'Luis_Coste_Full_Stack_Developer.pdf'
+        'es': 'Luis_Coste_Desarrollador_de_Software.pdf',
+        'en': 'Luis_Coste_Software_Developer.pdf'
     };
     
     if (!rutasCV[idioma]) {
