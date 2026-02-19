@@ -868,6 +868,9 @@ body {
     background: var(--color-texto-100);
 }
 
+/* ============================================
+   ESTILOS DE CADA TECNOLOGÍA
+   ============================================ */
 .tecnologia-item {
     display: flex;
     flex-direction: column;
@@ -878,7 +881,7 @@ body {
     background: rgba(255, 255, 255, 0.03);
     transition: all 0.3s ease;
     width: 80px;
-    height: 80px;
+    height: 80px;                /* Altura fija para mantener iconos alineados */
     flex-shrink: 0;
     text-align: center;
 }
@@ -903,15 +906,22 @@ body {
     transform: scale(1.1);
 }
 
+/* Nombre de tecnología */
 .nombre-tecnologia {
     font-size: 0.7rem;
     font-weight: 500;
     text-align: center;
-    line-height: 1.1;
+    line-height: 1.2;
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow: visible;           /* Quita el ocultamiento */
+    text-overflow: clip;         /* Sin puntos suspensivos */
+    white-space: normal;         /* Permite salto de línea */
+    word-break: break-word;      /* Divide palabras largas */
+}
+
+/* Clase especial para textos muy largos (ej: Microsoft .NET Core) */
+.tecnologia-item--largo .nombre-tecnologia {
+    font-size: 0.65rem;          /* Un poco más pequeño para que quepan dos líneas */
 }
 
 /* ============================================
@@ -1234,7 +1244,7 @@ body {
 }
 
 /* ============================================
-   BOTÓN VER CERTIFICADOS (modificado)
+   BOTÓN VER CERTIFICADOS
    ============================================ */
 .contenedor-boton-certificados {
     display: flex;
@@ -1488,6 +1498,7 @@ body {
 
 /* ============================================
    DISEÑO RESPONSIVE - TODAS LAS MEDIA QUERIES
+   (Se actualizan los tamaños de .tecnologia-item y .nombre-tecnologia)
    ============================================ */
 
 /* Pantallas grandes (hasta 1200px) */
@@ -1562,6 +1573,7 @@ body {
     .tecnologia-item {
         width: 75px;
         height: 75px;
+        padding: 0.4rem;
     }
     .icono-tecnologia {
         width: 30px;
@@ -1569,6 +1581,9 @@ body {
     }
     .nombre-tecnologia {
         font-size: 0.65rem;
+    }
+    .tecnologia-item--largo .nombre-tecnologia {
+        font-size: 0.6rem;      /* Ajuste para textos largos en tablet */
     }
 
     /* BOTONES ESCRITORIO */
@@ -1646,6 +1661,9 @@ body {
     }
     .nombre-tecnologia {
         font-size: 0.6rem;
+    }
+    .tecnologia-item--largo .nombre-tecnologia {
+        font-size: 0.55rem;
     }
     .seccion-tecnologias {
         padding: 2rem 1rem;
@@ -1804,7 +1822,10 @@ body {
     }
     .nombre-tecnologia {
         font-size: 0.55rem;
-        line-height: 1;
+        line-height: 1.2;
+    }
+    .tecnologia-item--largo .nombre-tecnologia {
+        font-size: 0.5rem;
     }
     .titulo-categoria {
         font-size: 1.3rem;
@@ -1885,6 +1906,9 @@ body {
     }
     .nombre-tecnologia {
         font-size: 0.5rem;
+    }
+    .tecnologia-item--largo .nombre-tecnologia {
+        font-size: 0.45rem;
     }
     .contenedor-tecnologias {
         gap: 0.3rem;

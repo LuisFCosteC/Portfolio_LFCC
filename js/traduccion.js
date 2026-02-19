@@ -250,7 +250,7 @@ export function configurarTraduccion() {
             if (botonMovil) {
                 botonMovil.classList.remove('ingles');
                 const span = botonMovil.querySelector('.texto-boton-traduccion');
-                if (span) span.textContent = 'Switch to English';
+                if (span) span.textContent = 'Cambiar a inglés';
             }
         }
     }
