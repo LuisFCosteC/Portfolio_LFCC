@@ -940,7 +940,7 @@ body {
 @media (max-width: 1024px) {
     .contenedor-hero {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 0rem;
         text-align: center;
     }
     
@@ -972,6 +972,7 @@ body {
     .seccion-carrusel-texto {
         grid-template-columns: 1fr;
         gap: 3rem;
+        margin-bottom: 0px;
     }
     
     .carrusel {
@@ -1122,7 +1123,7 @@ body {
     }
     
     .sobre-mi {
-        padding: 4rem 1rem;
+        padding: 2rem 1rem;
     }
     
     .titulo-seccion {
@@ -1394,7 +1395,7 @@ body {
 
 @media (max-width: 480px) {
     .proyectos {
-        padding: 4rem 1rem;
+        padding: 1rem 1rem;
     }
     
     .tarjeta-proyecto {
