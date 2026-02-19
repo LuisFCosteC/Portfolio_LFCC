@@ -53,22 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const mensaje = `Hola Luis, te escriben desde tu portafolio:
 
-*Nombre:* ${nombre}
-*Email:* ${email}
-*Teléfono:* ${telefono}
-*Servicio de interés:* ${servicioTexto}
-*Plazo estimado:* ${tiempoTexto}
-*Detalles del proyecto:*
-${detalles}
+            *Nombre:* ${nombre}
+            *Email:* ${email}
+            *Teléfono:* ${telefono}
+            *Servicio de interés:* ${servicioTexto}
+            *Plazo estimado:* ${tiempoTexto}
+            *Detalles del proyecto:*
+            ${detalles}
 
-Quedo atento a tu respuesta.`;
+            Quedo atento a tu respuesta.`;
 
-            const numero = '573116463033';
-            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
-        });
-    }
-});
+                const numero = '573116463033';
+                const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+                window.open(url, '_blank');
+            });
+        }
+    });
 
 // Función reutilizable para configurar el menú desplegable de CV
 function configurarMenuCV(botonId, menuId) {

@@ -1402,6 +1402,29 @@ body {
 }
 
 /* ============================================
+   ESTILOS PARA INPUTS AUTOCOMPLETADOS
+   ============================================ */
+.campo-formulario input:-webkit-autofill,
+.campo-formulario input:-webkit-autofill:hover,
+.campo-formulario input:-webkit-autofill:focus,
+.campo-formulario input:-webkit-autofill:active,
+.campo-formulario textarea:-webkit-autofill,
+.campo-formulario textarea:-webkit-autofill:hover,
+.campo-formulario textarea:-webkit-autofill:focus,
+.campo-formulario textarea:-webkit-autofill:active,
+.campo-formulario select:-webkit-autofill,
+.campo-formulario select:-webkit-autofill:hover,
+.campo-formulario select:-webkit-autofill:focus,
+.campo-formulario select:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba(7, 35, 59, 0.95) inset !important;
+    box-shadow: 0 0 0 30px rgba(7, 35, 59, 0.95) inset !important;
+    -webkit-text-fill-color: var(--color-blanco) !important;
+    color: var(--color-blanco) !important;
+    background-color: transparent !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
