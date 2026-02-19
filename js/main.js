@@ -99,3 +99,55 @@ window.descargarCV = function(idioma = 'es') {
     
     console.log(`CV descargado en ${textosIdioma[idioma]}`);
 };
+
+// ============================================
+// ENVÍO DEL FORMULARIO A WHATSAPP
+// ============================================
+const formulario = document.getElementById('formularioContacto');
+if (formulario) {
+    formulario.addEventListener('submit', (e) => {
+        e.preventDefault(); // Evita el envío tradicional
+
+        // Obtener valores de los campos
+        const nombre = document.getElementById('nombre')?.value.trim() || 'No especificado';
+        const email = document.getElementById('email')?.value.trim() || 'No especificado';
+        const telefono = document.getElementById('telefono')?.value.trim() || 'No especificado';
+        const servicio = document.getElementById('servicio')?.value;
+        const tiempo = document.getElementById('tiempo')?.value;
+        const detalles = document.getElementById('detalles')?.value.trim() || 'Sin detalles';
+
+        // Mapear valores de selects a texto legible
+        const servicioTexto = {
+            'desarrollo-web': 'Desarrollo Web',
+            'aplicacion-movil': 'Aplicación Móvil',
+            'consultoria': 'Consultoría',
+            'otro': 'Otro'
+        }[servicio] || servicio;
+
+        const tiempoTexto = {
+            'urgente': 'Urgente (1-2 semanas)',
+            'normal': 'Normal (3-4 semanas)',
+            'largo': 'Largo plazo (más de 1 mes)'
+        }[tiempo] || tiempo;
+
+        // Construir mensaje
+        const mensaje = `Hola Luis, te escriben desde tu portafolio:
+
+*Nombre:* ${nombre}
+*Email:* ${email}
+*Teléfono:* ${telefono}
+*Servicio de interés:* ${servicioTexto}
+*Plazo estimado:* ${tiempoTexto}
+*Detalles del proyecto:*
+${detalles}
+
+Quedo atento a tu respuesta.`;
+
+        // Número de WhatsApp con código de país (Colombia 57)
+        const numero = '573116463033';
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+
+        // Abrir WhatsApp en nueva pestaña
+        window.open(url, '_blank');
+    });
+}
