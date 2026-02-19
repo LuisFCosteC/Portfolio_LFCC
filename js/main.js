@@ -120,7 +120,6 @@ if (formulario) {
         const servicioTexto = {
             'desarrollo-web': 'Desarrollo Web',
             'aplicacion-movil': 'Aplicación Móvil',
-            'consultoria': 'Consultoría',
             'otro': 'Otro'
         }[servicio] || servicio;
 
