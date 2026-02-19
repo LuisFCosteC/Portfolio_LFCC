@@ -57,7 +57,7 @@ export function configurarTraduccion() {
         // ------------------------------------------
         'titulo-certificados': 'Certificates',
         'subtitulo-certificados': 'Professional certifications and achievements that demonstrate my experience and continuous learning.',
-        'ver-certificado': 'View certificate',
+        'ver-certificado': 'View certificate →',
         'boton-ver-certificados': 'View certificates',
         'boton-cerrar-certificados': 'Close certificates',
 
