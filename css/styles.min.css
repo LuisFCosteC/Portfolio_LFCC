@@ -338,12 +338,6 @@ body {
     display: block;
 }
 
-@media (min-width: 769px) {
-    .menu-movil {
-        display: none !important;
-    }
-}
-
 /* ============================================
    SECCIÓN HERO (ENCABEZADO)
    ============================================ */
@@ -928,291 +922,6 @@ body {
 }
 
 /* ============================================
-   DISEÑO RESPONSIVE
-   ============================================ */
-
-@media (max-width: 1200px) {
-    .contenedor-tecnologias {
-        max-width: 1000px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .contenedor-hero {
-        grid-template-columns: 1fr;
-        gap: 0rem;
-        text-align: center;
-    }
-    
-    .nombre-hero {
-        font-size: 2.5rem;
-    }
-    
-    .titulo-hero {
-        font-size: 2.5rem;
-    }
-    
-    .foto-perfil {
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .redes-sociales {
-        justify-content: center;
-    }
-    
-    .botones-hero {
-        justify-content: center;
-    }
-    
-    .contenedor-menu-cv {
-        margin: 20px auto;
-    }
-    
-    .seccion-carrusel-texto {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        margin-bottom: 0px;
-    }
-    
-    .carrusel {
-        height: 350px;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    .contenedor-tecnologias {
-        max-width: 900px;
-        gap: 0.8rem;
-    }
-    
-    .tecnologia-item {
-        width: 75px;
-        height: 75px;
-    }
-    
-    .icono-tecnologia {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .nombre-tecnologia {
-        font-size: 0.65rem;
-    }
-    
-    .contenedor-botones-escritorio {
-        gap: 0.75rem;
-    }
-    
-    .boton-traduccion-escritorio {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .icono-traduccion {
-        width: 18px;
-        height: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-escritorio {
-        display: none;
-    }
-    
-    .contenedor-botones-escritorio {
-        display: none;
-    }
-    
-    .alternar-menu {
-        display: block;
-    }
-    
-    .botones-hero {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .contenedor-menu-cv {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .boton-descargar-cv {
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    .menu-desplegable-cv {
-        width: 100%;
-        min-width: 100%;
-    }
-    
-    .titulo-seccion {
-        font-size: 2.5rem;
-    }
-    
-    .carrusel {
-        height: 300px;
-    }
-    
-    .contenedor-tecnologias {
-        max-width: 100%;
-        gap: 0.6rem;
-        justify-content: flex-start;
-        padding: 0.5rem 0.25rem;
-    }
-    
-    .tecnologia-item {
-        width: 70px;
-        height: 70px;
-        padding: 0.4rem;
-    }
-    
-    .icono-tecnologia {
-        width: 28px;
-        height: 28px;
-    }
-    
-    .nombre-tecnologia {
-        font-size: 0.6rem;
-    }
-    
-    .seccion-tecnologias {
-        padding: 2rem 1rem;
-    }
-
-    .menu-desplegable-cv {
-        left: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .nombre-hero {
-        font-size: 2rem;
-    }
-    
-    .titulo-hero {
-        font-size: 1.8rem;
-    }
-    
-    .contenedor-navegacion {
-        padding: 0 1rem;
-    }
-    
-    .hero {
-        padding: 5rem 1rem 3rem;
-    }
-    
-    .redes-sociales {
-        gap: 1rem;
-    }
-    
-    .icono-red {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .boton-descargar-cv {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-    }
-    
-    .texto-opcion {
-        font-size: 0.9rem;
-    }
-    
-    .nombre-archivo {
-        font-size: 0.75rem;
-    }
-    
-    .sobre-mi {
-        padding: 2rem 1rem;
-    }
-    
-    .titulo-seccion {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-    }
-    
-    .subtitulo-sobre-mi,
-    .subtitulo-tecnologias {
-        font-size: 1.5rem;
-    }
-    
-    .carrusel {
-        height: 250px;
-    }
-    
-    .carrusel-control {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .seccion-tecnologias {
-        padding: 1.5rem 0.5rem;
-    }
-    
-    .contenedor-tecnologias {
-        gap: 0.4rem;
-        padding: 0.5rem 0.25rem;
-    }
-    
-    .tecnologia-item {
-        width: 65px;
-        height: 65px;
-        padding: 0.3rem;
-    }
-    
-    .icono-tecnologia {
-        width: 25px;
-        height: 25px;
-        margin-bottom: 0.2rem;
-    }
-    
-    .nombre-tecnologia {
-        font-size: 0.55rem;
-        line-height: 1;
-    }
-    
-    .titulo-categoria {
-        font-size: 1.3rem;
-        margin-bottom: 0.75rem;
-    }
-    
-    .boton-traduccion-movil {
-        padding: 0.8rem;
-        font-size: 0.9rem;
-    }
-    
-    .icono-traduccion {
-        width: 16px;
-        height: 16px;
-    }
-}
-
-@media (max-width: 360px) {
-    .tecnologia-item {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .icono-tecnologia {
-        width: 22px;
-        height: 22px;
-    }
-    
-    .nombre-tecnologia {
-        font-size: 0.5rem;
-    }
-    
-    .contenedor-tecnologias {
-        gap: 0.3rem;
-    }
-}
-
-/* ============================================
    SECCIÓN PROYECTOS
    ============================================ */
 
@@ -1365,55 +1074,6 @@ body {
 
 .boton-proyecto.web img {
     filter: brightness(0) invert(0);
-}
-
-/* Responsive para proyectos */
-@media (max-width: 1024px) {
-    .grid-proyectos {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .imagen-proyecto {
-        height: 160px;
-    }
-}
-
-@media (max-width: 768px) {
-    .grid-proyectos {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .titulo-proyecto {
-        font-size: 1.5rem;
-    }
-    
-    .descripcion-proyecto {
-        font-size: 0.95rem;
-    }
-    
-    .imagen-proyecto {
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .proyectos {
-        padding: 1rem 1rem;
-    }
-    
-    .tarjeta-proyecto {
-        padding: 1.5rem;
-    }
-    
-    .imagen-proyecto {
-        height: 180px;
-    }
-    
-    .botones-proyecto {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
 }
 
 /* ============================================
@@ -1573,42 +1233,6 @@ body {
     pointer-events: auto;
 }
 
-/* Responsive para certificados */
-@media (max-width: 1200px) {
-    .grid-certificados {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .grid-certificados {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .subtitulo-certificados {
-        font-size: 1rem;
-    }
-    
-    .titulo-certificado {
-        font-size: 1.3rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .grid-certificados {
-        grid-template-columns: 1fr;
-    }
-    
-    .certificados {
-        padding: 4rem 1rem;
-    }
-    
-    .badge-plataforma {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.8rem;
-    }
-}
-
 /* ============================================
    BOTÓN VER CERTIFICADOS (modificado)
    ============================================ */
@@ -1659,14 +1283,6 @@ body {
 /* Clase para ocultar tarjetas extra */
 .tarjeta-certificado.oculto {
     display: none;
-}
-
-/* Responsive para el botón */
-@media (max-width: 480px) {
-    .boton-ver-certificados {
-        font-size: 1rem;
-        padding: 0.6rem 1.5rem;
-    }
 }
 
 /* ============================================
@@ -1776,62 +1392,6 @@ body {
 }
 
 /* ============================================
-   RESPONSIVE PARA FORMULARIO DE CONTACTO
-   ============================================ */
-
-@media (max-width: 768px) {
-    .formulario-contacto {
-        grid-template-columns: 1fr;           /* Una sola columna en móviles */
-        padding: 1.5rem;                       /* Reducir padding interior */
-    }
-
-    .campo-textarea,
-    .boton-enviar {
-        grid-column: span 1;                   /* Ocupan toda la fila */
-    }
-
-    .campo-formulario input,
-    .campo-formulario select,
-    .campo-formulario textarea {
-        font-size: 1rem;                        /* Tamaño legible sin zoom */
-        padding: 0.75rem;                        /* Ajuste de padding */
-    }
-
-    .subtitulo-contacto {
-        font-size: 1rem;                         /* Reducir tamaño de subtítulo */
-        margin-bottom: 2rem;
-    }
-
-    .boton-enviar {
-        padding: 0.9rem 1.5rem;                  /* Ajustar padding del botón */
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .formulario-contacto {
-        padding: 1rem;                            /* Padding aún más pequeño */
-        gap: 1rem;
-    }
-
-    .campo-formulario label {
-        font-size: 0.85rem;                       /* Etiquetas ligeramente más pequeñas */
-    }
-
-    .campo-formulario input,
-    .campo-formulario select,
-    .campo-formulario textarea {
-        padding: 0.6rem;                           /* Inputs más compactos */
-        font-size: 0.95rem;
-    }
-
-    .boton-enviar {
-        padding: 0.8rem 1rem;
-        font-size: 0.95rem;
-    }
-}
-
-/* ============================================
    FOOTER
    ============================================ */
 .footer {
@@ -1926,8 +1486,222 @@ body {
     color: var(--color-texto-0);
 }
 
-/* Responsive footer */
+/* ============================================
+   DISEÑO RESPONSIVE - TODAS LAS MEDIA QUERIES
+   ============================================ */
+
+/* Pantallas grandes (hasta 1200px) */
+@media (max-width: 1200px) {
+    /* SECCIÓN TECNOLOGÍAS */
+    .contenedor-tecnologias {
+        max-width: 1000px;
+    }
+
+    /* SECCIÓN CERTIFICADOS */
+    .grid-certificados {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Tablets y pantallas medianas (hasta 1024px) */
+@media (max-width: 1024px) {
+    /* NAVEGACIÓN - cambio a menú móvil */
+    .menu-escritorio {
+        display: none;
+    }
+    .contenedor-botones-escritorio {
+        display: none;
+    }
+    .alternar-menu {
+        display: block;
+    }
+
+    /* SECCIÓN HERO */
+    .contenedor-hero {
+        grid-template-columns: 1fr;
+        gap: 0rem;
+        text-align: center;
+    }
+    .nombre-hero {
+        font-size: 2.5rem;
+    }
+    .titulo-hero {
+        font-size: 2.5rem;
+    }
+    .foto-perfil {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .redes-sociales {
+        justify-content: center;
+    }
+    .botones-hero {
+        justify-content: center;
+    }
+    .contenedor-menu-cv {
+        margin: 20px auto;
+    }
+
+    /* SECCIÓN SOBRE MÍ - CARRUSEL */
+    .seccion-carrusel-texto {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-bottom: 0px;
+    }
+    .carrusel {
+        height: 350px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* SECCIÓN TECNOLOGÍAS */
+    .contenedor-tecnologias {
+        max-width: 900px;
+        gap: 0.8rem;
+    }
+    .tecnologia-item {
+        width: 75px;
+        height: 75px;
+    }
+    .icono-tecnologia {
+        width: 30px;
+        height: 30px;
+    }
+    .nombre-tecnologia {
+        font-size: 0.65rem;
+    }
+
+    /* BOTONES ESCRITORIO */
+    .contenedor-botones-escritorio {
+        gap: 0.75rem;
+    }
+    .boton-traduccion-escritorio {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    .icono-traduccion {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* SECCIÓN PROYECTOS */
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .imagen-proyecto {
+        height: 160px;
+    }
+}
+
+/* Móviles grandes / tablets pequeñas (hasta 768px) */
 @media (max-width: 768px) {
+    /* MENÚ MÓVIL - ajuste para botón CV */
+    .menu-desplegable-cv {
+        left: 0;
+    }
+
+    /* SECCIÓN HERO */
+    .botones-hero {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contenedor-menu-cv {
+        width: 100%;
+        max-width: 100%;
+    }
+    .boton-descargar-cv {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .menu-desplegable-cv {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    /* TÍTULOS GENERALES */
+    .titulo-seccion {
+        font-size: 2.5rem;
+    }
+
+    /* SECCIÓN CARRUSEL */
+    .carrusel {
+        height: 300px;
+    }
+
+    /* SECCIÓN TECNOLOGÍAS */
+    .contenedor-tecnologias {
+        max-width: 100%;
+        gap: 0.6rem;
+        justify-content: flex-start;
+        padding: 0.5rem 0.25rem;
+    }
+    .tecnologia-item {
+        width: 70px;
+        height: 70px;
+        padding: 0.4rem;
+    }
+    .icono-tecnologia {
+        width: 28px;
+        height: 28px;
+    }
+    .nombre-tecnologia {
+        font-size: 0.6rem;
+    }
+    .seccion-tecnologias {
+        padding: 2rem 1rem;
+    }
+
+    /* SECCIÓN PROYECTOS */
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .titulo-proyecto {
+        font-size: 1.5rem;
+    }
+    .descripcion-proyecto {
+        font-size: 0.95rem;
+    }
+    .imagen-proyecto {
+        height: 200px;
+    }
+
+    /* SECCIÓN CERTIFICADOS */
+    .grid-certificados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .subtitulo-certificados {
+        font-size: 1rem;
+    }
+    .titulo-certificado {
+        font-size: 1.3rem;
+    }
+
+    /* SECCIÓN CONTACTO */
+    .formulario-contacto {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+    .campo-textarea,
+    .boton-enviar {
+        grid-column: span 1;
+    }
+    .campo-formulario input,
+    .campo-formulario select,
+    .campo-formulario textarea {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+    .subtitulo-contacto {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    .boton-enviar {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* FOOTER */
     .footer {
         padding: 2rem 1rem;
     }
@@ -1951,5 +1725,168 @@ body {
     }
     .logo-footer {
         font-size: 1.8rem;
+    }
+}
+
+/* Móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    /* NAVEGACIÓN */
+    .contenedor-navegacion {
+        padding: 0 1rem;
+    }
+
+    /* SECCIÓN HERO */
+    .nombre-hero {
+        font-size: 2rem;
+    }
+    .titulo-hero {
+        font-size: 1.8rem;
+    }
+    .hero {
+        padding: 5rem 1rem 3rem;
+    }
+    .redes-sociales {
+        gap: 1rem;
+    }
+    .icono-red {
+        width: 35px;
+        height: 35px;
+    }
+    .boton-descargar-cv {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    .texto-opcion {
+        font-size: 0.9rem;
+    }
+    .nombre-archivo {
+        font-size: 0.75rem;
+    }
+
+    /* SECCIÓN SOBRE MÍ */
+    .sobre-mi {
+        padding: 2rem 1rem;
+    }
+    .titulo-seccion {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    .subtitulo-sobre-mi,
+    .subtitulo-tecnologias {
+        font-size: 1.5rem;
+    }
+    .carrusel {
+        height: 250px;
+    }
+    .carrusel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    /* SECCIÓN TECNOLOGÍAS */
+    .seccion-tecnologias {
+        padding: 1.5rem 0.5rem;
+    }
+    .contenedor-tecnologias {
+        gap: 0.4rem;
+        padding: 0.5rem 0.25rem;
+    }
+    .tecnologia-item {
+        width: 65px;
+        height: 65px;
+        padding: 0.3rem;
+    }
+    .icono-tecnologia {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 0.2rem;
+    }
+    .nombre-tecnologia {
+        font-size: 0.55rem;
+        line-height: 1;
+    }
+    .titulo-categoria {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* BOTÓN TRADUCCIÓN MÓVIL */
+    .boton-traduccion-movil {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    .icono-traduccion {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* SECCIÓN PROYECTOS */
+    .proyectos {
+        padding: 1rem 1rem;
+    }
+    .tarjeta-proyecto {
+        padding: 1.5rem;
+    }
+    .imagen-proyecto {
+        height: 180px;
+    }
+    .botones-proyecto {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* SECCIÓN CERTIFICADOS */
+    .grid-certificados {
+        grid-template-columns: 1fr;
+    }
+    .certificados {
+        padding: 4rem 1rem;
+    }
+    .badge-plataforma {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.8rem;
+    }
+    .boton-ver-certificados {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+    }
+
+    /* SECCIÓN CONTACTO */
+    .formulario-contacto {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    .campo-formulario label {
+        font-size: 0.85rem;
+    }
+    .campo-formulario input,
+    .campo-formulario select,
+    .campo-formulario textarea {
+        padding: 0.6rem;
+        font-size: 0.95rem;
+    }
+    .boton-enviar {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Móviles muy pequeños (hasta 360px) */
+@media (max-width: 360px) {
+    /* SECCIÓN TECNOLOGÍAS */
+    .tecnologia-item {
+        width: 60px;
+        height: 60px;
+    }
+    .icono-tecnologia {
+        width: 22px;
+        height: 22px;
+    }
+    .nombre-tecnologia {
+        font-size: 0.5rem;
+    }
+    .contenedor-tecnologias {
+        gap: 0.3rem;
     }
 }
