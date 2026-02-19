@@ -7,7 +7,7 @@
     <meta name="description" content="Portafolio profesional de Luis Fernando Coste Contreras, Desarrollador Full Stack Junior con 5+ años de experiencia">
     
     <!-- Preload crítico -->
-    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/styles.min.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" as="style">
     
     <!-- CSS -->
@@ -111,7 +111,7 @@
                     <a href="http://www.linkedin.com/in/luisfcostec" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="LinkedIn">
                         <img src="assets/images/Icono_Redes_Linkedin.png" alt="LinkedIn" class="icono-red">
                     </a>
-                    <a href="mailto:contacto@luiscoste.com" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="Gmail">
+                    <a href="mailto:luisfcostec@gmail.com" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="Gmail">
                         <img src="assets/images/Icono_Redes_Gmail.png" alt="Gmail" class="icono-red">
                     </a>
                     <a href="https://github.com/LuisFCosteC" target="_blank" rel="noopener noreferrer" class="enlace-red" aria-label="GitHub">
@@ -320,7 +320,7 @@
         </div>
     </section>
 
-    <!-- Sección Certificados (modificada con imágenes en el botón) -->
+    <!-- Sección Certificados -->
     <section class="certificados" id="certificados">
         <div class="contenedor-certificados">
             <h2 class="titulo-seccion">
@@ -541,6 +541,101 @@
         </div>
     </section>
     
+    <!-- Sección Contactame -->
+    <section class="contacto" id="contacto">
+        <div class="contenedor-contacto">
+            <h2 class="titulo-seccion">
+                <span class="gradiente-titulo traducible" data-key="titulo-contacto">Contáctame</span>
+            </h2>
+            
+            <p class="subtitulo-contacto traducible" data-key="subtitulo-contacto">
+                Cultivar conexiones: ponte en contacto conmigo y conectemos
+            </p>
+
+            <form class="formulario-contacto" id="formularioContacto" action="#" method="post">
+                <div class="campo-formulario">
+                    <label for="nombre" class="traducible" data-key="label-nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="email" class="traducible" data-key="label-email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="telefono" class="traducible" data-key="label-telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="servicio" class="traducible" data-key="label-servicio">Servicio de interés</label>
+                    <select id="servicio" name="servicio">
+                        <option value="desarrollo-web" class="traducible" data-key="opcion-web">Desarrollo Web</option>
+                        <option value="aplicacion-movil" class="traducible" data-key="opcion-movil">Aplicación Móvil</option>
+                        <option value="consultoria" class="traducible" data-key="opcion-consultoria">Consultoría</option>
+                        <option value="otro" class="traducible" data-key="opcion-otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="tiempo" class="traducible" data-key="label-tiempo">Plazo estimado</label>
+                    <select id="tiempo" name="tiempo">
+                        <option value="urgente" class="traducible" data-key="tiempo-urgente">Urgente (1-2 semanas)</option>
+                        <option value="normal" class="traducible" data-key="tiempo-normal">Normal (3-4 semanas)</option>
+                        <option value="largo" class="traducible" data-key="tiempo-largo">Largo plazo (más de 1 mes)</option>
+                    </select>
+                </div>
+
+                <div class="campo-formulario campo-textarea">
+                    <label for="detalles" class="traducible" data-key="label-detalles">Detalles del proyecto...</label>
+                    <textarea id="detalles" name="detalles" rows="5" placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                </div>
+
+                <button type="submit" class="boton-enviar traducible" data-key="boton-enviar">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Sección Contactame -->
+    <footer class="footer" role="contentinfo">
+        <div class="contenedor-footer">
+            <!-- Fila superior: logo a la izquierda, "Contáctame:" + redes a la derecha -->
+            <div class="footer-superior">
+                <div class="footer-izquierda">
+                    <a href="https://luisfcostec.github.io/Portfolio_LFCC/" class="logo-footer" aria-label="Inicio">
+                        LFCC
+                    </a>
+                </div>
+                <div class="footer-derecha">
+                    <span class="contacto-label">Contáctame:</span>
+                    <div class="redes-sociales-footer">
+                        <a href="https://github.com/LuisFCosteC" target="_blank" rel="noopener noreferrer" class="enlace-red-footer" aria-label="GitHub">
+                            <img src="assets/images/Icono_Redes_GitHub.png" alt="GitHub" class="icono-red-footer" loading="lazy">
+                        </a>
+                        <a href="http://www.linkedin.com/in/luisfcostec" target="_blank" rel="noopener noreferrer" class="enlace-red-footer" aria-label="LinkedIn">
+                            <img src="assets/images/Icono_Redes_Linkedin.png" alt="LinkedIn" class="icono-red-footer" loading="lazy">
+                        </a>
+                        <a href="mailto:luisfcostec@gmail.com" target="_blank" rel="noopener noreferrer" class="enlace-red-footer" aria-label="Gmail">
+                            <img src="assets/images/Icono_Redes_Gmail.png" alt="Gmail" class="icono-red-footer" loading="lazy">
+                        </a>
+                        <a href="https://wa.me/3116463033" target="_blank" rel="noopener noreferrer" class="enlace-red-footer" aria-label="WhatsApp">
+                            <img src="assets/images/Icono_Redes_WhatsApp.png" alt="WhatsApp" class="icono-red-footer" loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila inferior: copyright -->
+            <div class="footer-inferior">
+                <p class="copyright">
+                    &copy; <span id="año-actual">2026</span> All rights reserved.<br>
+                    <span class="powered-by">Powered by Luis F. Coste C.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="js/main.js" type="module"></script>
 </body>

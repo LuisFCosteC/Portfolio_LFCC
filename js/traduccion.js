@@ -1,3 +1,4 @@
+// js/traduccion.js
 import { reproducirAnimaciones } from './animaciones.js';
 
 export function configurarTraduccion() {

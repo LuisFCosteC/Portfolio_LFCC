@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sistemaTraduccion = configurarTraduccion();
     sistemaTraduccion.inicializar();
     
+    // Actualizar año en el footer
     const añoActual = new Date().getFullYear();
     const elementoAño = document.getElementById('año-actual');
     if (elementoAño) {
