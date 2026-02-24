@@ -63,133 +63,172 @@ const imagenes = {
     'flecha-arriba': { src: 'assets/images/Flecha_hacia_arriba.png', alt: '', clase: '' },
 };
 
-const textos = {
-    es: {
-        // Navegación
-        'nav-inicio': 'Inicio',
-        'nav-acerca-de-mi': 'Acerca de mí',
-        'nav-proyectos': 'Proyectos',
-        'nav-certificados': 'Certificados',
-        'nav-contactame': 'Contáctame',
+// ============================================
+// TEXTOS EN ESPAÑOL (ÚNICA FUENTE PARA ESPAÑOL)
+// ============================================
+export const textos = {
+    // Navegación
+    'nav-inicio': 'Inicio',
+    'nav-acerca-de-mi': 'Acerca de mí',
+    'nav-proyectos': 'Proyectos',
+    'nav-certificados': 'Certificados',
+    'nav-contactame': 'Contáctame',
 
-        // Hero
-        'saludo-hero': 'Hola, un gusto conocerte, soy',
-        'nombre-hero': 'Luis Fernando Coste Contreras',
-        'titulo-hero': 'Desarrollador de Software',
+    // Hero
+    'saludo-hero': 'Hola, un gusto conocerte, soy',
+    'nombre-hero': 'Luis Fernando Coste Contreras',
+    'titulo-hero': 'Desarrollador de Software',
 
-        // About Me
-        'titulo-acerca-de-mi': 'Acerca de mí',
-        'subtitulo-quien-soy': '¿Quien soy?',
-        'parrafo-sobre-mi': 'Soy un Desarrollador Full Stack Junior enfocado en crear software eficiente, escalable y fácil de mantener. Tengo experiencia teorica tanto en backend como en frontend, lo que me permite entender los proyectos de forma integral y proponer soluciones prácticas y bien pensadas. Me apasiona el aprendizaje continuo y el desarrollo de software de calidad.',
+    // About Me
+    'titulo-acerca-de-mi': 'Acerca de mí',
+    'subtitulo-quien-soy': '¿Quien soy?',
+    'parrafo-sobre-mi': 'Soy un Desarrollador Full Stack Junior enfocado en crear software eficiente, escalable y fácil de mantener. Tengo experiencia teorica tanto en backend como en frontend, lo que me permite entender los proyectos de forma integral y proponer soluciones prácticas y bien pensadas. Me apasiona el aprendizaje continuo y el desarrollo de software de calidad.',
 
-        // Tecnologías
-        'titulo-tecnologias': 'Tecnologías que domino',
-        'categoria-frontend': 'Frontend',
-        'categoria-backend': 'Backend',
-        'categoria-extras': 'Extras',
+    // Tecnologías
+    'titulo-tecnologias': 'Tecnologías que domino',
+    'categoria-frontend': 'Frontend',
+    'categoria-backend': 'Backend',
+    'categoria-extras': 'Extras',
 
-        // CV
-        'boton-cv': 'CV',
-        'opcion-cv-espanol': 'Descargar CV en Español',
-        'opcion-cv-ingles': 'Descargar CV en Inglés',
+    // CV
+    'boton-cv': 'CV',
+    'opcion-cv-espanol': 'Descargar CV en Español',
+    'opcion-cv-ingles': 'Descargar CV en Inglés',
 
-        // Proyectos
-        'titulo-proyectos': 'Proyectos',
-        'titulo-proyecto1': 'API de Rick y Morty con React',
-        'desc-proyecto1': 'En este proyecto de React, realice uso de la API de Rick y Morty, donde, a través de las URL necesarias, llamamos a la información de cada personaje para visualizarla en la página.',
-        'titulo-proyecto2': 'Formulario con React, MySQL, Node.js y Bootstrap',
-        'desc-proyecto2': 'Este proyecto es una aplicación web full-stack que implementa un CRUD para gestionar empleados, permitiendo registrar, visualizar, editar y eliminar información personal y laboral, con una interfaz que se actualiza en tiempo real.',
-        'titulo-proyecto3': 'Proyecto Pokedex API',
-        'desc-proyecto3': 'Este proyecto es una aplicación Pokédex que permite a los usuarios buscar información sobre Pokémon utilizando su número en la Pokédex o su nombre. La aplicación utiliza FastAPI para el backend y proporciona una interfaz de usuario interactiva utilizando HTML, CSS y JavaScript.',
-        'titulo-proyecto4': 'Proyecto WebSocket: Cliente-Servidor',
-        'desc-proyecto4': 'Este proyecto implementa una aplicación WebSocket que permite comunicación en tiempo real entre cliente y servidor, intercambiando información como encabezados de solicitud y respuestas a operaciones aritméticas.',
-        'titulo-proyecto5': 'Sistema de gestión de ventas',
-        'desc-proyecto5': 'Sistema de ventas desarrollado con ASP.NET Core Web API y arquitectura en capas (BLL, DAL, Model), con base de datos integrada. Permite CRUD de productos y ventas, gestión de usuarios y roles, e informes, aplicando inyección de dependencias para garantizar escalabilidad y mantenimiento.',
-        'boton-codigo': 'Código',
-        'boton-demo': 'Demo',
+    // Proyectos
+    'titulo-proyectos': 'Proyectos',
+    'titulo-proyecto1': 'API de Rick y Morty con React',
+    'desc-proyecto1': 'En este proyecto de React, realice uso de la API de Rick y Morty, donde, a través de las URL necesarias, llamamos a la información de cada personaje para visualizarla en la página.',
+    'titulo-proyecto2': 'Formulario con React, MySQL, Node.js y Bootstrap',
+    'desc-proyecto2': 'Este proyecto es una aplicación web full-stack que implementa un CRUD para gestionar empleados, permitiendo registrar, visualizar, editar y eliminar información personal y laboral, con una interfaz que se actualiza en tiempo real.',
+    'titulo-proyecto3': 'Proyecto Pokedex API',
+    'desc-proyecto3': 'Este proyecto es una aplicación Pokédex que permite a los usuarios buscar información sobre Pokémon utilizando su número en la Pokédex o su nombre. La aplicación utiliza FastAPI para el backend y proporciona una interfaz de usuario interactiva utilizando HTML, CSS y JavaScript.',
+    'titulo-proyecto4': 'Proyecto WebSocket: Cliente-Servidor',
+    'desc-proyecto4': 'Este proyecto implementa una aplicación WebSocket que permite comunicación en tiempo real entre cliente y servidor, intercambiando información como encabezados de solicitud y respuestas a operaciones aritméticas.',
+    'titulo-proyecto5': 'Sistema de gestión de ventas',
+    'desc-proyecto5': 'Sistema de ventas desarrollado con ASP.NET Core Web API y arquitectura en capas (BLL, DAL, Model), con base de datos integrada. Permite CRUD de productos y ventas, gestión de usuarios y roles, e informes, aplicando inyección de dependencias para garantizar escalabilidad y mantenimiento.',
+    'boton-codigo': 'Código',
+    'boton-demo': 'Demo',
 
-        // Certificados
-        'titulo-certificados': 'Certificados',
-        'subtitulo-certificados': 'Certificaciones profesionales y logros que demuestran mi experiencia y aprendizaje continuo.',
-        'ver-certificado': 'Ver certificado →',
-        'boton-ver-certificados': 'Ver certificados',
-        'boton-cerrar-certificados': 'Cerrar certificados',
+    // Certificados
+    'titulo-certificados': 'Certificados',
+    'subtitulo-certificados': 'Certificaciones profesionales y logros que demuestran mi experiencia y aprendizaje continuo.',
+    'ver-certificado': 'Ver certificado →',
+    'boton-ver-certificados': 'Ver certificados',
+    'boton-cerrar-certificados': 'Cerrar certificados',
 
-        // Badges
-        'badge-meta': 'Meta',
-        'badge-cisco': 'Cisco Networking Academy',
-        'badge-udemy': 'Udemy',
-        'badge-linkedin': 'LinkedIn Learning',
-        'badge-microsoft-linkedin': 'Microsoft y LinkedIn',
-        'badge-compensar': 'compensar y EDU',
+    // Badges
+    'badge-meta': 'Meta',
+    'badge-cisco': 'Cisco Networking Academy',
+    'badge-udemy': 'Udemy',
+    'badge-linkedin': 'LinkedIn Learning',
+    'badge-microsoft-linkedin': 'Microsoft y LinkedIn',
+    'badge-compensar': 'compensar y EDU',
 
-        // Títulos de certificados
-        'cert-titulo-1': 'Introducción al desarrollo de apps móviles para Android',
-        'cert-titulo-2': 'Fundamentos de JavaScript 1',
-        'cert-titulo-3': 'Introducción a la ciencia de datos',
-        'cert-titulo-4': 'Fundamentos de Python 1',
-        'cert-titulo-5': 'C# TOTAL - Programador Experto en 28 días',
-        'cert-titulo-6': 'Fundamentos esenciales de la programación',
-        'cert-titulo-7': 'Fundamentos profesionales del desarrollo de software',
-        'cert-titulo-8': 'Fundamentos profesionales del análisis de datos',
-        'cert-titulo-9': 'Aprende análisis de datos',
-        'cert-titulo-10': 'Aprende data science: Conceptos básicos',
-        'cert-titulo-11': 'Aprende data science: Cuenta historias con los datos',
-        'cert-titulo-12': 'Introducción a las habilidades profesionales en análisis de datos',
-        'cert-titulo-13': 'Aprende SQL con MySQL 8 (2023)',
-        'cert-titulo-14': 'Excel Intermedio',
+    // Títulos de certificados
+    'cert-titulo-1': 'Introducción al desarrollo de apps móviles para Android',
+    'cert-titulo-2': 'Fundamentos de JavaScript 1',
+    'cert-titulo-3': 'Introducción a la ciencia de datos',
+    'cert-titulo-4': 'Fundamentos de Python 1',
+    'cert-titulo-5': 'C# TOTAL - Programador Experto en 28 días',
+    'cert-titulo-6': 'Fundamentos esenciales de la programación',
+    'cert-titulo-7': 'Fundamentos profesionales del desarrollo de software',
+    'cert-titulo-8': 'Fundamentos profesionales del análisis de datos',
+    'cert-titulo-9': 'Aprende análisis de datos',
+    'cert-titulo-10': 'Aprende data science: Conceptos básicos',
+    'cert-titulo-11': 'Aprende data science: Cuenta historias con los datos',
+    'cert-titulo-12': 'Introducción a las habilidades profesionales en análisis de datos',
+    'cert-titulo-13': 'Aprende SQL con MySQL 8 (2023)',
+    'cert-titulo-14': 'Excel Intermedio',
 
-        // Descripciones cortas de certificados
-        'cert-desc-2': 'Sintaxis del JavaScript básico',
-        'cert-desc-3': 'Conceptos básicos de análisis de datos, ingeniería de datos, ciencia de datos',
-        'cert-desc-4': 'Conocimientos de programación informática, sintaxis y semántica del lenguaje Python',
+    // Descripciones cortas de certificados
+    'cert-desc-2': 'Sintaxis del JavaScript básico',
+    'cert-desc-3': 'Conceptos básicos de análisis de datos, ingeniería de datos, ciencia de datos',
+    'cert-desc-4': 'Conocimientos de programación informática, sintaxis y semántica del lenguaje Python',
 
-        // Fechas
-        'fecha-cert-1': '15 de mayo de 2025',
-        'fecha-cert-2': '31 de enero de 2024',
-        'fecha-cert-3': '25 de octubre de 2023',
-        'fecha-cert-4': '02 de octubre de 2023',
-        'fecha-cert-5': '17 de junio de 2023',
-        'fecha-cert-6': '14 de junio de 2023',
-        'fecha-cert-7': '11 de junio de 2023',
-        'fecha-cert-8': '11 de junio de 2023',
-        'fecha-cert-9': '10 de junio de 2023',
-        'fecha-cert-10': '10 de junio de 2023',
-        'fecha-cert-11': '10 de junio de 2023',
-        'fecha-cert-12': '09 de junio de 2023',
-        'fecha-cert-13': '03 de junio de 2023',
-        'fecha-cert-14': '03 de junio de 2023',
+    // Fechas
+    'fecha-cert-1': '15 de mayo de 2025',
+    'fecha-cert-2': '31 de enero de 2024',
+    'fecha-cert-3': '25 de octubre de 2023',
+    'fecha-cert-4': '02 de octubre de 2023',
+    'fecha-cert-5': '17 de junio de 2023',
+    'fecha-cert-6': '14 de junio de 2023',
+    'fecha-cert-7': '11 de junio de 2023',
+    'fecha-cert-8': '11 de junio de 2023',
+    'fecha-cert-9': '10 de junio de 2023',
+    'fecha-cert-10': '10 de junio de 2023',
+    'fecha-cert-11': '10 de junio de 2023',
+    'fecha-cert-12': '09 de junio de 2023',
+    'fecha-cert-13': '03 de junio de 2023',
+    'fecha-cert-14': '03 de junio de 2023',
 
-        // Contacto
-        'titulo-contacto': 'Contáctame',
-        'subtitulo-contacto': 'Cultivar conexiones: ponte en contacto conmigo y conectemos',
-        'label-nombre': 'Nombre',
-        'label-email': 'Email',
-        'label-telefono': 'Teléfono',
-        'label-servicio': 'Servicio de interés',
-        'opcion-web': 'Desarrollo Web',
-        'opcion-movil': 'Aplicación Móvil',
-        'opcion-otro': 'Otro',
-        'label-tiempo': 'Plazo estimado',
-        'tiempo-urgente': 'Urgente (1-2 semanas)',
-        'tiempo-normal': 'Normal (3-4 semanas)',
-        'tiempo-largo': 'Largo plazo (más de 1 mes)',
-        'label-detalles': 'Detalles del proyecto...',
-        'placeholder-detalles': 'Cuéntame sobre tu proyecto...',
-        'boton-enviar': 'Enviar mensaje',
+    // Contacto
+    'titulo-contacto': 'Contáctame',
+    'subtitulo-contacto': 'Cultivar conexiones: ponte en contacto conmigo y conectemos',
+    'label-nombre': 'Nombre',
+    'label-email': 'Email',
+    'label-telefono': 'Teléfono',
+    'label-servicio': 'Servicio de interés',
+    'opcion-web': 'Desarrollo Web',
+    'opcion-movil': 'Aplicación Móvil',
+    'opcion-otro': 'Otro',
+    'label-tiempo': 'Plazo estimado',
+    'tiempo-urgente': 'Urgente (1-2 semanas)',
+    'tiempo-normal': 'Normal (3-4 semanas)',
+    'tiempo-largo': 'Largo plazo (más de 1 mes)',
+    'label-detalles': 'Detalles del proyecto...',
+    'placeholder-detalles': 'Cuéntame sobre tu proyecto...',
+    'boton-enviar': 'Enviar mensaje',
 
-        // Footer
-        'footer-contacto': 'Contáctame:',
-        'copyright': 'Todos los derechos reservados.',
-        'powered-by': 'Desarrollado por Luis F. Coste C.',
-    }
+    // Footer
+    'footer-contacto': 'Contáctame:',
+    'copyright': 'Todos los derechos reservados.',
+    'powered-by': 'Desarrollado por Luis F. Coste C.',
 };
 
 // ============================================
-// FUNCIONES DE INYECCIÓN
+// FUNCIÓN DE INYECCIÓN DE TEXTOS
+// Recibe un objeto de textos (por defecto el español)
 // ============================================
+export function inyectarTextos(textosIdioma = textos) {
+    // Elementos con data-key
+    document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.dataset.key;
+        if (textosIdioma[key]) {
+            el.textContent = textosIdioma[key];
+        }
+    });
 
-// Inyecta imágenes en todos los contenedores con data-img
+    // Placeholders
+    document.querySelectorAll('[data-placeholder-key]').forEach(el => {
+        const key = el.dataset.placeholderKey;
+        if (textosIdioma[key]) {
+            el.placeholder = textosIdioma[key];
+        }
+    });
+
+    // Actualizar título y meta descripción según el idioma (se detecta por el objeto)
+    const tituloPagina = document.querySelector('title');
+    const metaDescripcion = document.querySelector('meta[name="description"]');
+    
+    // Determinamos si es inglés comprobando alguna clave representativa
+    const esIngles = textosIdioma['saludo-hero'] === 'Hello, nice to meet you, I am';
+    
+    if (tituloPagina) {
+        tituloPagina.textContent = esIngles 
+            ? 'Luis F. Coste C. | Software Developer' 
+            : 'Luis F. Coste C. | Desarrollador de Software';
+    }
+    if (metaDescripcion) {
+        metaDescripcion.setAttribute('content', esIngles
+            ? 'Professional portfolio of Luis Fernando Coste Contreras, Junior Full Stack Developer with 5+ years of experience'
+            : 'Portafolio profesional de Luis Fernando Coste Contreras, Desarrollador Full Stack Junior con 5+ años de experiencia');
+    }
+}
+
+// ============================================
+// FUNCIONES DE GENERACIÓN DE CONTENIDO DINÁMICO
+// ============================================
 function cargarImagenes() {
     document.querySelectorAll('[data-img]').forEach(contenedor => {
         const key = contenedor.dataset.img;
@@ -205,92 +244,10 @@ function cargarImagenes() {
     });
 }
 
-// Inyecta textos en elementos con data-key usando el idioma actual
-function inyectarTextos(idioma = 'es') {
-    const langData = textos[idioma];
-    if (!langData) return;
-
-    // Elementos con data-key
-    document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.dataset.key;
-        if (langData[key]) {
-            el.textContent = langData[key];
-        }
-    });
-
-    // Placeholders (elementos con data-placeholder-key)
-    document.querySelectorAll('[data-placeholder-key]').forEach(el => {
-        const key = el.dataset.placeholderKey;
-        if (langData[key]) {
-            el.placeholder = langData[key];
-        }
-    });
-
-    // Actualizar título y meta descripción
-    const tituloPagina = document.querySelector('title');
-    if (tituloPagina) {
-        tituloPagina.textContent = idioma === 'en' 
-            ? 'Luis F. Coste C. | Software Developer' 
-            : 'Luis F. Coste C. | Desarrollador de Software';
-    }
-    const metaDescripcion = document.querySelector('meta[name="description"]');
-    if (metaDescripcion) {
-        metaDescripcion.setAttribute('content', idioma === 'en'
-            ? 'Professional portfolio of Luis Fernando Coste Contreras, Junior Full Stack Developer with 5+ years of experience'
-            : 'Portafolio profesional de Luis Fernando Coste Contreras, Desarrollador Full Stack Junior con 5+ años de experiencia');
-    }
-}
-
-// Cambia el idioma actual y actualiza todos los textos
-function cambiarIdioma(nuevoIdioma) {
-    if (nuevoIdioma !== 'es' && nuevoIdioma !== 'en') return;
-    idiomaActual = nuevoIdioma;
-    document.documentElement.lang = nuevoIdioma;
-    inyectarTextos(nuevoIdioma);
-    actualizarEstadoBotones();
-    localStorage.setItem('idioma-preferido', nuevoIdioma);
-    
-    // Reproducir animaciones después del cambio
-    import('./animaciones.js').then(module => {
-        module.reproducirAnimaciones();
-    });
-}
-
-// Actualiza el texto de los botones de traducción
-function actualizarEstadoBotones() {
-    const botonEscritorio = document.getElementById('botonTraduccionEscritorio');
-    const botonMovil = document.getElementById('botonTraduccionMovil');
-    
-    if (idiomaActual === 'en') {
-        if (botonEscritorio) {
-            botonEscritorio.classList.add('ingles');
-            botonEscritorio.querySelector('.texto-boton-traduccion').textContent = 'ES';
-        }
-        if (botonMovil) {
-            botonMovil.classList.add('ingles');
-            const span = botonMovil.querySelector('.texto-boton-traduccion');
-            if (span) span.textContent = 'Switch to Spanish';
-        }
-    } else {
-        if (botonEscritorio) {
-            botonEscritorio.classList.remove('ingles');
-            botonEscritorio.querySelector('.texto-boton-traduccion').textContent = 'EN';
-        }
-        if (botonMovil) {
-            botonMovil.classList.remove('ingles');
-            const span = botonMovil.querySelector('.texto-boton-traduccion');
-            if (span) span.textContent = 'Cambiar a inglés';
-        }
-    }
-}
-
-// ============================================
-// DATOS DE PROYECTOS
-// ============================================
 const proyectos = [
     {
         id: 5,
-        imgKey: '', // No hay imagen
+        imgKey: '',
         tituloKey: 'titulo-proyecto5',
         descKey: 'desc-proyecto5',
         tecnologias: ['angular', 'dotnetcore', 'sqlserver'],
@@ -343,7 +300,6 @@ function generarProyectos() {
         const article = document.createElement('article');
         article.className = 'tarjeta-proyecto';
 
-        // Imagen
         const divImg = document.createElement('div');
         divImg.className = 'imagen-proyecto';
         if (proj.imgKey) {
@@ -355,19 +311,16 @@ function generarProyectos() {
         }
         article.appendChild(divImg);
 
-        // Título
         const h3 = document.createElement('h3');
         h3.className = 'titulo-proyecto';
         h3.setAttribute('data-key', proj.tituloKey);
         article.appendChild(h3);
 
-        // Descripción
         const p = document.createElement('p');
         p.className = 'descripcion-proyecto';
         p.setAttribute('data-key', proj.descKey);
         article.appendChild(p);
 
-        // Tecnologías
         const divTec = document.createElement('div');
         divTec.className = 'tecnologias-proyecto';
         proj.tecnologias.forEach(tecKey => {
@@ -383,7 +336,6 @@ function generarProyectos() {
         });
         article.appendChild(divTec);
 
-        // Botones
         const divBotones = document.createElement('div');
         divBotones.className = 'botones-proyecto';
 
@@ -411,15 +363,14 @@ function generarProyectos() {
         aDemo.setAttribute('aria-label', 'Ver proyecto en vivo');
 
         if (proj.demo) {
-            aDemo.href = proj.demo;               // ← ASIGNAR LA URL
-            aDemo.target = '_blank';               // Se abre en nueva pestaña
+            aDemo.href = proj.demo;
+            aDemo.target = '_blank';
         } else {
-            // Si no hay demo, lo deshabilitamos visualmente
             aDemo.style.pointerEvents = 'none';
             aDemo.style.opacity = '0.5';
-            aDemo.removeAttribute('href');          // Asegura que no sea un enlace
+            aDemo.removeAttribute('href');
         }
-        
+
         const imgDemo = document.createElement('img');
         imgDemo.src = imagenes['web-icon'].src;
         imgDemo.alt = 'Sitio web';
@@ -429,20 +380,13 @@ function generarProyectos() {
         const spanDemo = document.createElement('span');
         spanDemo.setAttribute('data-key', 'boton-demo');
         aDemo.appendChild(spanDemo);
-        if (!proj.demo) {
-            aDemo.style.pointerEvents = 'none';
-            aDemo.style.opacity = '0.5';
-        }
-        divBotones.appendChild(aDemo);
 
+        divBotones.appendChild(aDemo);
         article.appendChild(divBotones);
         grid.appendChild(article);
     });
 }
 
-// ============================================
-// DATOS DE TECNOLOGÍAS
-// ============================================
 const tecnologias = {
     frontend: ['html', 'css', 'javascript', 'angular', 'typescript', 'bootstrap'],
     backend: ['python', 'java', 'csharp', 'nodejs', 'fastapi', 'dotnetcore', 'dotnet', 'mysql', 'sqlserver'],
@@ -481,9 +425,6 @@ function generarTecnologias() {
     }
 }
 
-// ============================================
-// CARRUSEL
-// ============================================
 function generarCarrusel() {
     const slidesContainer = document.querySelector('.carrusel-slides');
     const indicadoresContainer = document.querySelector('.carrusel-indicadores');
@@ -510,9 +451,6 @@ function generarCarrusel() {
     });
 }
 
-// ============================================
-// DATOS DE CERTIFICADOS
-// ============================================
 const certificados = [
     { plataformaKey: 'badge-meta', tituloKey: 'cert-titulo-1', fechaKey: 'fecha-cert-1', url: 'https://coursera.org/share/0ecfa4c415c7b22a3a6ef16c2ff10987', desc: null },
     { plataformaKey: 'badge-cisco', tituloKey: 'cert-titulo-2', fechaKey: 'fecha-cert-2', url: 'https://www.credly.com/badges/c7cc4845-32fa-43da-a558-ab7425f429a1/public_url', descKey: 'cert-desc-2' },
@@ -586,26 +524,62 @@ function generarCertificados() {
 }
 
 // ============================================
+// CONFIGURACIÓN DE MENÚ CV (función auxiliar)
+// ============================================
+function configurarMenuCV(botonId, menuId) {
+    const boton = document.getElementById(botonId);
+    const menu = document.getElementById(menuId);
+    if (!boton || !menu) return;
+
+    boton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.toggle('mostrar');
+        boton.classList.toggle('menu-abierto');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!boton.contains(e.target) && !menu.contains(e.target)) {
+            menu.classList.remove('mostrar');
+            boton.classList.remove('menu-abierto');
+        }
+    });
+
+    document.querySelectorAll(`#${menuId} .opcion-menu`).forEach(op => {
+        op.addEventListener('click', () => {
+            setTimeout(() => {
+                menu.classList.remove('mostrar');
+                boton.classList.remove('menu-abierto');
+            }, 100);
+        });
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            menu.classList.remove('mostrar');
+            boton.classList.remove('menu-abierto');
+        }
+    });
+}
+
+// ============================================
 // INICIALIZACIÓN
 // ============================================
-let idiomaActual = 'es';
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Portafolio LFCC cargado');
 
-    // 1. Generar estructuras dinámicas
+    // Generar estructuras dinámicas
     generarCarrusel();
     generarTecnologias();
     generarProyectos();
     generarCertificados();
 
-    // 2. Cargar imágenes
+    // Cargar imágenes
     cargarImagenes();
 
-    // 3. Cargar textos iniciales (español)
-    inyectarTextos('es');
+    // Inyectar textos en español (por defecto)
+    inyectarTextos(textos);
 
-    // 4. Configurar funcionalidades existentes
+    // Configurar funcionalidades (navegación, animaciones, etc.)
     configurarNavegacion();
     configurarAnimaciones();
     configurarMenuCV('botonDescargarCV', 'menuCV');
@@ -613,28 +587,15 @@ document.addEventListener('DOMContentLoaded', () => {
     configurarCarrusel();
     configurarVerMasCertificados();
 
-    // 5. Configurar botones de traducción
-    document.getElementById('botonTraduccionEscritorio')?.addEventListener('click', () => {
-        cambiarIdioma(idiomaActual === 'es' ? 'en' : 'es');
-    });
-    document.getElementById('botonTraduccionMovil')?.addEventListener('click', () => {
-        cambiarIdioma(idiomaActual === 'es' ? 'en' : 'es');
-    });
+    // Configurar sistema de traducción (esto añadirá los event listeners a los botones)
+    configurarTraduccion();
 
-    // 6. Cargar idioma preferido de localStorage
-    const guardado = localStorage.getItem('idioma-preferido');
-    if (guardado === 'en') {
-        cambiarIdioma('en');
-    }
-
-    // 7. Actualizar año en el footer
+    // Actualizar año en el footer
     const añoActual = new Date().getFullYear();
     const elementoAño = document.getElementById('año-actual');
-    if (elementoAño) {
-        elementoAño.textContent = añoActual;
-    }
+    if (elementoAño) elementoAño.textContent = añoActual;
 
-    // 8. Envío del formulario a WhatsApp
+    // Envío del formulario a WhatsApp
     const formulario = document.getElementById('formularioContacto');
     if (formulario) {
         formulario.addEventListener('submit', (e) => {
@@ -678,66 +639,21 @@ Quedo atento a tu respuesta.`;
     }
 });
 
-// Función reutilizable para configurar el menú desplegable de CV
-function configurarMenuCV(botonId, menuId) {
-    const boton = document.getElementById(botonId);
-    const menu = document.getElementById(menuId);
-    
-    if (!boton || !menu) return;
-    
-    boton.addEventListener('click', (evento) => {
-        evento.stopPropagation();
-        menu.classList.toggle('mostrar');
-        boton.classList.toggle('menu-abierto');
-    });
-    
-    document.addEventListener('click', (evento) => {
-        if (!boton.contains(evento.target) && !menu.contains(evento.target)) {
-            menu.classList.remove('mostrar');
-            boton.classList.remove('menu-abierto');
-        }
-    });
-    
-    const opcionesMenu = document.querySelectorAll(`#${menuId} .opcion-menu`);
-    opcionesMenu.forEach(opcion => {
-        opcion.addEventListener('click', () => {
-            setTimeout(() => {
-                menu.classList.remove('mostrar');
-                boton.classList.remove('menu-abierto');
-            }, 100);
-        });
-    });
-    
-    document.addEventListener('keydown', (evento) => {
-        if (evento.key === 'Escape') {
-            menu.classList.remove('mostrar');
-            boton.classList.remove('menu-abierto');
-        }
-    });
-}
-
 // Función global para descargar CV según idioma
 window.descargarCV = function(idioma = 'es') {
     const rutasCV = {
         'es': 'assets/docs/Luis Coste Desarrollador de Software.pdf',
         'en': 'assets/docs/Luis Coste Software Developer.pdf'
     };
-    
     const nombresCV = {
         'es': 'Luis_Coste_Desarrollador_de_Software.pdf',
         'en': 'Luis_Coste_Software_Developer.pdf'
     };
-    
-    if (!rutasCV[idioma]) {
-        console.error('Idioma no válido:', idioma);
-        return;
-    }
-    
+    if (!rutasCV[idioma]) return;
     const enlace = document.createElement('a');
     enlace.href = rutasCV[idioma];
     enlace.download = nombresCV[idioma];
     enlace.target = '_blank';
-    
     document.body.appendChild(enlace);
     enlace.click();
     document.body.removeChild(enlace);
