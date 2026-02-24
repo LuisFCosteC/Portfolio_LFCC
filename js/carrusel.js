@@ -1,4 +1,5 @@
 // js/carrusel.js - Funcionalidad del carrusel
+
 export function configurarCarrusel() {
     const carruselSlides = document.querySelector('.carrusel-slides');
     const slides = document.querySelectorAll('.carrusel-slide');

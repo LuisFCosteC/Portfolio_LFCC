@@ -1,4 +1,5 @@
 // js/navegacion.js - Manejo de navegación
+
 export function configurarNavegacion() {
     const alternarMenu = document.querySelector('.alternar-menu');
     const menuMovil = document.querySelector('.menu-movil');

@@ -1,3 +1,5 @@
+// js/traduccion.js - Sistema de traducción y gestión de idiomas
+
 import { reproducirAnimaciones } from './animaciones.js';
 
 export function configurarTraduccion() {
@@ -6,48 +8,36 @@ export function configurarTraduccion() {
     // Organizadas por secciones
     // ============================================
     const traduccionesEN = {
-        // ------------------------------------------
         // Navegación
-        // ------------------------------------------
         'nav-inicio': 'Home',
         'nav-acerca-de-mi': 'About Me',
         'nav-proyectos': 'Projects',
         'nav-certificados': 'Certificates',
         'nav-contactame': 'Contact Me',
 
-        // ------------------------------------------
-        // Hero Section
-        // ------------------------------------------
+        // Hero
         'saludo-hero': 'Hello, nice to meet you, I am',
         'nombre-hero': 'Luis Fernando Coste Contreras',
         'titulo-hero': 'Software Developer',
 
-        // ------------------------------------------
-        // About Me Section
-        // ------------------------------------------
+        // About Me
         'titulo-acerca-de-mi': 'About Me',
         'subtitulo-quien-soy': 'Who Am I?',
         'parrafo-sobre-mi': 'I am a Junior Full Stack Developer focused on creating efficient, scalable, and maintainable web applications. I have theoretical experience in both backend and frontend, which allows me to comprehensively understand projects and propose practical, well-thought-out solutions. I am passionate about continuous learning and quality software development.',
 
-        // ------------------------------------------
-        // Technologies Section
-        // ------------------------------------------
+        // Tecnologías
         'titulo-tecnologias': 'Technologies I Master',
         'categoria-frontend': 'Frontend',
         'categoria-backend': 'Backend',
         'categoria-extras': 'Additional',
 
-        // ------------------------------------------
-        // CV Options (botones desplegables)
-        // ------------------------------------------
+        // CV
+        'boton-cv': 'Resume',
         'opcion-cv-espanol': 'Download CV in Spanish',
         'opcion-cv-ingles': 'Download CV in English',
 
-        // ------------------------------------------
-        // Projects Section
-        // ------------------------------------------
+        // Proyectos
         'titulo-proyectos': 'Projects',
-        'fecha-proyecto1': 'October 9, 2024',
         'titulo-proyecto1': 'Rick and Morty API with React',
         'desc-proyecto1': 'In this React project we made the consumption of The Rick and Morty API, where through the necessary urls we called the information of each character to be visualized on the page',
         'titulo-proyecto2': 'Form with React, MySQL, Node.js, and Bootstrap',
@@ -58,25 +48,17 @@ export function configurarTraduccion() {
         'desc-proyecto4': 'This project implements a WebSocket application that enables real-time communication between client and server, exchanging information such as request headers and responses to arithmetic operations.',
         'titulo-proyecto5': 'Sales Management System',
         'desc-proyecto5': 'Sales system developed with ASP.NET Core Web API and layered architecture (BLL, DAL, Model), with integrated database. It allows CRUD of products and sales, user and role management, and reports, applying dependency injection to ensure scalability and maintenance.',
-        'titulo-proyecto': '',
-        'desc-proyecto': '',
-        'titulo-proyecto': '',
-        'desc-proyecto': '',
-        'titulo-proyecto': '',
-        'desc-proyecto': '',
         'boton-codigo': 'Code',
         'boton-demo': 'Live Demo',
 
-        // ------------------------------------------
-        // Certificates Section
-        // ------------------------------------------
+        // Certificados
         'titulo-certificados': 'Certificates',
         'subtitulo-certificados': 'Professional certifications and achievements that demonstrate my experience and continuous learning.',
         'ver-certificado': 'View certificate →',
         'boton-ver-certificados': 'View certificates',
         'boton-cerrar-certificados': 'Close certificates',
 
-        // Badges de plataformas (nombres propios, se mantienen igual o se traducen si aplica)
+        // Badges
         'badge-meta': 'Meta',
         'badge-cisco': 'Cisco Networking Academy',
         'badge-udemy': 'Udemy',
@@ -100,12 +82,12 @@ export function configurarTraduccion() {
         'cert-titulo-13': 'Learn SQL with MySQL 8 (2023)',
         'cert-titulo-14': 'Intermediate Excel',
 
-        // Descripciones cortas de certificados
+        // Descripciones cortas
         'cert-desc-2': 'Basic JavaScript syntax',
         'cert-desc-3': 'Basic concepts of data analysis, data engineering, data science',
         'cert-desc-4': 'Computer programming knowledge, Python syntax and semantics',
 
-        // Fechas de certificados (formato inglés)
+        // Fechas
         'fecha-cert-1': 'May 15, 2025',
         'fecha-cert-2': 'January 31, 2024',
         'fecha-cert-3': 'October 25, 2023',
@@ -121,9 +103,7 @@ export function configurarTraduccion() {
         'fecha-cert-13': 'June 3, 2023',
         'fecha-cert-14': 'June 3, 2023',
 
-        // ------------------------------------------
-        // Contact Section
-        // ------------------------------------------
+        // Contacto
         'titulo-contacto': 'Contact Me',
         'subtitulo-contacto': 'Cultivate connections: get in touch with me and let\'s connect',
         'label-nombre': 'Name',
@@ -141,17 +121,10 @@ export function configurarTraduccion() {
         'placeholder-detalles': 'Tell me about your project...',
         'boton-enviar': 'Send message',
 
-        // ------------------------------------------
         // Footer
-        // ------------------------------------------
         'footer-contacto': 'Contact me:',
         'copyright': 'All rights reserved.',
         'powered-by': 'Powered by Luis F. Coste C.',
-
-        // ------------------------------------------
-        // Botones adicionales
-        // ------------------------------------------
-        'boton-cv': 'Resume',
     };
 
     let idiomaActual = 'es';

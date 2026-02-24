@@ -1,4 +1,5 @@
 // js/animaciones.js - Animaciones y efectos
+
 export function configurarAnimaciones() {
     // Aplicar animación a elementos visibles al cargar
     const elementosIniciales = document.querySelectorAll('.contenido-hero, .imagen-hero, .seccion-carrusel-texto, .seccion-tecnologias');

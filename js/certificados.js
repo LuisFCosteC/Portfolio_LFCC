@@ -1,3 +1,5 @@
+// js/certificados.js - Funcionalidad para mostrar/ocultar certificados adicionales
+
 export function configurarVerMasCertificados() {
     const grid = document.getElementById('gridCertificados');
     if (!grid) return;
