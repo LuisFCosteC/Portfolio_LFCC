@@ -46,6 +46,7 @@ const imagenes = {
     'postman': { src: 'assets/images/Icono_Tecnología_PostMan.png', alt: 'Postman', clase: 'icono-tecnologia' },
     
     // Proyectos (imágenes de vista previa)
+    'proyecto-sistema-ventas': { src: 'assets/images/proyecto_Sistema_de_gestión_de_Ventas.png', alt: 'Proyecto Sistema de Ventas', clase: '' },
     'proyecto-websocket': { src: 'assets/images/proyecto_WebSocket.png', alt: 'Proyecto WebSocket: Comunicación cliente-servidor', clase: '' },
     'proyecto-pokedex': { src: 'assets/images/proyecto_Pokedex_API.png', alt: 'Proyecto Pokedex API', clase: '' },
     'proyecto-form-react': { src: 'assets/images/proyecto_Formulario_con_React.png', alt: 'Formulario con React, MySQL, Node.js y Bootstrap', clase: '' },
@@ -248,7 +249,7 @@ function cargarImagenes() {
 const proyectos = [
     {
         id: 5,
-        imgKey: '',
+        imgKey: 'proyecto-sistema-ventas',
         tituloKey: 'titulo-proyecto5',
         descKey: 'desc-proyecto5',
         tecnologias: ['angular', 'dotnetcore', 'sqlserver'],
