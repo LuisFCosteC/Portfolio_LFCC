@@ -15,6 +15,7 @@ const imagenes = {
     'linkedin': { src: 'assets/images/Icono_Redes_Linkedin.png', alt: 'LinkedIn', clase: 'icono-red' },
     'gmail': { src: 'assets/images/Icono_Redes_Gmail.png', alt: 'Gmail', clase: 'icono-red' },
     'github': { src: 'assets/images/Icono_Redes_GitHub.png', alt: 'GitHub', clase: 'icono-red' },
+    'discord': { src: 'assets/images/Icono_Redes_Discord.png', alt: 'Discord', clase: 'icono-red' },
     'linkedin-footer': { src: 'assets/images/Icono_Redes_Linkedin.png', alt: 'LinkedIn', clase: 'icono-red-footer' },
     'gmail-footer': { src: 'assets/images/Icono_Redes_Gmail.png', alt: 'Gmail', clase: 'icono-red-footer' },
     'github-footer': { src: 'assets/images/Icono_Redes_GitHub.png', alt: 'GitHub', clase: 'icono-red-footer' },
