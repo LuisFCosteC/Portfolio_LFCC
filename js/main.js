@@ -15,11 +15,13 @@ const imagenes = {
     'linkedin': { src: 'assets/images/Icono_Redes_Linkedin.png', alt: 'LinkedIn', clase: 'icono-red' },
     'gmail': { src: 'assets/images/Icono_Redes_Gmail.png', alt: 'Gmail', clase: 'icono-red' },
     'github': { src: 'assets/images/Icono_Redes_GitHub.png', alt: 'GitHub', clase: 'icono-red' },
+    'whatsapp': { src: 'assets/images/Icono_Redes_WhatsApp.png', alt: 'WhatsApp', clase: 'icono-red' },
     'discord': { src: 'assets/images/Icono_Redes_Discord.png', alt: 'Discord', clase: 'icono-red' },
     'linkedin-footer': { src: 'assets/images/Icono_Redes_Linkedin.png', alt: 'LinkedIn', clase: 'icono-red-footer' },
     'gmail-footer': { src: 'assets/images/Icono_Redes_Gmail.png', alt: 'Gmail', clase: 'icono-red-footer' },
     'github-footer': { src: 'assets/images/Icono_Redes_GitHub.png', alt: 'GitHub', clase: 'icono-red-footer' },
     'whatsapp-footer': { src: 'assets/images/Icono_Redes_WhatsApp.png', alt: 'WhatsApp', clase: 'icono-red-footer' },
+    'discord-footer': { src: 'assets/images/Icono_Redes_Discord.png', alt: 'Discord', clase: 'icono-red-footer' },
     
     // Hero
     'hero-perfil': { src: 'assets/images/Imagen_1.png', alt: 'Luis Fernando Coste Contreras - Desarrollador Full Stack Junior', clase: 'foto-perfil' },
