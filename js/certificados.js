@@ -6,7 +6,7 @@ export function configurarVerMasCertificados() {
 
     const tarjetas = Array.from(grid.querySelectorAll('.tarjeta-certificado'));
     const totalTarjetas = tarjetas.length;
-    const iniciales = 8;
+    const iniciales = 8; // Número de certificados a mostrar inicialmente
 
     if (totalTarjetas <= iniciales) return;
 
@@ -14,14 +14,15 @@ export function configurarVerMasCertificados() {
     tarjetasExtra.forEach(tarjeta => tarjeta.classList.add('oculto'));
 
     const boton = document.getElementById('botonVerCertificados');
-    const spanTexto = boton.querySelector('span.traducible');
+    if (!boton) return;
 
-    if (!boton || !spanTexto) return;
+    // Buscamos el span que tiene el texto (puede ser el primer span o el que tiene data-key)
+    const spanTexto = boton.querySelector('span[data-key]') || boton.querySelector('span');
+    if (!spanTexto) return;
 
     let expandido = false;
     boton.setAttribute('aria-expanded', 'false');
 
-    // Textos para inglés (coinciden con traduccion.js)
     const textosIngles = {
         'boton-ver-certificados': 'View certificates',
         'boton-cerrar-certificados': 'Close certificates'
@@ -29,13 +30,12 @@ export function configurarVerMasCertificados() {
 
     function actualizarTextoBoton(expandido) {
         const idioma = document.documentElement.lang; // 'es' o 'en'
-        const nuevaClave = expandido ? 'boton-cerrar-certificados' : 'boton-ver-certificados';
-        spanTexto.setAttribute('data-key', nuevaClave);
+        const clave = expandido ? 'boton-cerrar-certificados' : 'boton-ver-certificados';
+        spanTexto.setAttribute('data-key', clave);
         
         if (idioma === 'en') {
-            spanTexto.textContent = textosIngles[nuevaClave];
+            spanTexto.textContent = textosIngles[clave];
         } else {
-            // Español
             spanTexto.textContent = expandido ? 'Cerrar certificados' : 'Ver certificados';
         }
     }
@@ -47,7 +47,7 @@ export function configurarVerMasCertificados() {
         if (expandido) {
             tarjetasExtra.forEach((tarjeta, index) => {
                 tarjeta.classList.remove('oculto');
-                // Aplicar animación con un pequeño delay para cada una
+                // Aplicar animación con retraso
                 setTimeout(() => {
                     tarjeta.classList.add('animar-entrada');
                 }, index * 50);
