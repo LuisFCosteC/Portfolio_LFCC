@@ -16,7 +16,6 @@ const imagenes = {
     'gmail': { src: 'assets/images/Icono_Redes_Gmail.png', alt: 'Gmail', clase: 'icono-red' },
     'github': { src: 'assets/images/Icono_Redes_GitHub.png', alt: 'GitHub', clase: 'icono-red' },
     'whatsapp': { src: 'assets/images/Icono_Redes_WhatsApp.png', alt: 'WhatsApp', clase: 'icono-red' },
-    'discord': { src: 'assets/images/Icono_Redes_Discord.png', alt: 'Discord', clase: 'icono-red' },
     'linkedin-footer': { src: 'assets/images/Icono_Redes_Linkedin.png', alt: 'LinkedIn', clase: 'icono-red-footer' },
     'gmail-footer': { src: 'assets/images/Icono_Redes_Gmail.png', alt: 'Gmail', clase: 'icono-red-footer' },
     'github-footer': { src: 'assets/images/Icono_Redes_GitHub.png', alt: 'GitHub', clase: 'icono-red-footer' },
@@ -86,7 +85,7 @@ export const textos = {
     // About Me
     'titulo-acerca-de-mi': 'Acerca de mí',
     'subtitulo-quien-soy': '¿Quien soy?',
-    'parrafo-sobre-mi': 'Soy un Desarrollador Full Stack Junior enfocado en crear software eficiente, escalable y fácil de mantener. Tengo experiencia teorica tanto en backend como en frontend, lo que me permite entender los proyectos de forma integral y proponer soluciones prácticas y bien pensadas. Me apasiona el aprendizaje continuo y el desarrollo de software de calidad.',
+    'parrafo-sobre-mi': 'Soy un Desarrollador de Software enfocado en crear software eficiente, escalable y fácil de mantener. Tengo experiencia teorica tanto en backend como en frontend, lo que me permite entender los proyectos de forma integral y proponer soluciones prácticas y bien pensadas. Me apasiona el aprendizaje continuo y el desarrollo de software de calidad.',
 
     // Tecnologías
     'titulo-tecnologias': 'Tecnologías que domino',
